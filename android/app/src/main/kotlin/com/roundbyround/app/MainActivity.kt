@@ -1,4 +1,4 @@
-package com.example.round_by_round
+package com.roundbyround.app
 
 import io.flutter.embedding.android.FlutterActivity
 
