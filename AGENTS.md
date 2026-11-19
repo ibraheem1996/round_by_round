@@ -14,7 +14,12 @@
 
 ## 3. Engineering Rules
 - Use FVM and the approved stack: feature-first pragmatic clean architecture, Cubit, `get_it` + `injectable`, and `go_router`. Respect dependency boundaries; keep business logic independent of Firebase details.
-- Follow the technical contract for localization, theme roles and responsive layout. Adapt to local constraints, text scaling and reading direction; keep width limits local to the content that needs them.
+- Use approved Stitch designs for colors, visual identity, composition, and imagery. Treat HTML measurements as guidance and adapt semantic typography and layout to locale, text scaling, and local content constraints.
+- Use the central responsive policy for window-based values. Keep feature-specific values in their feature and use parent constraints when a component needs to measure its own available space.
+- Keep `main()` to one line that starts the app. Put logic, initialization, and callbacks outside it.
+- Use built-in widget accessibility. Do not add explicit `Semantics` wrappers.
+- Do not use `debugPrint` or direct console printing in application code.
+- Keep UI components in their owning feature. Extract them to Shared only when actual reuse across features or a clear cross-feature responsibility warrants it.
 - Add only needed files, packages, and abstractions. Do not hand-edit generated code.
 - Use `fvm flutter` / `fvm dart`; run relevant formatting, analysis, and tests. Report actual verification results and limitations.
 

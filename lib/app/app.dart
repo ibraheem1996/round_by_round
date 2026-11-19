@@ -1,30 +1,57 @@
+import 'package:go_router/go_router.dart';
 import 'package:material_ui/material_ui.dart';
 
+import '../features/onboarding/data/onboarding_completion.dart';
 import '../l10n/app_localizations.dart';
 import 'app_router.dart';
-import 'theme/dark_theme.dart';
-import 'theme/light_theme.dart';
+import 'di/app_dependencies.dart';
+import 'theme/app_theme.dart';
 
 class MainApp extends StatefulWidget {
-  const MainApp({super.key});
+  const MainApp({this.onboardingCompletion, super.key});
+
+  final OnboardingCompletion? onboardingCompletion;
 
   @override
   State<MainApp> createState() => _MainAppState();
 }
 
 class _MainAppState extends State<MainApp> {
-  late final _router = createAppRouter();
+  GoRouter? _router;
+
+  @override
+  void initState() {
+    super.initState();
+    _loadRouter();
+  }
+
+  Future<void> _loadRouter() async {
+    final completion =
+        widget.onboardingCompletion ?? appDependencies<OnboardingCompletion>();
+    final completed = await completion.read();
+    if (!mounted) return;
+    setState(() {
+      _router = createAppRouter(
+        initialOnboardingComplete: completed,
+        onboardingCompletion: completion,
+      );
+    });
+  }
 
   @override
   void dispose() {
-    _router.dispose();
+    _router?.dispose();
     super.dispose();
   }
 
   @override
   Widget build(BuildContext context) {
+    final router = _router;
+    if (router == null) {
+      return ColoredBox(color: darkTheme.scaffoldBackgroundColor);
+    }
     return MaterialApp.router(
-      routerConfig: _router,
+      routerConfig: router,
       theme: lightTheme,
       darkTheme: darkTheme,
       themeMode: ThemeMode.system,

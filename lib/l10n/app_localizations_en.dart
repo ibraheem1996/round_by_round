@@ -19,4 +19,44 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get backToStart => 'Back to start';
+
+  @override
+  String get onboardingLogTitle => 'Log every set.';
+
+  @override
+  String get onboardingLogEmphasis => 'Build your progress.';
+
+  @override
+  String get onboardingLogDescription =>
+      'Track weights and reps easily and stay focused on your workout.';
+
+  @override
+  String get onboardingPreviousTitle => 'Every workout starts';
+
+  @override
+  String get onboardingPreviousEmphasis => 'with your last lift.';
+
+  @override
+  String get onboardingPreviousDescription =>
+      'See your previous weight and reps before each set, so you know where to pick up.';
+
+  @override
+  String get onboardingRoutinesTitle => 'Ready-made routines,';
+
+  @override
+  String get onboardingRoutinesEmphasis => 'a faster start.';
+
+  @override
+  String get onboardingRoutinesDescription =>
+      'Pick a routine and start your workout with a plan.';
+
+  @override
+  String get onboardingContinue => 'Continue';
+
+  @override
+  String get onboardingStart => 'Get started';
+
+  @override
+  String get onboardingSaveFailed =>
+      'Couldn’t save your onboarding progress. Try again.';
 }
