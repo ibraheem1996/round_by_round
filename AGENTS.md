@@ -14,6 +14,7 @@
 
 ## 3. Engineering Rules
 - Use FVM and the approved stack: feature-first pragmatic clean architecture, Cubit, `get_it` + `injectable`, and `go_router`. Respect dependency boundaries; keep business logic independent of Firebase details.
+- Follow the technical contract for localization, theme roles and responsive layout. Adapt to local constraints, text scaling and reading direction; keep width limits local to the content that needs them.
 - Add only needed files, packages, and abstractions. Do not hand-edit generated code.
 - Use `fvm flutter` / `fvm dart`; run relevant formatting, analysis, and tests. Report actual verification results and limitations.
 
