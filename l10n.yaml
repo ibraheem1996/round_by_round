@@ -1,0 +1,3 @@
+format: true
+# Flutter 3.50 generates references to the legacy Material and Cupertino delegates.
+header: "// ignore_for_file: deprecated_member_use"
