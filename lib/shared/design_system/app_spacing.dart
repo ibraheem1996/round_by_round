@@ -1,4 +1,3 @@
-
 abstract final class AppSpacing {
   static const double screenHorizontalInset = 24;
   static const double screenVerticalInset = 16;

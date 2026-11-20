@@ -3,13 +3,9 @@ import 'package:flutter/widgets.dart';
 import 'app_text_scale_value.dart';
 import 'app_window_class.dart';
 
-
 abstract final class AppIconSizes {
-
-
   static double buttonAction(BuildContext context) =>
       _responsive(context, compact: 21, medium: 22, expanded: 23);
-
 
   static double _responsive(
     BuildContext context, {
