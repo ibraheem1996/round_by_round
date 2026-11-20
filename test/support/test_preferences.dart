@@ -3,9 +3,9 @@ import 'package:shared_preferences/shared_preferences.dart';
 
 class TestPreferences extends Fake implements SharedPreferencesAsync {
   TestPreferences({bool completed = false, this.beforeWrite})
-    : values = {'onboarding_complete_v1': completed};
+    : values = {if (completed) 'onboarding_complete_v1': true};
 
-  final Future<void>? beforeWrite;
+  final Future<void> Function()? beforeWrite;
   final Map<String, bool> values;
   final _writtenKeys = <String>[];
 
@@ -17,7 +17,7 @@ class TestPreferences extends Fake implements SharedPreferencesAsync {
   @override
   Future<void> setBool(String key, bool value) async {
     _writtenKeys.add(key);
-    await beforeWrite;
+    await beforeWrite?.call();
     values[key] = value;
   }
 }

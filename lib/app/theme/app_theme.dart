@@ -15,5 +15,6 @@ ThemeData _buildAppTheme(ThemeData defaults) {
   return defaults.copyWith(
     colorScheme: scheme,
     scaffoldBackgroundColor: scheme.surface,
+    iconTheme: IconThemeData(applyTextScaling: true),
   );
 }

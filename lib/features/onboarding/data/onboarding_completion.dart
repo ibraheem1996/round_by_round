@@ -1,5 +1,7 @@
+import 'package:injectable/injectable.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
+@lazySingleton
 class OnboardingCompletion {
   const OnboardingCompletion(this._preferences);
 
@@ -7,12 +9,11 @@ class OnboardingCompletion {
   final SharedPreferencesAsync _preferences;
 
   Future<bool> read() async {
-    return false;
-    // try {
-    //   return await _preferences.getBool(_key) ?? false;
-    // } on Exception {
-    //   return false;
-    // }
+    try {
+      return await _preferences.getBool(_key) ?? false;
+    } on Exception {
+      return false;
+    }
   }
 
   Future<void> save() => _preferences.setBool(_key, true);

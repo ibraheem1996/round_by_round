@@ -4,7 +4,7 @@ import 'package:material_ui/material_ui.dart';
 import 'package:round_by_round/app/app.dart';
 import 'package:round_by_round/features/onboarding/data/onboarding_completion.dart';
 
-import 'support/test_preferences.dart';
+import '../support/test_preferences.dart';
 
 final _returningApp = MainApp(
   onboardingCompletion: OnboardingCompletion(TestPreferences(completed: true)),

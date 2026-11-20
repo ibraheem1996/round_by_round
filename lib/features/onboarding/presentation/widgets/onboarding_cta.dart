@@ -1,6 +1,10 @@
 import 'package:material_ui/material_ui.dart';
 
 import '../../../../app/theme/app_typography.dart';
+import '../../../../shared/design_system/app_control_sizes.dart';
+import '../../../../shared/design_system/app_icon_sizes.dart';
+import '../../../../shared/design_system/app_radius.dart';
+import '../../../../shared/design_system/app_spacing.dart';
 
 class OnboardingCta extends StatelessWidget {
   const OnboardingCta({
@@ -12,22 +16,35 @@ class OnboardingCta extends StatelessWidget {
   final String label;
   final VoidCallback? onPressed;
 
+  static const double _minWidthForInlineLabel = 120;
+
   @override
   Widget build(BuildContext context) {
-    final theme = Theme.of(context);
-    final shape = RoundedRectangleBorder(
-      borderRadius: BorderRadius.circular(16),
+    const shape = RoundedRectangleBorder(
+      borderRadius: BorderRadius.all(
+        Radius.circular(AppRadius.primaryButtonRadius),
+      ),
     );
-    final amber = theme.colorScheme.primary;
+    final amber = Theme.of(context).colorScheme.primary;
+    final style = context.appTypography.buttonLabel;
+    final iconSize = AppIconSizes.buttonAction(context);
+    final labelText = Text(label, textAlign: TextAlign.center);
+    final arrow = Icon(Icons.arrow_forward, size: iconSize);
 
     return FilledButton(
       onPressed: onPressed,
       style: FilledButton.styleFrom(
         foregroundColor: Colors.white,
         backgroundColor: const Color(0xFFC2410C),
-        textStyle: context.appTypography.buttonLabel,
-        minimumSize: const Size(48, 56),
-        padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 12),
+        textStyle: style,
+        minimumSize: const Size(
+          AppControlSizes.minimumTapTarget,
+          AppControlSizes.primaryButtonMinHeight,
+        ),
+        padding: const EdgeInsets.symmetric(
+          horizontal: AppSpacing.buttonHorizontalPadding,
+          vertical: AppSpacing.buttonVerticalPadding,
+        ),
         shape: shape,
         elevation: 4,
         shadowColor: amber.withValues(alpha: 0.5),
@@ -51,14 +68,25 @@ class OnboardingCta extends StatelessWidget {
                 child: child,
               ),
       ),
-      child: Row(
-        mainAxisSize: MainAxisSize.min,
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          Flexible(child: Text(label, textAlign: TextAlign.center)),
-          const SizedBox(width: 8),
-          const Icon(Icons.arrow_forward, size: 20),
-        ],
+      child: LayoutBuilder(
+        builder: (context, constraints) =>
+            constraints.maxWidth < _minWidthForInlineLabel
+            ? Column(
+                mainAxisSize: .min,
+                spacing: AppSpacing.relatedItemGap,
+                children: [labelText, arrow],
+              )
+            : ConstrainedBox(
+                constraints: const BoxConstraints(maxWidth: 680),
+                child: Row(
+                  mainAxisAlignment: .center,
+                  spacing: AppSpacing.relatedItemGap,
+                  children: [
+                    Flexible(child: labelText),
+                    arrow,
+                  ],
+                ),
+              ),
       ),
     );
   }

@@ -4,13 +4,12 @@ import 'package:material_ui/material_ui.dart';
 import '../features/onboarding/data/onboarding_completion.dart';
 import '../l10n/app_localizations.dart';
 import 'app_router.dart';
-import 'di/app_dependencies.dart';
 import 'theme/app_theme.dart';
 
 class MainApp extends StatefulWidget {
-  const MainApp({this.onboardingCompletion, super.key});
+  const MainApp({required this.onboardingCompletion, super.key});
 
-  final OnboardingCompletion? onboardingCompletion;
+  final OnboardingCompletion onboardingCompletion;
 
   @override
   State<MainApp> createState() => _MainAppState();
@@ -26,14 +25,13 @@ class _MainAppState extends State<MainApp> {
   }
 
   Future<void> _loadRouter() async {
-    final completion =
-        widget.onboardingCompletion ?? appDependencies<OnboardingCompletion>();
+    final completion = widget.onboardingCompletion;
     final completed = await completion.read();
     if (!mounted) return;
     setState(() {
       _router = createAppRouter(
         initialOnboardingComplete: completed,
-        onboardingCompletion: completion,
+        saveOnboardingCompletion: completion.save,
       );
     });
   }

@@ -15,7 +15,8 @@
 ## 3. Engineering Rules
 - Use FVM and the approved stack: feature-first pragmatic clean architecture, Cubit, `get_it` + `injectable`, and `go_router`. Respect dependency boundaries; keep business logic independent of Firebase details.
 - Use approved Stitch designs for colors, visual identity, composition, and imagery. Treat HTML measurements as guidance and adapt semantic typography and layout to locale, text scaling, and local content constraints.
-- Use the central responsive policy for window-based values. Keep feature-specific values in their feature and use parent constraints when a component needs to measure its own available space.
+- For any Flutter UI or widget change, you must use `$responsive-ui` and the app's shared responsive system. Use `AppWindowClass` and `AppResponsiveValue` for window decisions, and `AppPageFrame` or `AppSafeArea` with `AppScreenInsets` for safe areas and constraint-based padding across supported orientations.
+- Reuse shared design roles only when their purpose and behavior match. If a needed shared role is missing, add a named static member to the owning group (`AppIconSizes`, `AppRadius`, or `AppSpacing`) or a semantic getter in `AppTypography`. Keep feature-specific layout values with their feature.
 - Keep `main()` to one line that starts the app. Put logic, initialization, and callbacks outside it.
 - Use built-in widget accessibility. Do not add explicit `Semantics` wrappers.
 - Do not use `debugPrint` or direct console printing in application code.

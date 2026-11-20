@@ -1,14 +1,13 @@
 import 'package:go_router/go_router.dart';
 import 'package:material_ui/material_ui.dart';
 
-import '../features/onboarding/data/onboarding_completion.dart';
 import '../features/onboarding/presentation/onboarding_page.dart';
 import '../l10n/app_localizations.dart';
 import 'theme/app_typography.dart';
 
 GoRouter createAppRouter({
   required bool initialOnboardingComplete,
-  required OnboardingCompletion onboardingCompletion,
+  required Future<void> Function() saveOnboardingCompletion,
 }) {
   var completed = initialOnboardingComplete;
   return GoRouter(
@@ -33,7 +32,7 @@ GoRouter createAppRouter({
         redirect: (context, state) => completed ? '/' : null,
         builder: (context, state) => OnboardingPage(
           onComplete: () async {
-            await onboardingCompletion.save();
+            await saveOnboardingCompletion();
             completed = true;
             if (context.mounted) context.go('/');
           },
