@@ -1,0 +1,54 @@
+{
+  "project_info": {
+    "project_number": "723059300221",
+    "project_id": "round-by-round-5e50a",
+    "storage_bucket": "round-by-round-5e50a.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:723059300221:android:d518b5127a0965c1d61e14",
+        "android_client_info": {
+          "package_name": "com.roundbyround.app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "723059300221-tj948iamqljl2n12ci160f1f3liihh0k.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.roundbyround.app",
+            "certificate_hash": "b143d12ad1f918f3ea42575ac5a943f15ee55b3e"
+          }
+        },
+        {
+          "client_id": "723059300221-lacco922h0db8v250il8sshrkbmk6db1.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA6IwvtEPazURU5gBUA9EmU74LpAFIfGjo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "723059300221-lacco922h0db8v250il8sshrkbmk6db1.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "723059300221-h6gvac1401aqj1s852bpgn7dfn529blq.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.roundbyround.app"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
