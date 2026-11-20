@@ -116,6 +116,78 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Back to start'**
   String get backToStart;
+
+  /// No description provided for @onboardingLogTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Log every set.'**
+  String get onboardingLogTitle;
+
+  /// No description provided for @onboardingLogEmphasis.
+  ///
+  /// In en, this message translates to:
+  /// **'Build your progress.'**
+  String get onboardingLogEmphasis;
+
+  /// No description provided for @onboardingLogDescription.
+  ///
+  /// In en, this message translates to:
+  /// **'Track weights and reps easily and stay focused on your workout.'**
+  String get onboardingLogDescription;
+
+  /// No description provided for @onboardingPreviousTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Every workout starts'**
+  String get onboardingPreviousTitle;
+
+  /// No description provided for @onboardingPreviousEmphasis.
+  ///
+  /// In en, this message translates to:
+  /// **'with your last lift.'**
+  String get onboardingPreviousEmphasis;
+
+  /// No description provided for @onboardingPreviousDescription.
+  ///
+  /// In en, this message translates to:
+  /// **'See your previous weight and reps before each set, so you know where to pick up.'**
+  String get onboardingPreviousDescription;
+
+  /// No description provided for @onboardingRoutinesTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Ready-made routines,'**
+  String get onboardingRoutinesTitle;
+
+  /// No description provided for @onboardingRoutinesEmphasis.
+  ///
+  /// In en, this message translates to:
+  /// **'a faster start.'**
+  String get onboardingRoutinesEmphasis;
+
+  /// No description provided for @onboardingRoutinesDescription.
+  ///
+  /// In en, this message translates to:
+  /// **'Pick a routine and start your workout with a plan.'**
+  String get onboardingRoutinesDescription;
+
+  /// No description provided for @onboardingContinue.
+  ///
+  /// In en, this message translates to:
+  /// **'Continue'**
+  String get onboardingContinue;
+
+  /// No description provided for @onboardingStart.
+  ///
+  /// In en, this message translates to:
+  /// **'Get started'**
+  String get onboardingStart;
+
+  /// No description provided for @onboardingSaveFailed.
+  ///
+  /// In en, this message translates to:
+  /// **'Couldn’t save your onboarding progress. Try again.'**
+  String get onboardingSaveFailed;
 }
 
 class _AppLocalizationsDelegate

@@ -2,5 +2,17 @@
   "@@locale": "en",
   "appName": "Round by Round",
   "pageNotFound": "Page not found",
-  "backToStart": "Back to start"
+  "backToStart": "Back to start",
+  "onboardingLogTitle": "Log every set.",
+  "onboardingLogEmphasis": "Build your progress.",
+  "onboardingLogDescription": "Track weights and reps easily and stay focused on your workout.",
+  "onboardingPreviousTitle": "Every workout starts",
+  "onboardingPreviousEmphasis": "with your last lift.",
+  "onboardingPreviousDescription": "See your previous weight and reps before each set, so you know where to pick up.",
+  "onboardingRoutinesTitle": "Ready-made routines,",
+  "onboardingRoutinesEmphasis": "a faster start.",
+  "onboardingRoutinesDescription": "Pick a routine and start your workout with a plan.",
+  "onboardingContinue": "Continue",
+  "onboardingStart": "Get started",
+  "onboardingSaveFailed": "Couldn’t save your onboarding progress. Try again."
 }

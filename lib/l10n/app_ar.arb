@@ -2,5 +2,17 @@
   "@@locale": "ar",
   "appName": "جولة بجولة",
   "pageNotFound": "الصفحة غير موجودة",
-  "backToStart": "العودة إلى البداية"
+  "backToStart": "العودة إلى البداية",
+  "onboardingLogTitle": "سجّل كل جولة.",
+  "onboardingLogEmphasis": "اصنع تقدّمك.",
+  "onboardingLogDescription": "تتبّع أوزانك وتكراراتك بسهولة وركّز على تمرينك.",
+  "onboardingPreviousTitle": "كل تمرين يبدأ",
+  "onboardingPreviousEmphasis": "من آخر إنجاز.",
+  "onboardingPreviousDescription": "راجع أوزانك وتكراراتك السابقة قبل كل جولة، واعرف من أين تتابع.",
+  "onboardingRoutinesTitle": "الروتينات الجاهزة،",
+  "onboardingRoutinesEmphasis": "أسرع انطلاقة.",
+  "onboardingRoutinesDescription": "اختر روتينًا جاهزًا وابدأ تمرينك بخطة واضحة.",
+  "onboardingContinue": "متابعة",
+  "onboardingStart": "ابدأ الآن",
+  "onboardingSaveFailed": "تعذّر حفظ اكتمال التعريف. حاول مرة أخرى."
 }

@@ -2,6 +2,13 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:go_router/go_router.dart';
 import 'package:material_ui/material_ui.dart';
 import 'package:round_by_round/app/app.dart';
+import 'package:round_by_round/features/onboarding/data/onboarding_completion.dart';
+
+import '../support/test_preferences.dart';
+
+final _returningApp = MainApp(
+  onboardingCompletion: OnboardingCompletion(TestPreferences(completed: true)),
+);
 
 void main() {
   testWidgets('device languages, Arabic fallback and system brightness', (
@@ -10,7 +17,7 @@ void main() {
     final platform = tester.platformDispatcher;
     addTearDown(platform.clearAllTestValues);
     platform.localesTestValue = const [Locale('fr')];
-    await tester.pumpWidget(const MainApp());
+    await tester.pumpWidget(_returningApp);
     await tester.pumpAndSettle();
     final arabic = tester.element(find.text('جولة بجولة'));
     expect(Directionality.of(arabic), TextDirection.rtl);
@@ -43,7 +50,7 @@ void main() {
       Future<void> resize(double width) async {
         await tester.pumpWidget(
           Center(
-            child: SizedBox(width: width, height: 180, child: const MainApp()),
+            child: SizedBox(width: width, height: 180, child: _returningApp),
           ),
         );
         await tester.pumpAndSettle();
