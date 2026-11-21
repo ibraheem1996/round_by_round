@@ -59,4 +59,47 @@ class AppLocalizationsEn extends AppLocalizations {
   @override
   String get onboardingSaveFailed =>
       'Couldn’t save your onboarding progress. Try again.';
+
+  @override
+  String get authWelcome => 'Welcome to your training companion';
+
+  @override
+  String get authDescription =>
+      'Sign in to keep your workout history with your account.';
+
+  @override
+  String get authContinueApple => 'Continue with Apple';
+
+  @override
+  String get authContinueGoogle => 'Continue with Google';
+
+  @override
+  String get authInternetRequired =>
+      'Connect to the internet to sign in for the first time.';
+
+  @override
+  String get authRestoring => 'Checking your session…';
+
+  @override
+  String get authStartupFailed => 'Couldn’t check your session. Try again.';
+
+  @override
+  String get authRetry => 'Try again';
+
+  @override
+  String get authSigningIn => 'Signing in…';
+
+  @override
+  String get authOffline => 'Check your internet connection and try again.';
+
+  @override
+  String get authProviderUnavailable =>
+      'This sign-in option is unavailable. Try again later.';
+
+  @override
+  String get authAccountConflict =>
+      'Sign in with the provider you originally used for this account.';
+
+  @override
+  String get authSignInFailed => 'Couldn’t sign in. Try again.';
 }

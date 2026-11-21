@@ -6,15 +6,26 @@ import '../l10n/app_localizations.dart';
 import 'theme/app_typography.dart';
 
 GoRouter createAppRouter({
-  required bool initialOnboardingComplete,
-  required Future<void> Function() saveOnboardingCompletion,
+  required Listenable refreshListenable,
+  required String Function() entryLocation,
+  required Future<void> Function() completeOnboarding,
+  required Widget Function() buildStartup,
+  required Widget Function() buildLogin,
 }) {
-  var completed = initialOnboardingComplete;
   return GoRouter(
+    refreshListenable: refreshListenable,
+    redirect: (context, state) {
+      final path = state.uri.path;
+      if (!const {'/', '/startup', '/onboarding', '/login'}.contains(path)) {
+        return null;
+      }
+      final destination = entryLocation();
+      return path == destination ? null : destination;
+    },
     routes: [
+      GoRoute(path: '/startup', builder: (context, state) => buildStartup()),
       GoRoute(
         path: '/',
-        redirect: (context, state) => completed ? null : '/onboarding',
         builder: (context, state) => Scaffold(
           body: SafeArea(
             child: Center(
@@ -29,15 +40,10 @@ GoRouter createAppRouter({
       ),
       GoRoute(
         path: '/onboarding',
-        redirect: (context, state) => completed ? '/' : null,
-        builder: (context, state) => OnboardingPage(
-          onComplete: () async {
-            await saveOnboardingCompletion();
-            completed = true;
-            if (context.mounted) context.go('/');
-          },
-        ),
+        builder: (context, state) =>
+            OnboardingPage(onComplete: completeOnboarding),
       ),
+      GoRoute(path: '/login', builder: (context, state) => buildLogin()),
     ],
     errorBuilder: (context, state) {
       final strings = AppLocalizations.of(context)!;

@@ -10,11 +10,17 @@
 
 // ignore_for_file: no_leading_underscores_for_library_prefixes
 
+import 'package:firebase_auth/firebase_auth.dart' as _i59;
 import 'package:get_it/get_it.dart' as _i174;
+import 'package:google_sign_in/google_sign_in.dart' as _i116;
 import 'package:injectable/injectable.dart' as _i526;
 import 'package:shared_preferences/shared_preferences.dart' as _i460;
 
+import '../../features/authentication/auth_gateway.dart' as _i401;
+import '../../features/authentication/data/firebase_auth_gateway.dart' as _i457;
+import '../../features/authentication/presentation/auth_cubit.dart' as _i852;
 import '../../features/onboarding/data/onboarding_completion.dart' as _i373;
+import 'firebase_module.dart' as _i616;
 import 'preferences_module.dart' as _i816;
 
 extension GetItInjectableX on _i174.GetIt {
@@ -24,15 +30,27 @@ extension GetItInjectableX on _i174.GetIt {
     _i526.EnvironmentFilter? environmentFilter,
   }) {
     final gh = _i526.GetItHelper(this, environment, environmentFilter);
+    final firebaseModule = _$FirebaseModule();
     final preferencesModule = _$PreferencesModule();
+    gh.lazySingleton<_i59.FirebaseAuth>(() => firebaseModule.auth);
+    gh.lazySingleton<_i116.GoogleSignIn>(() => firebaseModule.google);
     gh.lazySingleton<_i460.SharedPreferencesAsync>(
       () => preferencesModule.preferences,
     );
     gh.lazySingleton<_i373.OnboardingCompletion>(
       () => _i373.OnboardingCompletion(gh<_i460.SharedPreferencesAsync>()),
     );
+    gh.lazySingleton<_i401.AuthGateway>(
+      () => _i457.FirebaseAuthGateway(
+        gh<_i59.FirebaseAuth>(),
+        gh<_i116.GoogleSignIn>(),
+      ),
+    );
+    gh.factory<_i852.AuthCubit>(() => _i852.AuthCubit(gh<_i401.AuthGateway>()));
     return this;
   }
 }
+
+class _$FirebaseModule extends _i616.FirebaseModule {}
 
 class _$PreferencesModule extends _i816.PreferencesModule {}

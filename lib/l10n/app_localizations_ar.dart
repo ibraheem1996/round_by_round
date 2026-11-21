@@ -58,4 +58,45 @@ class AppLocalizationsAr extends AppLocalizations {
 
   @override
   String get onboardingSaveFailed => 'تعذّر حفظ اكتمال التعريف. حاول مرة أخرى.';
+
+  @override
+  String get authWelcome => 'مرحبًا بك في رفيق تدريبك';
+
+  @override
+  String get authDescription => 'سجّل الدخول للاحتفاظ بسجل تمارينك في حسابك.';
+
+  @override
+  String get authContinueApple => 'المتابعة باستخدام Apple';
+
+  @override
+  String get authContinueGoogle => 'المتابعة باستخدام Google';
+
+  @override
+  String get authInternetRequired => 'اتصل بالإنترنت لتسجيل الدخول لأول مرة.';
+
+  @override
+  String get authRestoring => 'جارٍ التحقق من جلستك…';
+
+  @override
+  String get authStartupFailed => 'تعذّر التحقق من جلستك. حاول مرة أخرى.';
+
+  @override
+  String get authRetry => 'إعادة المحاولة';
+
+  @override
+  String get authSigningIn => 'جارٍ تسجيل الدخول…';
+
+  @override
+  String get authOffline => 'تحقّق من اتصالك بالإنترنت وحاول مرة أخرى.';
+
+  @override
+  String get authProviderUnavailable =>
+      'خيار الدخول هذا غير متاح. حاول مرة أخرى لاحقًا.';
+
+  @override
+  String get authAccountConflict =>
+      'سجّل الدخول باستخدام مزوّد الدخول الذي استخدمته أول مرة لهذا الحساب.';
+
+  @override
+  String get authSignInFailed => 'تعذّر تسجيل الدخول. حاول مرة أخرى.';
 }

@@ -2,13 +2,18 @@ import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/widgets.dart';
 
 import '../core/services/logger_service.dart';
+import '../features/authentication/presentation/auth_cubit.dart';
 import '../features/onboarding/data/onboarding_completion.dart';
 import '../firebase_options.dart';
 import 'app.dart';
 import 'di/app_dependencies.dart';
 
-Future<void> bootstrap() async {
+void bootstrap() {
   WidgetsFlutterBinding.ensureInitialized();
+  runApp(const MainApp(initialize: _initialize));
+}
+
+Future<AppStartup> _initialize() async {
   final firebaseApp = await Firebase.initializeApp(
     options: DefaultFirebaseOptions.currentPlatform,
   );
@@ -17,5 +22,8 @@ Future<void> bootstrap() async {
     '(${firebaseApp.options.appId}).',
   );
   final dependencies = configureDependencies();
-  runApp(MainApp(onboardingCompletion: dependencies<OnboardingCompletion>()));
+  return (
+    onboardingCompletion: dependencies<OnboardingCompletion>(),
+    authCubit: dependencies<AuthCubit>(),
+  );
 }

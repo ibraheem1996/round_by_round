@@ -1,23 +1,22 @@
 import 'package:flutter_test/flutter_test.dart';
 import 'package:go_router/go_router.dart';
 import 'package:material_ui/material_ui.dart';
-import 'package:round_by_round/app/app.dart';
-import 'package:round_by_round/features/onboarding/data/onboarding_completion.dart';
 
+import '../support/mock_device_orientation.dart';
+import '../support/test_auth_gateway.dart';
 import '../support/test_preferences.dart';
-
-final _returningApp = MainApp(
-  onboardingCompletion: OnboardingCompletion(TestPreferences(completed: true)),
-);
 
 void main() {
   testWidgets('device languages, Arabic fallback and system brightness', (
     tester,
   ) async {
+    mockDeviceOrientation('PortraitUp');
+    final gateway = TestAuthGateway(userId: 'returning-user');
+    addTearDown(gateway.close);
     final platform = tester.platformDispatcher;
     addTearDown(platform.clearAllTestValues);
     platform.localesTestValue = const [Locale('fr')];
-    await tester.pumpWidget(_returningApp);
+    await tester.pumpWidget(testApp(TestPreferences(completed: true), gateway));
     await tester.pumpAndSettle();
     final arabic = tester.element(find.text('جولة بجولة'));
     expect(Directionality.of(arabic), TextDirection.rtl);
@@ -39,6 +38,10 @@ void main() {
     testWidgets('unknown route adapts and returns home (Arabic: $arabic)', (
       tester,
     ) async {
+      mockDeviceOrientation('PortraitUp');
+      final gateway = TestAuthGateway(userId: 'returning-user');
+      addTearDown(gateway.close);
+      final app = testApp(TestPreferences(completed: true), gateway);
       final platform = tester.platformDispatcher;
       addTearDown(platform.clearAllTestValues);
       platform.localesTestValue = [Locale(arabic ? 'ar' : 'en')];
@@ -50,7 +53,7 @@ void main() {
       Future<void> resize(double width) async {
         await tester.pumpWidget(
           Center(
-            child: SizedBox(width: width, height: 180, child: _returningApp),
+            child: SizedBox(width: width, height: 180, child: app),
           ),
         );
         await tester.pumpAndSettle();

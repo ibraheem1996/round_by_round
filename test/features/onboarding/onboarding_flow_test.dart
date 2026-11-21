@@ -3,15 +3,14 @@ import 'dart:async';
 import 'package:flutter/services.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:material_ui/material_ui.dart';
-import 'package:round_by_round/app/app.dart';
 import 'package:round_by_round/core/assets/app_assets.dart';
-import 'package:round_by_round/features/onboarding/data/onboarding_completion.dart';
 import 'package:round_by_round/features/onboarding/presentation/onboarding_page.dart';
 import 'package:round_by_round/features/onboarding/presentation/widgets/onboarding_backdrop.dart';
 import 'package:round_by_round/l10n/app_localizations.dart';
 import 'package:round_by_round/shared/design_system/app_text_scale_limits.dart';
 
 import '../../support/mock_device_orientation.dart';
+import '../../support/test_auth_gateway.dart';
 import '../../support/test_preferences.dart';
 
 void main() {
@@ -95,12 +94,12 @@ void main() {
 
     pendingSave.complete();
     await tester.pumpAndSettle();
-    expect(find.text(strings.appName), findsOneWidget);
+    expect(find.text(strings.authContinueGoogle), findsOneWidget);
     expect(page, findsNothing);
 
     await tester.pumpWidget(const SizedBox.shrink());
     await _launch(tester, preferences);
-    expect(find.text(strings.appName), findsOneWidget);
+    expect(find.text(strings.authContinueGoogle), findsOneWidget);
     expect(page, findsNothing);
     expect(preferences.writes, 2);
   });
@@ -146,9 +145,9 @@ void main() {
 }
 
 Future<void> _launch(WidgetTester tester, TestPreferences preferences) async {
-  await tester.pumpWidget(
-    MainApp(onboardingCompletion: OnboardingCompletion(preferences)),
-  );
+  final gateway = TestAuthGateway();
+  addTearDown(gateway.close);
+  await tester.pumpWidget(testApp(preferences, gateway));
   await tester.pumpAndSettle();
 }
 

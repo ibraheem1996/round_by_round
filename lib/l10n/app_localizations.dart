@@ -188,6 +188,84 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Couldn’t save your onboarding progress. Try again.'**
   String get onboardingSaveFailed;
+
+  /// No description provided for @authWelcome.
+  ///
+  /// In en, this message translates to:
+  /// **'Welcome to your training companion'**
+  String get authWelcome;
+
+  /// No description provided for @authDescription.
+  ///
+  /// In en, this message translates to:
+  /// **'Sign in to keep your workout history with your account.'**
+  String get authDescription;
+
+  /// No description provided for @authContinueApple.
+  ///
+  /// In en, this message translates to:
+  /// **'Continue with Apple'**
+  String get authContinueApple;
+
+  /// No description provided for @authContinueGoogle.
+  ///
+  /// In en, this message translates to:
+  /// **'Continue with Google'**
+  String get authContinueGoogle;
+
+  /// No description provided for @authInternetRequired.
+  ///
+  /// In en, this message translates to:
+  /// **'Connect to the internet to sign in for the first time.'**
+  String get authInternetRequired;
+
+  /// No description provided for @authRestoring.
+  ///
+  /// In en, this message translates to:
+  /// **'Checking your session…'**
+  String get authRestoring;
+
+  /// No description provided for @authStartupFailed.
+  ///
+  /// In en, this message translates to:
+  /// **'Couldn’t check your session. Try again.'**
+  String get authStartupFailed;
+
+  /// No description provided for @authRetry.
+  ///
+  /// In en, this message translates to:
+  /// **'Try again'**
+  String get authRetry;
+
+  /// No description provided for @authSigningIn.
+  ///
+  /// In en, this message translates to:
+  /// **'Signing in…'**
+  String get authSigningIn;
+
+  /// No description provided for @authOffline.
+  ///
+  /// In en, this message translates to:
+  /// **'Check your internet connection and try again.'**
+  String get authOffline;
+
+  /// No description provided for @authProviderUnavailable.
+  ///
+  /// In en, this message translates to:
+  /// **'This sign-in option is unavailable. Try again later.'**
+  String get authProviderUnavailable;
+
+  /// No description provided for @authAccountConflict.
+  ///
+  /// In en, this message translates to:
+  /// **'Sign in with the provider you originally used for this account.'**
+  String get authAccountConflict;
+
+  /// No description provided for @authSignInFailed.
+  ///
+  /// In en, this message translates to:
+  /// **'Couldn’t sign in. Try again.'**
+  String get authSignInFailed;
 }
 
 class _AppLocalizationsDelegate
