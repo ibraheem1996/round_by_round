@@ -1,9 +1,11 @@
 import 'dart:async';
 
-import 'package:round_by_round/app/app.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:round_by_round/app/startup/app_startup.dart';
 import 'package:round_by_round/features/authentication/auth_gateway.dart';
-import 'package:round_by_round/features/authentication/presentation/auth_cubit.dart';
-import 'package:round_by_round/features/onboarding/data/onboarding_completion.dart';
+import 'package:round_by_round/features/authentication/presentation/login/login_cubit.dart';
+import 'package:round_by_round/features/authentication/presentation/session/session_cubit.dart';
+import 'package:round_by_round/features/onboarding/data/onboarding_intro_completion.dart';
 
 import 'test_preferences.dart';
 
@@ -15,6 +17,8 @@ final class TestAuthGateway implements AuthGateway {
   bool delayInitialEvent;
   final calls = <SignInProvider>[];
   Future<SignInResult> Function()? onSignIn;
+
+  int get sessionListeners => _sessions.length;
 
   @override
   Stream<String?> watchUserId() {
@@ -55,10 +59,17 @@ final class TestAuthGateway implements AuthGateway {
   }
 }
 
-MainApp testApp(TestPreferences preferences, TestAuthGateway gateway) =>
-    MainApp(
-      initialize: () async => (
-        onboardingCompletion: OnboardingCompletion(preferences),
-        authCubit: AuthCubit(gateway),
-      ),
-    );
+BlocProvider<SessionCubit> testApp(
+  TestPreferences preferences,
+  TestAuthGateway gateway, {
+  Future<void> Function()? beforeInitialize,
+}) => BlocProvider(
+  create: (_) => SessionCubit(gateway),
+  child: AppStartup(
+    initialize: () async {
+      await beforeInitialize?.call();
+    },
+    getIntroCompletion: () => OnboardingIntroCompletion(preferences),
+    createLogin: () => LoginCubit(gateway),
+  ),
+);

@@ -1,13 +1,13 @@
+import 'dart:async';
+
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:go_router/go_router.dart';
 import 'package:material_ui/material_ui.dart';
-import 'package:round_by_round/app/app.dart';
 import 'package:round_by_round/features/authentication/auth_gateway.dart';
-import 'package:round_by_round/features/authentication/presentation/auth_cubit.dart';
-import 'package:round_by_round/features/authentication/presentation/auth_state.dart';
-import 'package:round_by_round/features/authentication/presentation/login_page.dart';
-import 'package:round_by_round/features/onboarding/data/onboarding_completion.dart';
-import 'package:round_by_round/features/onboarding/presentation/onboarding_page.dart';
+import 'package:round_by_round/features/authentication/presentation/login/login_cubit.dart';
+import 'package:round_by_round/features/authentication/presentation/login/login_page.dart';
+import 'package:round_by_round/features/authentication/presentation/login/login_state.dart';
 import 'package:round_by_round/l10n/app_localizations.dart';
 
 import '../../support/mock_device_orientation.dart';
@@ -16,84 +16,8 @@ import '../../support/test_preferences.dart';
 
 void main() {
   final login = find.byType(LoginPage);
-  final onboarding = find.byType(OnboardingPage);
 
   setUp(() => mockDeviceOrientation('PortraitUp'));
-
-  testWidgets(
-    'waits for session, guards direct routes, and retries listening',
-    (tester) async {
-      final gateway = TestAuthGateway(delayInitialEvent: true);
-      addTearDown(gateway.close);
-      _locale(tester, 'en');
-
-      final cubit = AuthCubit(gateway);
-      await tester.pumpWidget(
-        MainApp(
-          initialize: () async => (
-            onboardingCompletion: OnboardingCompletion(TestPreferences()),
-            authCubit: cubit,
-          ),
-        ),
-      );
-      await tester.pump();
-      final checking = find.text('Checking your session…');
-      expect(checking, findsOneWidget);
-      expect(login, findsNothing);
-      expect(onboarding, findsNothing);
-
-      final router = GoRouter.of(tester.element(checking));
-      router.go('/login');
-      await tester.pump();
-      expect(checking, findsOneWidget);
-      gateway.failSession();
-      await tester.pump();
-      final retry = find.text('Try again');
-      expect(retry, findsOneWidget);
-      gateway.delayInitialEvent = false;
-      await tester.tap(retry);
-      await tester.pump();
-      expect(cubit.state, isA<AuthSignedOut>());
-      await tester.pumpAndSettle();
-
-      expect(onboarding, findsOneWidget);
-      router.go('/');
-      await tester.pumpAndSettle();
-      expect(onboarding, findsOneWidget);
-      expect(login, findsNothing);
-    },
-  );
-
-  testWidgets('can retry the app startup after Firebase setup fails', (
-    tester,
-  ) async {
-    final gateway = TestAuthGateway(userId: 'restored-user');
-    addTearDown(gateway.close);
-    _locale(tester, 'en');
-    var failStartup = true;
-    await tester.pumpWidget(
-      MainApp(
-        initialize: () async {
-          if (failStartup) throw Exception('Firebase startup failed');
-          return (
-            onboardingCompletion: OnboardingCompletion(TestPreferences()),
-            authCubit: AuthCubit(gateway),
-          );
-        },
-      ),
-    );
-    await tester.pumpAndSettle();
-    expect(
-      find.text('Couldn’t check your session. Try again.'),
-      findsOneWidget,
-    );
-    failStartup = false;
-    await tester.tap(find.text('Try again'));
-    await tester.pumpAndSettle();
-    expect(find.text('Round by Round'), findsOneWidget);
-    expect(login, findsNothing);
-    expect(onboarding, findsNothing);
-  });
 
   testWidgets('Apple tap is inert and Google can retry then unlock the app', (
     tester,
@@ -104,14 +28,17 @@ void main() {
     await tester.pumpWidget(testApp(TestPreferences(completed: true), gateway));
     await tester.pumpAndSettle();
     final context = tester.element(login);
+    final firstLogin = context.read<LoginCubit>();
     final strings = AppLocalizations.of(context)!;
     final router = GoRouter.of(context);
     final google = find.text(strings.authContinueGoogle);
     final apple = find.widgetWithText(FilledButton, strings.authContinueApple);
 
-    router.go('/');
+    router.go('/?workout=123#summary');
     await tester.pumpAndSettle();
     expect(login, findsOneWidget);
+    expect(router.routerDelegate.currentConfiguration.uri, Uri.parse('/login'));
+    expect(find.text(strings.appName), findsNothing);
     await tester.ensureVisible(apple);
     await tester.tap(apple, warnIfMissed: false);
     await tester.pumpAndSettle();
@@ -135,17 +62,32 @@ void main() {
     await tester.tap(google);
     await tester.pump();
     expect(find.text(strings.authSigningIn), findsOneWidget);
+    await tester.pump(const Duration(seconds: 10));
+    expect(find.text(strings.authSignInFailed), findsOneWidget);
+    await tester.ensureVisible(google);
+    await tester.tap(google);
+    await tester.pump();
+    expect(find.text(strings.authSigningIn), findsOneWidget);
     gateway.emitSession('google-test-uid');
     await tester.pumpAndSettle();
     expect(find.text(strings.appName), findsOneWidget);
+    expect(router.routerDelegate.currentConfiguration.uri, Uri.parse('/'));
+    expect(firstLogin.isClosed, isTrue);
 
     router.go('/login');
     await tester.pumpAndSettle();
     expect(login, findsNothing);
 
+    unawaited(router.push<void>('/?workout=456'));
+    await tester.pumpAndSettle();
+    expect(router.canPop(), isTrue);
+
     gateway.emitSession(null);
     await tester.pumpAndSettle();
-    expect(login, findsOneWidget);
+    final newLogin = tester.element(login).read<LoginCubit>();
+    expect(newLogin, isNot(same(firstLogin)));
+    expect(newLogin.state, const LoginState.idle());
+    expect(router.canPop(), isFalse);
   });
 
   for (final language in ['ar', 'en']) {

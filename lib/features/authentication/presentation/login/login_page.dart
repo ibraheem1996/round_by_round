@@ -1,26 +1,25 @@
 import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:material_ui/material_ui.dart';
+import 'package:round_by_round/shared/design_system/app_text_scale_value.dart';
 
-import '../../../app/theme/app_theme.dart';
-import '../../../app/theme/app_typography.dart';
-import '../../../core/assets/app_assets.dart';
-import '../../../l10n/app_localizations.dart';
-import '../../../shared/design_system/app_control_sizes.dart';
-import '../../../shared/design_system/app_radius.dart';
-import '../../../shared/design_system/app_responsive_value.dart';
-import '../../../shared/design_system/app_spacing.dart';
-import '../../../shared/design_system/app_window_class.dart';
-import '../../../shared/widgets/app_page_frame.dart';
-import '../../../shared/widgets/app_safe_area.dart';
-import '../auth_gateway.dart';
-import 'auth_cubit.dart';
-import 'auth_state.dart';
+import '../../../../app/theme/app_theme.dart';
+import '../../../../app/theme/app_typography.dart';
+import '../../../../core/assets/app_assets.dart';
+import '../../../../l10n/app_localizations.dart';
+import '../../../../shared/design_system/app_control_sizes.dart';
+import '../../../../shared/design_system/app_radius.dart';
+import '../../../../shared/design_system/app_responsive_value.dart';
+import '../../../../shared/design_system/app_spacing.dart';
+import '../../../../shared/design_system/app_window_class.dart';
+import '../../../../shared/widgets/app_page_frame.dart';
+import '../../../../shared/widgets/app_safe_area.dart';
+import '../../auth_gateway.dart';
+import 'login_cubit.dart';
+import 'login_state.dart';
 
 class LoginPage extends StatelessWidget {
-  const LoginPage({required this.authCubit, super.key});
-
-  final AuthCubit authCubit;
+  const LoginPage({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -35,9 +34,24 @@ class LoginPage extends StatelessWidget {
               final short = isShortWindow(MediaQuery.sizeOf(context));
               final heroFraction = AppResponsiveValue.resolve(
                 context,
-                compact: .46,
-                medium: .43,
-                expanded: .45,
+                compact: AppTextScaleValue.resolve(
+                  context,
+                  normal: 0.44,
+                  large: 0.41,
+                  extraLarge: 0.39,
+                ),
+                medium: AppTextScaleValue.resolve(
+                  context,
+                  normal: 0.45,
+                  large: 0.43,
+                  extraLarge: 0.41,
+                ),
+                expanded: AppTextScaleValue.resolve(
+                  context,
+                  normal: 0.47,
+                  large: 0.45,
+                  extraLarge: 0.43,
+                ),
               );
               final heroHeight = short
                   ? (height * .3).clamp(64.0, 140.0)
@@ -56,12 +70,12 @@ class LoginPage extends StatelessWidget {
                             constraints: const BoxConstraints(maxWidth: 460),
                             child: Padding(
                               padding: AppScreenInsets.resolve(constraints),
-                              child: BlocBuilder<AuthCubit, AuthState>(
-                                bloc: authCubit,
+                              child: BlocBuilder<LoginCubit, LoginState>(
                                 builder: (context, state) => _LoginContent(
                                   state: state,
-                                  onGoogle: () =>
-                                      authCubit.signIn(SignInProvider.google),
+                                  onGoogle: () => context
+                                      .read<LoginCubit>()
+                                      .signIn(SignInProvider.google),
                                 ),
                               ),
                             ),
@@ -117,7 +131,7 @@ class _LoginHero extends StatelessWidget {
 class _LoginContent extends StatelessWidget {
   const _LoginContent({required this.state, required this.onGoogle});
 
-  final AuthState state;
+  final LoginState state;
   final VoidCallback onGoogle;
 
   @override
@@ -125,14 +139,14 @@ class _LoginContent extends StatelessWidget {
     final strings = AppLocalizations.of(context)!;
     final scheme = Theme.of(context).colorScheme;
     final typography = context.appTypography;
-    final signingIn = state is AuthSigningIn;
+    final signingIn = state is LoginSubmitting;
     final signInError = switch (state) {
-      AuthSignedOut(error: SignInResult.networkError) => strings.authOffline,
-      AuthSignedOut(error: SignInResult.serviceUnavailable) =>
+      LoginFailure(error: SignInResult.networkError) => strings.authOffline,
+      LoginFailure(error: SignInResult.serviceUnavailable) =>
         strings.authProviderUnavailable,
-      AuthSignedOut(error: SignInResult.accountConflict) =>
+      LoginFailure(error: SignInResult.accountConflict) =>
         strings.authAccountConflict,
-      AuthSignedOut(error: SignInResult.failed) => strings.authSignInFailed,
+      LoginFailure(error: SignInResult.failed) => strings.authSignInFailed,
       _ => null,
     };
 
@@ -173,7 +187,7 @@ class _LoginContent extends StatelessWidget {
         ),
         const SizedBox(height: AppSpacing.relatedItemGap),
         OutlinedButton(
-          onPressed: state is AuthSignedOut ? onGoogle : null,
+          onPressed: signingIn ? null : onGoogle,
           style: OutlinedButton.styleFrom(
             backgroundColor: const Color(0xFF131314),
             foregroundColor: const Color(0xFFE3E3E3),
@@ -204,8 +218,18 @@ class _LoginContent extends StatelessWidget {
               else
                 Image.asset(
                   AppAssets.googleSignIn,
-                  width: 20,
-                  height: 20,
+                  width: AppTextScaleValue.resolve(
+                    context,
+                    normal: 30,
+                    large: 33,
+                    extraLarge: 35,
+                  ),
+                  height: AppTextScaleValue.resolve(
+                    context,
+                    normal: 30,
+                    large: 33,
+                    extraLarge: 35,
+                  ),
                   excludeFromSemantics: true,
                 ),
               const SizedBox(width: AppSpacing.relatedItemGap),
