@@ -1,5 +1,4 @@
-import '../features/account_setup/presentation/account_setup_state.dart';
-import '../features/authentication/presentation/session/session_state.dart';
+import 'startup/app_entry_state.dart';
 
 abstract final class AppRoutes {
   static const home = '/';
@@ -16,22 +15,15 @@ const _entryPaths = {
   AppRoutes.accountSetup,
 };
 
-String? appRouteRedirect(
-  Uri location, {
-  required SessionState session,
-  required bool introCompleted,
-  required AccountSetupState accountSetup,
-}) {
+String? appRouteRedirect(Uri location, EntryDestination entry) {
   final path = location.path;
-  final destination = switch (session) {
-    SessionSignedIn() => switch (accountSetup) {
-      AccountSetupReady() => _entryPaths.contains(path) ? AppRoutes.home : null,
-      AccountSetupEditing() => AppRoutes.accountSetup,
-      _ => AppRoutes.startup,
-    },
-    SessionSignedOut() =>
-      introCompleted ? AppRoutes.login : AppRoutes.onboarding,
-    _ => AppRoutes.startup,
+  final destination = switch (entry) {
+    EntryDestination.startup => AppRoutes.startup,
+    EntryDestination.onboarding => AppRoutes.onboarding,
+    EntryDestination.login => AppRoutes.login,
+    EntryDestination.accountSetup => AppRoutes.accountSetup,
+    EntryDestination.ready =>
+      _entryPaths.contains(path) ? AppRoutes.home : null,
   };
   return destination == path ? null : destination;
 }

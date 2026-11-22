@@ -29,10 +29,9 @@ import '../../features/authentication/auth_gateway.dart' as _i401;
 import '../../features/authentication/data/firebase_auth_gateway.dart' as _i457;
 import '../../features/authentication/presentation/login/login_cubit.dart'
     as _i514;
-import '../../features/authentication/presentation/session/session_cubit.dart'
-    as _i1072;
 import '../../features/onboarding/data/onboarding_intro_completion.dart'
     as _i1036;
+import '../startup/app_entry_cubit.dart' as _i993;
 import 'firebase_module.dart' as _i616;
 import 'preferences_module.dart' as _i816;
 
@@ -70,20 +69,25 @@ extension GetItInjectableX on _i174.GetIt {
         gh<_i701.AccountCloudStore>(),
       ),
     );
-    gh.factory<_i778.AccountSetupCubit>(
-      () => _i778.AccountSetupCubit(gh<_i158.AccountRepository>()),
-    );
     gh.lazySingleton<_i401.AuthGateway>(
       () => _i457.FirebaseAuthGateway(
         gh<_i59.FirebaseAuth>(),
         gh<_i116.GoogleSignIn>(),
       ),
     );
+    gh.factoryParam<_i778.AccountSetupCubit, String, dynamic>(
+      (uid, _) => _i778.AccountSetupCubit(gh<_i158.AccountRepository>(), uid),
+    );
+    gh.factoryParam<_i993.AppEntryCubit, bool, _i993.SaveIntro>(
+      (introCompleted, persistIntro) => _i993.AppEntryCubit(
+        gh<_i401.AuthGateway>(),
+        gh<_i158.AccountRepository>(),
+        introCompleted,
+        persistIntro,
+      ),
+    );
     gh.factory<_i514.LoginCubit>(
       () => _i514.LoginCubit(gh<_i401.AuthGateway>()),
-    );
-    gh.factory<_i1072.SessionCubit>(
-      () => _i1072.SessionCubit(gh<_i401.AuthGateway>()),
     );
     return this;
   }

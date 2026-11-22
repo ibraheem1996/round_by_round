@@ -24,7 +24,6 @@ class AccountSetupPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final strings = AppLocalizations.of(context)!;
-    final uid = context.select((AccountSetupCubit cubit) => cubit.uid);
     return AnnotatedRegion<SystemUiOverlayStyle>(
       value: SystemUiOverlayStyle.light,
       child: Theme(
@@ -59,7 +58,6 @@ class AccountSetupPage extends StatelessWidget {
                         child: ConstrainedBox(
                           constraints: const BoxConstraints(maxWidth: 340),
                           child: _WeightWheel(
-                            key: ValueKey(uid),
                             shortWindow: constraints.maxHeight < 480,
                           ),
                         ),
@@ -78,7 +76,7 @@ class AccountSetupPage extends StatelessWidget {
 }
 
 class _WeightWheel extends StatefulWidget {
-  const _WeightWheel({required this.shortWindow, super.key});
+  const _WeightWheel({required this.shortWindow});
 
   final bool shortWindow;
 
@@ -98,10 +96,7 @@ class _WeightWheelState extends State<_WeightWheel> {
   @override
   void initState() {
     super.initState();
-    final state = context.read<AccountSetupCubit>().state;
-    final weight = state is AccountSetupEditing
-        ? state.weight
-        : AccountProfile.initialWeight;
+    final weight = context.read<AccountSetupCubit>().state.weight;
     _controller = FixedExtentScrollController(
       initialItem: ((weight - _minimum) / _step).round(),
     );
@@ -115,15 +110,12 @@ class _WeightWheelState extends State<_WeightWheel> {
     final unitStyle = context.appTypography.weightPickerUnit;
     final numbers = NumberFormat('0.0', strings.localeName);
     final weight = context.select(
-      (AccountSetupCubit cubit) => switch (cubit.state) {
-        AccountSetupEditing(:final weight) => weight,
-        AccountSetupReady(:final profile) => profile.bodyWeightKg,
-        _ => AccountProfile.initialWeight,
-      },
+      (AccountSetupCubit cubit) => cubit.state.weight,
     );
     final saving = context.select(
       (AccountSetupCubit cubit) => switch (cubit.state) {
-        AccountSetupEditing(saveStatus: WeightSaveStatus.saving) => true,
+        AccountSetupEditing(saveStatus: WeightSaveStatus.saving) ||
+        AccountSetupSaved() => true,
         _ => false,
       },
     );

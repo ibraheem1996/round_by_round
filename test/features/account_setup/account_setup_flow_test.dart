@@ -83,7 +83,7 @@ void main() {
     },
   );
 
-  testWidgets('ignores a save that finishes after switching accounts', (
+  testWidgets('ignores a save from an earlier visit to the same account', (
     tester,
   ) async {
     final auth = TestAuthGateway(userId: 'first');
@@ -108,6 +108,8 @@ void main() {
     expect(account.saves.single.$1, 'first');
 
     auth.emitSession('second');
+    await tester.pumpAndSettle();
+    auth.emitSession('first');
     await tester.pumpAndSettle();
     previousSave.complete();
     await tester.pumpAndSettle();

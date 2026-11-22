@@ -15,30 +15,66 @@ T _$identity<T>(T value) => value;
 /// @nodoc
 mixin _$AccountSetupState {
 
-
+ double get weight;
+/// Create a copy of AccountSetupState
+/// with the given fields replaced by the non-null parameter values.
+@JsonKey(includeFromJson: false, includeToJson: false)
+@pragma('vm:prefer-inline')
+$AccountSetupStateCopyWith<AccountSetupState> get copyWith => _$AccountSetupStateCopyWithImpl<AccountSetupState>(this as AccountSetupState, _$identity);
 
 
 
 @override
 bool operator ==(Object other) {
-    return identical(this, other) || (other.runtimeType == runtimeType&&other is AccountSetupState);
+  final _this = this as AccountSetupState;
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is AccountSetupState&&(identical(other.weight, _this.weight) || other.weight == _this.weight));
 }
 
 
 @override
-int get hashCode => runtimeType.hashCode;
+int get hashCode {
+  final _this = this as AccountSetupState;
+  return Object.hash(runtimeType,_this.weight);
+}
 
 @override
 String toString() {
-    return 'AccountSetupState()';
+  final _this = this as AccountSetupState;
+  return 'AccountSetupState(weight: ${_this.weight})';
 }
 
 
 }
 
 /// @nodoc
-class $AccountSetupStateCopyWith<$Res>  {
-$AccountSetupStateCopyWith(AccountSetupState _, $Res Function(AccountSetupState) __);
+abstract mixin class $AccountSetupStateCopyWith<$Res>  {
+  factory $AccountSetupStateCopyWith(AccountSetupState value, $Res Function(AccountSetupState) _then) = _$AccountSetupStateCopyWithImpl;
+@useResult
+$Res call({
+ double weight
+});
+
+
+
+
+}
+/// @nodoc
+class _$AccountSetupStateCopyWithImpl<$Res>
+    implements $AccountSetupStateCopyWith<$Res> {
+  _$AccountSetupStateCopyWithImpl(this._self, this._then);
+
+  final AccountSetupState _self;
+  final $Res Function(AccountSetupState) _then;
+
+/// Create a copy of AccountSetupState
+/// with the given fields replaced by the non-null parameter values.
+@pragma('vm:prefer-inline') @override $Res call({Object? weight = null,}) {
+  return _then(_self.copyWith(
+weight: null == weight ? _self.weight : weight // ignore: cast_nullable_to_non_nullable
+as double,
+  ));
+}
+
 }
 
 
@@ -56,14 +92,12 @@ extension AccountSetupStatePatterns on AccountSetupState {
 /// }
 /// ```
 
-@optionalTypeArgs TResult maybeMap<TResult extends Object?>({TResult Function( AccountSetupChecking value)?  checking,TResult Function( AccountSetupUnavailable value)?  unavailable,TResult Function( AccountSetupEditing value)?  editing,TResult Function( AccountSetupReady value)?  ready,required TResult orElse(),}){
+@optionalTypeArgs TResult maybeMap<TResult extends Object?>({TResult Function( AccountSetupEditing value)?  editing,TResult Function( AccountSetupSaved value)?  saved,required TResult orElse(),}){
 final _that = this;
 switch (_that) {
-case AccountSetupChecking() when checking != null:
-return checking(_that);case AccountSetupUnavailable() when unavailable != null:
-return unavailable(_that);case AccountSetupEditing() when editing != null:
-return editing(_that);case AccountSetupReady() when ready != null:
-return ready(_that);case _:
+case AccountSetupEditing() when editing != null:
+return editing(_that);case AccountSetupSaved() when saved != null:
+return saved(_that);case _:
   return orElse();
 
 }
@@ -81,14 +115,12 @@ return ready(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult map<TResult extends Object?>({required TResult Function( AccountSetupChecking value)  checking,required TResult Function( AccountSetupUnavailable value)  unavailable,required TResult Function( AccountSetupEditing value)  editing,required TResult Function( AccountSetupReady value)  ready,}){
+@optionalTypeArgs TResult map<TResult extends Object?>({required TResult Function( AccountSetupEditing value)  editing,required TResult Function( AccountSetupSaved value)  saved,}){
 final _that = this;
 switch (_that) {
-case AccountSetupChecking():
-return checking(_that);case AccountSetupUnavailable():
-return unavailable(_that);case AccountSetupEditing():
-return editing(_that);case AccountSetupReady():
-return ready(_that);case _:
+case AccountSetupEditing():
+return editing(_that);case AccountSetupSaved():
+return saved(_that);case _:
   throw StateError('Unexpected subclass');
 
 }
@@ -105,14 +137,12 @@ return ready(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult? mapOrNull<TResult extends Object?>({TResult? Function( AccountSetupChecking value)?  checking,TResult? Function( AccountSetupUnavailable value)?  unavailable,TResult? Function( AccountSetupEditing value)?  editing,TResult? Function( AccountSetupReady value)?  ready,}){
+@optionalTypeArgs TResult? mapOrNull<TResult extends Object?>({TResult? Function( AccountSetupEditing value)?  editing,TResult? Function( AccountSetupSaved value)?  saved,}){
 final _that = this;
 switch (_that) {
-case AccountSetupChecking() when checking != null:
-return checking(_that);case AccountSetupUnavailable() when unavailable != null:
-return unavailable(_that);case AccountSetupEditing() when editing != null:
-return editing(_that);case AccountSetupReady() when ready != null:
-return ready(_that);case _:
+case AccountSetupEditing() when editing != null:
+return editing(_that);case AccountSetupSaved() when saved != null:
+return saved(_that);case _:
   return null;
 
 }
@@ -129,13 +159,11 @@ return ready(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult maybeWhen<TResult extends Object?>({TResult Function()?  checking,TResult Function()?  unavailable,TResult Function( double weight,  WeightSaveStatus saveStatus)?  editing,TResult Function( AccountProfile profile)?  ready,required TResult orElse(),}) {final _that = this;
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>({TResult Function( double weight,  WeightSaveStatus saveStatus)?  editing,TResult Function( double weight)?  saved,required TResult orElse(),}) {final _that = this;
 switch (_that) {
-case AccountSetupChecking() when checking != null:
-return checking();case AccountSetupUnavailable() when unavailable != null:
-return unavailable();case AccountSetupEditing() when editing != null:
-return editing(_that.weight,_that.saveStatus);case AccountSetupReady() when ready != null:
-return ready(_that.profile);case _:
+case AccountSetupEditing() when editing != null:
+return editing(_that.weight,_that.saveStatus);case AccountSetupSaved() when saved != null:
+return saved(_that.weight);case _:
   return orElse();
 
 }
@@ -153,13 +181,11 @@ return ready(_that.profile);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult when<TResult extends Object?>({required TResult Function()  checking,required TResult Function()  unavailable,required TResult Function( double weight,  WeightSaveStatus saveStatus)  editing,required TResult Function( AccountProfile profile)  ready,}) {final _that = this;
+@optionalTypeArgs TResult when<TResult extends Object?>({required TResult Function( double weight,  WeightSaveStatus saveStatus)  editing,required TResult Function( double weight)  saved,}) {final _that = this;
 switch (_that) {
-case AccountSetupChecking():
-return checking();case AccountSetupUnavailable():
-return unavailable();case AccountSetupEditing():
-return editing(_that.weight,_that.saveStatus);case AccountSetupReady():
-return ready(_that.profile);case _:
+case AccountSetupEditing():
+return editing(_that.weight,_that.saveStatus);case AccountSetupSaved():
+return saved(_that.weight);case _:
   throw StateError('Unexpected subclass');
 
 }
@@ -176,13 +202,11 @@ return ready(_that.profile);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>({TResult? Function()?  checking,TResult? Function()?  unavailable,TResult? Function( double weight,  WeightSaveStatus saveStatus)?  editing,TResult? Function( AccountProfile profile)?  ready,}) {final _that = this;
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>({TResult? Function( double weight,  WeightSaveStatus saveStatus)?  editing,TResult? Function( double weight)?  saved,}) {final _that = this;
 switch (_that) {
-case AccountSetupChecking() when checking != null:
-return checking();case AccountSetupUnavailable() when unavailable != null:
-return unavailable();case AccountSetupEditing() when editing != null:
-return editing(_that.weight,_that.saveStatus);case AccountSetupReady() when ready != null:
-return ready(_that.profile);case _:
+case AccountSetupEditing() when editing != null:
+return editing(_that.weight,_that.saveStatus);case AccountSetupSaved() when saved != null:
+return saved(_that.weight);case _:
   return null;
 
 }
@@ -193,80 +217,16 @@ return ready(_that.profile);case _:
 /// @nodoc
 
 
-class AccountSetupChecking implements AccountSetupState {
-  const AccountSetupChecking();
-  
-
-
-
-
-
-
-@override
-bool operator ==(Object other) {
-    return identical(this, other) || (other.runtimeType == runtimeType&&other is AccountSetupChecking);
-}
-
-
-@override
-int get hashCode => runtimeType.hashCode;
-
-@override
-String toString() {
-    return 'AccountSetupState.checking()';
-}
-
-
-}
-
-
-
-
-/// @nodoc
-
-
-class AccountSetupUnavailable implements AccountSetupState {
-  const AccountSetupUnavailable();
-  
-
-
-
-
-
-
-@override
-bool operator ==(Object other) {
-    return identical(this, other) || (other.runtimeType == runtimeType&&other is AccountSetupUnavailable);
-}
-
-
-@override
-int get hashCode => runtimeType.hashCode;
-
-@override
-String toString() {
-    return 'AccountSetupState.unavailable()';
-}
-
-
-}
-
-
-
-
-/// @nodoc
-
-
 class AccountSetupEditing implements AccountSetupState {
   const AccountSetupEditing({required this.weight, required this.saveStatus});
   
 
- final  double weight;
+@override final  double weight;
  final  WeightSaveStatus saveStatus;
 
 /// Create a copy of AccountSetupState
 /// with the given fields replaced by the non-null parameter values.
-@JsonKey(includeFromJson: false, includeToJson: false)
+@override @JsonKey(includeFromJson: false, includeToJson: false)
 @pragma('vm:prefer-inline')
 $AccountSetupEditingCopyWith<AccountSetupEditing> get copyWith => _$AccountSetupEditingCopyWithImpl<AccountSetupEditing>(this, _$identity);
 
@@ -294,7 +254,7 @@ String toString() {
 /// @nodoc
 abstract mixin class $AccountSetupEditingCopyWith<$Res> implements $AccountSetupStateCopyWith<$Res> {
   factory $AccountSetupEditingCopyWith(AccountSetupEditing value, $Res Function(AccountSetupEditing) _then) = _$AccountSetupEditingCopyWithImpl;
-@useResult
+@override @useResult
 $Res call({
  double weight, WeightSaveStatus saveStatus
 });
@@ -313,7 +273,7 @@ class _$AccountSetupEditingCopyWithImpl<$Res>
 
 /// Create a copy of AccountSetupState
 /// with the given fields replaced by the non-null parameter values.
-@pragma('vm:prefer-inline') $Res call({Object? weight = null,Object? saveStatus = null,}) {
+@override @pragma('vm:prefer-inline') $Res call({Object? weight = null,Object? saveStatus = null,}) {
   return _then(AccountSetupEditing(
 weight: null == weight ? _self.weight : weight // ignore: cast_nullable_to_non_nullable
 as double,saveStatus: null == saveStatus ? _self.saveStatus : saveStatus // ignore: cast_nullable_to_non_nullable
@@ -327,78 +287,69 @@ as WeightSaveStatus,
 /// @nodoc
 
 
-class AccountSetupReady implements AccountSetupState {
-  const AccountSetupReady(this.profile);
+class AccountSetupSaved implements AccountSetupState {
+  const AccountSetupSaved(this.weight);
   
 
- final  AccountProfile profile;
+@override final  double weight;
 
 /// Create a copy of AccountSetupState
 /// with the given fields replaced by the non-null parameter values.
-@JsonKey(includeFromJson: false, includeToJson: false)
+@override @JsonKey(includeFromJson: false, includeToJson: false)
 @pragma('vm:prefer-inline')
-$AccountSetupReadyCopyWith<AccountSetupReady> get copyWith => _$AccountSetupReadyCopyWithImpl<AccountSetupReady>(this, _$identity);
+$AccountSetupSavedCopyWith<AccountSetupSaved> get copyWith => _$AccountSetupSavedCopyWithImpl<AccountSetupSaved>(this, _$identity);
 
 
 
 @override
 bool operator ==(Object other) {
-    return identical(this, other) || (other.runtimeType == runtimeType&&other is AccountSetupReady&&(identical(other.profile, profile) || other.profile == profile));
+    return identical(this, other) || (other.runtimeType == runtimeType&&other is AccountSetupSaved&&(identical(other.weight, weight) || other.weight == weight));
 }
 
 
 @override
 int get hashCode {
-    return Object.hash(runtimeType,profile);
+    return Object.hash(runtimeType,weight);
 }
 
 @override
 String toString() {
-    return 'AccountSetupState.ready(profile: $profile)';
+    return 'AccountSetupState.saved(weight: $weight)';
 }
 
 
 }
 
 /// @nodoc
-abstract mixin class $AccountSetupReadyCopyWith<$Res> implements $AccountSetupStateCopyWith<$Res> {
-  factory $AccountSetupReadyCopyWith(AccountSetupReady value, $Res Function(AccountSetupReady) _then) = _$AccountSetupReadyCopyWithImpl;
-@useResult
+abstract mixin class $AccountSetupSavedCopyWith<$Res> implements $AccountSetupStateCopyWith<$Res> {
+  factory $AccountSetupSavedCopyWith(AccountSetupSaved value, $Res Function(AccountSetupSaved) _then) = _$AccountSetupSavedCopyWithImpl;
+@override @useResult
 $Res call({
- AccountProfile profile
+ double weight
 });
 
 
-$AccountProfileCopyWith<$Res> get profile;
+
 
 }
 /// @nodoc
-class _$AccountSetupReadyCopyWithImpl<$Res>
-    implements $AccountSetupReadyCopyWith<$Res> {
-  _$AccountSetupReadyCopyWithImpl(this._self, this._then);
+class _$AccountSetupSavedCopyWithImpl<$Res>
+    implements $AccountSetupSavedCopyWith<$Res> {
+  _$AccountSetupSavedCopyWithImpl(this._self, this._then);
 
-  final AccountSetupReady _self;
-  final $Res Function(AccountSetupReady) _then;
+  final AccountSetupSaved _self;
+  final $Res Function(AccountSetupSaved) _then;
 
 /// Create a copy of AccountSetupState
 /// with the given fields replaced by the non-null parameter values.
-@pragma('vm:prefer-inline') $Res call({Object? profile = null,}) {
-  return _then(AccountSetupReady(
-null == profile ? _self.profile : profile // ignore: cast_nullable_to_non_nullable
-as AccountProfile,
+@override @pragma('vm:prefer-inline') $Res call({Object? weight = null,}) {
+  return _then(AccountSetupSaved(
+null == weight ? _self.weight : weight // ignore: cast_nullable_to_non_nullable
+as double,
   ));
 }
 
-/// Create a copy of AccountSetupState
-/// with the given fields replaced by the non-null parameter values.
-@override
-@pragma('vm:prefer-inline')
-$AccountProfileCopyWith<$Res> get profile {
-  
-  return $AccountProfileCopyWith<$Res>(_self.profile, (value) {
-    return _then(_self.copyWith(profile: value));
-  });
-}
+
 }
 
 // dart format on

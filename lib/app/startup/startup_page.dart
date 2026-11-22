@@ -6,20 +6,15 @@ import '../../shared/widgets/app_page_frame.dart';
 import '../theme/app_typography.dart';
 
 class StartupPage extends StatelessWidget {
-  const StartupPage({
-    required this.failed,
-    required this.checkingAccount,
-    required this.onRetry,
-    super.key,
-  });
+  const StartupPage({required this.checkingAccount, this.onRetry, super.key});
 
-  final bool failed;
   final bool checkingAccount;
-  final VoidCallback onRetry;
+  final VoidCallback? onRetry;
 
   @override
   Widget build(BuildContext context) {
     final strings = AppLocalizations.of(context)!;
+    final failed = onRetry != null;
     return Scaffold(
       body: AppPageFrame(
         maxContentWidth: 480,
