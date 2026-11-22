@@ -27,5 +27,12 @@
   "authOffline": "تحقّق من اتصالك بالإنترنت وحاول مرة أخرى.",
   "authProviderUnavailable": "خيار الدخول هذا غير متاح. حاول مرة أخرى لاحقًا.",
   "authAccountConflict": "سجّل الدخول باستخدام مزوّد الدخول الذي استخدمته أول مرة لهذا الحساب.",
-  "authSignInFailed": "تعذّر تسجيل الدخول. حاول مرة أخرى."
+  "authSignInFailed": "تعذّر تسجيل الدخول. حاول مرة أخرى.",
+  "accountChecking": "جارٍ التحقق من حسابك…",
+  "accountCheckFailed": "تعذّر التحقق من حسابك. حاول مرة أخرى.",
+  "accountWeightTitle": "أدخل وزنك الحالي",
+  "accountWeightUnit": "كجم",
+  "accountWeightReading": "{weight} كيلوغرام",
+  "accountWeightContinue": "لنبدأ",
+  "accountWeightSaveFailed": "تعذّر حفظ وزنك. حاول مرة أخرى."
 }

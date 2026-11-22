@@ -25,6 +25,7 @@ dependencies:
   json_annotation: ^4.12.0
   material_ui: ^1.11.1
   shared_preferences: ^2.5.5
+  path_provider: ^2.1.6
   logger: ^2.8.0
   native_device_orientation: ^2.1.3
 

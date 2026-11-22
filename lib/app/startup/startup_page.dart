@@ -6,9 +6,15 @@ import '../../shared/widgets/app_page_frame.dart';
 import '../theme/app_typography.dart';
 
 class StartupPage extends StatelessWidget {
-  const StartupPage({required this.failed, required this.onRetry, super.key});
+  const StartupPage({
+    required this.failed,
+    required this.checkingAccount,
+    required this.onRetry,
+    super.key,
+  });
 
   final bool failed;
+  final bool checkingAccount;
   final VoidCallback onRetry;
 
   @override
@@ -26,7 +32,12 @@ class StartupPage extends StatelessWidget {
                 const SizedBox(height: AppSpacing.sectionGap),
               ],
               Text(
-                failed ? strings.authStartupFailed : strings.authRestoring,
+                switch ((checkingAccount, failed)) {
+                  (true, true) => strings.accountCheckFailed,
+                  (true, false) => strings.accountChecking,
+                  (false, true) => strings.authStartupFailed,
+                  (false, false) => strings.authRestoring,
+                },
                 style: context.appTypography.supportingBody,
                 textAlign: TextAlign.center,
               ),

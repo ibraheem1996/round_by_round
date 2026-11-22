@@ -2,6 +2,8 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
 import 'package:material_ui/material_ui.dart';
 
+import '../features/account_setup/presentation/account_setup_cubit.dart';
+import '../features/account_setup/presentation/account_setup_page.dart';
 import '../features/authentication/presentation/login/login_cubit.dart';
 import '../features/authentication/presentation/login/login_page.dart';
 import '../features/onboarding/presentation/onboarding_page.dart';
@@ -15,6 +17,7 @@ GoRouter createAppRouter({
   required Future<void> Function() completeIntro,
   required Widget Function() buildStartup,
   required LoginCubit Function() createLogin,
+  required AccountSetupCubit Function() getAccountSetup,
 }) {
   return GoRouter(
     refreshListenable: refreshListenable,
@@ -41,6 +44,13 @@ GoRouter createAppRouter({
       GoRoute(
         path: AppRoutes.onboarding,
         builder: (context, state) => OnboardingPage(onComplete: completeIntro),
+      ),
+      GoRoute(
+        path: AppRoutes.accountSetup,
+        builder: (_, _) => BlocProvider.value(
+          value: getAccountSetup(),
+          child: const AccountSetupPage(),
+        ),
       ),
       GoRoute(
         path: AppRoutes.login,

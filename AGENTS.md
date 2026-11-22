@@ -10,10 +10,11 @@
 - `Project docs/GYM_TRACKER_V1_PRODUCT_CONTRACT.md` — approved product behavior and scope.
 - `Project docs/GYM_TRACKER_V1_TECHNICAL_CONTRACT (1).md` — approved technical decisions.
 - `Project docs/PROJECT_STATUS.md` — concise snapshot of current progress, active work, and blockers; **not** a source of new requirements. Read it when present and keep it accurate after material progress or a verified status change. Replace stale entries, never append a changelog; if absent, report it rather than inventing facts.
-- Read only task-relevant contract sections and dependencies. Never turn pending choices into decisions or silently override contracts. Update the appropriate contract before reflecting newly approved, cross-cutting rules here.
+- Read only task-relevant contract sections and dependencies. Never turn pending choices into decisions or silently override contracts. Product and technical contracts are living documents. Update the relevant contract in place when an approved decision changes requirements.
 
 ## 3. Engineering Rules
-- Use FVM and the approved stack: feature-first pragmatic clean architecture, Cubit, `get_it` + `injectable`, and `go_router`. Respect dependency boundaries; keep business logic independent of Firebase details.
+- Use FVM and the approved stack: feature-first pragmatic clean architecture, Cubit, `get_it` + `injectable`, and `go_router`.
+- Presentation and Cubits depend on backend-agnostic contracts and models; Firebase, Firestore, and other provider-specific details remain inside Data implementations.
 - Use approved Stitch designs for colors, visual identity, composition, and imagery. Treat HTML measurements as guidance and adapt semantic typography and layout to locale, text scaling, and local content constraints.
 - For any Flutter UI or widget change, you must use `$responsive-ui` and the app's shared responsive system. Use `AppWindowClass` and `AppResponsiveValue` for window decisions, and `AppPageFrame` or `AppSafeArea` with `AppScreenInsets` for safe areas and constraint-based padding across supported orientations.
 - Reuse shared design roles only when their purpose and behavior match. If a needed shared role is missing, add a named static member to the owning group (`AppIconSizes`, `AppRadius`, or `AppSpacing`) or a semantic getter in `AppTypography`. Keep feature-specific layout values with their feature.

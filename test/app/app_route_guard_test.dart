@@ -1,5 +1,7 @@
 import 'package:flutter_test/flutter_test.dart';
 import 'package:round_by_round/app/app_route_guard.dart';
+import 'package:round_by_round/features/account_setup/account_profile.dart';
+import 'package:round_by_round/features/account_setup/presentation/account_setup_state.dart';
 import 'package:round_by_round/features/authentication/presentation/session/session_state.dart';
 
 void main() {
@@ -7,11 +9,44 @@ void main() {
     String location,
     SessionState session, {
     bool introCompleted = false,
+    AccountSetupState accountSetup = const AccountSetupState.ready(
+      AccountProfile(bodyWeightKg: 80),
+    ),
   }) => appRouteRedirect(
     Uri.parse(location),
     session: session,
     introCompleted: introCompleted,
+    accountSetup: accountSetup,
   );
+
+  test('only confirmed absence routes a signed-in account to setup', () {
+    const signedIn = SessionState.signedIn('user');
+    const editing = AccountSetupState.editing(
+      weight: 80,
+      saveStatus: WeightSaveStatus.idle,
+    );
+    expect(
+      redirect('/', signedIn, accountSetup: const AccountSetupState.checking()),
+      AppRoutes.startup,
+    );
+    expect(
+      redirect(
+        '/',
+        signedIn,
+        accountSetup: const AccountSetupState.unavailable(),
+      ),
+      AppRoutes.startup,
+    );
+    expect(
+      redirect('/', signedIn, accountSetup: editing),
+      AppRoutes.accountSetup,
+    );
+    expect(
+      redirect(AppRoutes.accountSetup, signedIn, accountSetup: editing),
+      isNull,
+    );
+    expect(redirect(AppRoutes.accountSetup, signedIn), AppRoutes.home);
+  });
 
   test('gates private destinations through startup, intro, and login', () {
     const privatePath = '/workouts/123/edit';

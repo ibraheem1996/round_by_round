@@ -29,4 +29,15 @@ final class AppTypography {
     fontWeight: FontWeight.w700,
     height: _isArabic ? 1.35 : 1.2,
   );
+
+  TextStyle get weightPickerValue => _theme.textTheme.headlineMedium!.copyWith(
+    fontSize: 32,
+    fontWeight: FontWeight.w800,
+    fontFeatures: const [FontFeature.tabularFigures()],
+  );
+
+  TextStyle get weightPickerUnit => _theme.textTheme.titleMedium!.copyWith(
+    fontSize: 18,
+    color: _theme.colorScheme.primary,
+  );
 }

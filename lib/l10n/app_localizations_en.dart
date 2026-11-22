@@ -102,4 +102,27 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get authSignInFailed => 'Couldn’t sign in. Try again.';
+
+  @override
+  String get accountChecking => 'Checking your account…';
+
+  @override
+  String get accountCheckFailed => 'Couldn’t check your account. Try again.';
+
+  @override
+  String get accountWeightTitle => 'Enter your current weight';
+
+  @override
+  String get accountWeightUnit => 'kg';
+
+  @override
+  String accountWeightReading(String weight) {
+    return '$weight kilograms';
+  }
+
+  @override
+  String get accountWeightContinue => 'Let’s start';
+
+  @override
+  String get accountWeightSaveFailed => 'Couldn’t save your weight. Try again.';
 }

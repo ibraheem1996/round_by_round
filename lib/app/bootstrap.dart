@@ -3,6 +3,7 @@ import 'package:flutter/widgets.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 import '../core/services/logger_service.dart';
+import '../features/account_setup/presentation/account_setup_cubit.dart';
 import '../features/authentication/presentation/login/login_cubit.dart';
 import '../features/authentication/presentation/session/session_cubit.dart';
 import '../features/onboarding/data/onboarding_intro_completion.dart';
@@ -21,6 +22,7 @@ void bootstrap() {
       child: AppStartup(
         initialize: _initializeFirebase,
         createLogin: () => dependencies<LoginCubit>(),
+        createAccountSetup: () => dependencies<AccountSetupCubit>(),
         getIntroCompletion: () => dependencies<OnboardingIntroCompletion>(),
       ),
     ),
