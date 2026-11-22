@@ -21,6 +21,7 @@
 - Use built-in widget accessibility. Do not add explicit `Semantics` wrappers.
 - Do not use `debugPrint` or direct console printing in application code.
 - Keep UI components in their owning feature. Extract them to Shared only when actual reuse across features or a clear cross-feature responsibility warrants it.
+- Use Freezed for Cubit states and immutable data models. Declare state variants with Freezed factories on an abstract class and generate the implementations with build_runner.
 - Add only needed files, packages, and abstractions. Do not hand-edit generated code.
 - Use `fvm flutter` / `fvm dart`; run relevant formatting, analysis, and tests. Report actual verification results and limitations.
 

@@ -1,20 +1,31 @@
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
 import 'package:material_ui/material_ui.dart';
 
+import '../features/authentication/presentation/login/login_cubit.dart';
+import '../features/authentication/presentation/login/login_page.dart';
 import '../features/onboarding/presentation/onboarding_page.dart';
 import '../l10n/app_localizations.dart';
+import 'app_route_guard.dart';
 import 'theme/app_typography.dart';
 
 GoRouter createAppRouter({
-  required bool initialOnboardingComplete,
-  required Future<void> Function() saveOnboardingCompletion,
+  required Listenable refreshListenable,
+  required String? Function(Uri) redirect,
+  required Future<void> Function() completeIntro,
+  required Widget Function() buildStartup,
+  required LoginCubit Function() createLogin,
 }) {
-  var completed = initialOnboardingComplete;
   return GoRouter(
+    refreshListenable: refreshListenable,
+    redirect: (context, state) => redirect(state.uri),
     routes: [
       GoRoute(
-        path: '/',
-        redirect: (context, state) => completed ? null : '/onboarding',
+        path: AppRoutes.startup,
+        builder: (context, state) => buildStartup(),
+      ),
+      GoRoute(
+        path: AppRoutes.home,
         builder: (context, state) => Scaffold(
           body: SafeArea(
             child: Center(
@@ -28,14 +39,14 @@ GoRouter createAppRouter({
         ),
       ),
       GoRoute(
-        path: '/onboarding',
-        redirect: (context, state) => completed ? '/' : null,
-        builder: (context, state) => OnboardingPage(
-          onComplete: () async {
-            await saveOnboardingCompletion();
-            completed = true;
-            if (context.mounted) context.go('/');
-          },
+        path: AppRoutes.onboarding,
+        builder: (context, state) => OnboardingPage(onComplete: completeIntro),
+      ),
+      GoRoute(
+        path: AppRoutes.login,
+        builder: (context, state) => BlocProvider(
+          create: (_) => createLogin(),
+          child: const LoginPage(),
         ),
       ),
     ],
@@ -51,7 +62,7 @@ GoRouter createAppRouter({
                 children: [
                   Text(strings.pageNotFound),
                   TextButton(
-                    onPressed: () => context.go('/'),
+                    onPressed: () => context.go(AppRoutes.home),
                     child: Text(strings.backToStart),
                   ),
                 ],

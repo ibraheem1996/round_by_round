@@ -14,5 +14,18 @@
   "onboardingRoutinesDescription": "Pick a routine and start your workout with a plan.",
   "onboardingContinue": "Continue",
   "onboardingStart": "Get started",
-  "onboardingSaveFailed": "Couldn’t save your onboarding progress. Try again."
+  "onboardingSaveFailed": "Couldn’t save your onboarding progress. Try again.",
+  "authWelcome": "Welcome to your training companion",
+  "authDescription": "Sign in to keep your workout history with your account.",
+  "authContinueApple": "Continue with Apple",
+  "authContinueGoogle": "Continue with Google",
+  "authInternetRequired": "Connect to the internet to sign in for the first time.",
+  "authRestoring": "Checking your session…",
+  "authStartupFailed": "Couldn’t check your session. Try again.",
+  "authRetry": "Try again",
+  "authSigningIn": "Signing in…",
+  "authOffline": "Check your internet connection and try again.",
+  "authProviderUnavailable": "This sign-in option is unavailable. Try again later.",
+  "authAccountConflict": "Sign in with the provider you originally used for this account.",
+  "authSignInFailed": "Couldn’t sign in. Try again."
 }

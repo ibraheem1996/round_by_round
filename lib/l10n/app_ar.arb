@@ -14,5 +14,18 @@
   "onboardingRoutinesDescription": "اختر روتينًا جاهزًا وابدأ تمرينك بخطة واضحة.",
   "onboardingContinue": "متابعة",
   "onboardingStart": "ابدأ الآن",
-  "onboardingSaveFailed": "تعذّر حفظ اكتمال التعريف. حاول مرة أخرى."
+  "onboardingSaveFailed": "تعذّر حفظ اكتمال التعريف. حاول مرة أخرى.",
+  "authWelcome": "مرحبًا بك في رفيق تدريبك",
+  "authDescription": "سجّل الدخول للاحتفاظ بسجل تمارينك في حسابك.",
+  "authContinueApple": "المتابعة باستخدام Apple",
+  "authContinueGoogle": "المتابعة باستخدام Google",
+  "authInternetRequired": "اتصل بالإنترنت لتسجيل الدخول لأول مرة.",
+  "authRestoring": "جارٍ التحقق من جلستك…",
+  "authStartupFailed": "تعذّر التحقق من جلستك. حاول مرة أخرى.",
+  "authRetry": "إعادة المحاولة",
+  "authSigningIn": "جارٍ تسجيل الدخول…",
+  "authOffline": "تحقّق من اتصالك بالإنترنت وحاول مرة أخرى.",
+  "authProviderUnavailable": "خيار الدخول هذا غير متاح. حاول مرة أخرى لاحقًا.",
+  "authAccountConflict": "سجّل الدخول باستخدام مزوّد الدخول الذي استخدمته أول مرة لهذا الحساب.",
+  "authSignInFailed": "تعذّر تسجيل الدخول. حاول مرة أخرى."
 }
