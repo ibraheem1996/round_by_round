@@ -1,10 +1,15 @@
 import 'dart:async';
 
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter/widgets.dart';
+import 'package:round_by_round/app/app.dart';
+import 'package:round_by_round/app/startup/app_entry_cubit.dart';
 import 'package:round_by_round/app/startup/app_startup.dart';
+import 'package:round_by_round/features/account_setup/account_profile.dart';
+import 'package:round_by_round/features/account_setup/account_repository.dart';
+import 'package:round_by_round/features/account_setup/presentation/account_setup_cubit.dart';
 import 'package:round_by_round/features/authentication/auth_gateway.dart';
 import 'package:round_by_round/features/authentication/presentation/login/login_cubit.dart';
-import 'package:round_by_round/features/authentication/presentation/session/session_cubit.dart';
 import 'package:round_by_round/features/onboarding/data/onboarding_intro_completion.dart';
 
 import 'test_preferences.dart';
@@ -59,17 +64,49 @@ final class TestAuthGateway implements AuthGateway {
   }
 }
 
-BlocProvider<SessionCubit> testApp(
+Widget testApp(
   TestPreferences preferences,
   TestAuthGateway gateway, {
   Future<void> Function()? beforeInitialize,
-}) => BlocProvider(
-  create: (_) => SessionCubit(gateway),
-  child: AppStartup(
-    initialize: () async {
-      await beforeInitialize?.call();
-    },
-    getIntroCompletion: () => OnboardingIntroCompletion(preferences),
-    createLogin: () => LoginCubit(gateway),
-  ),
+  AccountRepository? accounts,
+}) => AppStartup(
+  prepare: () async {
+    await beforeInitialize?.call();
+    final intro = OnboardingIntroCompletion(preferences);
+    final completed = await intro.read();
+    final repository = accounts ?? TestAccountRepository();
+    return BlocProvider(
+      create: (_) =>
+          AppEntryCubit(gateway, repository, completed, intro.save)..start(),
+      child: MainApp(
+        createLogin: () => LoginCubit(gateway),
+        createAccountSetup: (uid) => AccountSetupCubit(repository, uid),
+      ),
+    );
+  },
 );
+
+final class TestAccountRepository implements AccountRepository {
+  TestAccountRepository({
+    this.profile = const AccountProfile(bodyWeightKg: 80),
+  });
+
+  AccountProfile? profile;
+  final saves = <(String, AccountProfile)>[];
+  final checks = <String>[];
+  Future<void> Function()? beforeSave;
+  Stream<AccountProfile?> Function(String uid)? onCheck;
+
+  @override
+  Stream<AccountProfile?> check(String uid) {
+    checks.add(uid);
+    return onCheck?.call(uid) ?? Stream.value(profile);
+  }
+
+  @override
+  Future<void> createIfMissing(String uid, AccountProfile profile) async {
+    saves.add((uid, profile));
+    await beforeSave?.call();
+    this.profile ??= profile;
+  }
+}

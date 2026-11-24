@@ -6,14 +6,15 @@ import '../../shared/widgets/app_page_frame.dart';
 import '../theme/app_typography.dart';
 
 class StartupPage extends StatelessWidget {
-  const StartupPage({required this.failed, required this.onRetry, super.key});
+  const StartupPage({required this.checkingAccount, this.onRetry, super.key});
 
-  final bool failed;
-  final VoidCallback onRetry;
+  final bool checkingAccount;
+  final VoidCallback? onRetry;
 
   @override
   Widget build(BuildContext context) {
     final strings = AppLocalizations.of(context)!;
+    final failed = onRetry != null;
     return Scaffold(
       body: AppPageFrame(
         maxContentWidth: 480,
@@ -26,7 +27,12 @@ class StartupPage extends StatelessWidget {
                 const SizedBox(height: AppSpacing.sectionGap),
               ],
               Text(
-                failed ? strings.authStartupFailed : strings.authRestoring,
+                switch ((checkingAccount, failed)) {
+                  (true, true) => strings.accountCheckFailed,
+                  (true, false) => strings.accountChecking,
+                  (false, true) => strings.authStartupFailed,
+                  (false, false) => strings.authRestoring,
+                },
                 style: context.appTypography.supportingBody,
                 textAlign: TextAlign.center,
               ),

@@ -266,6 +266,48 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Couldn’t sign in. Try again.'**
   String get authSignInFailed;
+
+  /// No description provided for @accountChecking.
+  ///
+  /// In en, this message translates to:
+  /// **'Checking your account…'**
+  String get accountChecking;
+
+  /// No description provided for @accountCheckFailed.
+  ///
+  /// In en, this message translates to:
+  /// **'Couldn’t check your account. Try again.'**
+  String get accountCheckFailed;
+
+  /// No description provided for @accountWeightTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Enter your current weight'**
+  String get accountWeightTitle;
+
+  /// No description provided for @accountWeightUnit.
+  ///
+  /// In en, this message translates to:
+  /// **'kg'**
+  String get accountWeightUnit;
+
+  /// No description provided for @accountWeightReading.
+  ///
+  /// In en, this message translates to:
+  /// **'{weight} kilograms'**
+  String accountWeightReading(String weight);
+
+  /// No description provided for @accountWeightContinue.
+  ///
+  /// In en, this message translates to:
+  /// **'Let’s start'**
+  String get accountWeightContinue;
+
+  /// No description provided for @accountWeightSaveFailed.
+  ///
+  /// In en, this message translates to:
+  /// **'Couldn’t save your weight. Try again.'**
+  String get accountWeightSaveFailed;
 }
 
 class _AppLocalizationsDelegate

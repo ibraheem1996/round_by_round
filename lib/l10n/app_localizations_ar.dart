@@ -99,4 +99,27 @@ class AppLocalizationsAr extends AppLocalizations {
 
   @override
   String get authSignInFailed => 'تعذّر تسجيل الدخول. حاول مرة أخرى.';
+
+  @override
+  String get accountChecking => 'جارٍ التحقق من حسابك…';
+
+  @override
+  String get accountCheckFailed => 'تعذّر التحقق من حسابك. حاول مرة أخرى.';
+
+  @override
+  String get accountWeightTitle => 'أدخل وزنك الحالي';
+
+  @override
+  String get accountWeightUnit => 'كجم';
+
+  @override
+  String accountWeightReading(String weight) {
+    return '$weight كيلوغرام';
+  }
+
+  @override
+  String get accountWeightContinue => 'لنبدأ';
+
+  @override
+  String get accountWeightSaveFailed => 'تعذّر حفظ وزنك. حاول مرة أخرى.';
 }
