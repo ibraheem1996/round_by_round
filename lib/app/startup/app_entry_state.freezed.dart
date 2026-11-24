@@ -141,17 +141,17 @@ return ready(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult maybeWhen<TResult extends Object?>({TResult Function()?  restoringSession,TResult Function()?  sessionUnavailable,TResult Function()?  onboarding,TResult Function()?  login,TResult Function( EntryAccount account)?  checkingAccount,TResult Function( EntryAccount account)?  accountUnavailable,TResult Function( EntryAccount account)?  setupRequired,TResult Function( EntryAccount account)?  ready,required TResult orElse(),}) {final _that = this;
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>({TResult Function()?  restoringSession,TResult Function()?  sessionUnavailable,TResult Function()?  onboarding,TResult Function()?  login,TResult Function( String uid)?  checkingAccount,TResult Function( String uid)?  accountUnavailable,TResult Function( String uid)?  setupRequired,TResult Function( String uid)?  ready,required TResult orElse(),}) {final _that = this;
 switch (_that) {
 case EntryRestoringSession() when restoringSession != null:
 return restoringSession();case EntrySessionUnavailable() when sessionUnavailable != null:
 return sessionUnavailable();case EntryOnboarding() when onboarding != null:
 return onboarding();case EntryLogin() when login != null:
 return login();case EntryCheckingAccount() when checkingAccount != null:
-return checkingAccount(_that.account);case EntryAccountUnavailable() when accountUnavailable != null:
-return accountUnavailable(_that.account);case EntrySetupRequired() when setupRequired != null:
-return setupRequired(_that.account);case EntryReady() when ready != null:
-return ready(_that.account);case _:
+return checkingAccount(_that.uid);case EntryAccountUnavailable() when accountUnavailable != null:
+return accountUnavailable(_that.uid);case EntrySetupRequired() when setupRequired != null:
+return setupRequired(_that.uid);case EntryReady() when ready != null:
+return ready(_that.uid);case _:
   return orElse();
 
 }
@@ -169,17 +169,17 @@ return ready(_that.account);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult when<TResult extends Object?>({required TResult Function()  restoringSession,required TResult Function()  sessionUnavailable,required TResult Function()  onboarding,required TResult Function()  login,required TResult Function( EntryAccount account)  checkingAccount,required TResult Function( EntryAccount account)  accountUnavailable,required TResult Function( EntryAccount account)  setupRequired,required TResult Function( EntryAccount account)  ready,}) {final _that = this;
+@optionalTypeArgs TResult when<TResult extends Object?>({required TResult Function()  restoringSession,required TResult Function()  sessionUnavailable,required TResult Function()  onboarding,required TResult Function()  login,required TResult Function( String uid)  checkingAccount,required TResult Function( String uid)  accountUnavailable,required TResult Function( String uid)  setupRequired,required TResult Function( String uid)  ready,}) {final _that = this;
 switch (_that) {
 case EntryRestoringSession():
 return restoringSession();case EntrySessionUnavailable():
 return sessionUnavailable();case EntryOnboarding():
 return onboarding();case EntryLogin():
 return login();case EntryCheckingAccount():
-return checkingAccount(_that.account);case EntryAccountUnavailable():
-return accountUnavailable(_that.account);case EntrySetupRequired():
-return setupRequired(_that.account);case EntryReady():
-return ready(_that.account);case _:
+return checkingAccount(_that.uid);case EntryAccountUnavailable():
+return accountUnavailable(_that.uid);case EntrySetupRequired():
+return setupRequired(_that.uid);case EntryReady():
+return ready(_that.uid);case _:
   throw StateError('Unexpected subclass');
 
 }
@@ -196,17 +196,17 @@ return ready(_that.account);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>({TResult? Function()?  restoringSession,TResult? Function()?  sessionUnavailable,TResult? Function()?  onboarding,TResult? Function()?  login,TResult? Function( EntryAccount account)?  checkingAccount,TResult? Function( EntryAccount account)?  accountUnavailable,TResult? Function( EntryAccount account)?  setupRequired,TResult? Function( EntryAccount account)?  ready,}) {final _that = this;
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>({TResult? Function()?  restoringSession,TResult? Function()?  sessionUnavailable,TResult? Function()?  onboarding,TResult? Function()?  login,TResult? Function( String uid)?  checkingAccount,TResult? Function( String uid)?  accountUnavailable,TResult? Function( String uid)?  setupRequired,TResult? Function( String uid)?  ready,}) {final _that = this;
 switch (_that) {
 case EntryRestoringSession() when restoringSession != null:
 return restoringSession();case EntrySessionUnavailable() when sessionUnavailable != null:
 return sessionUnavailable();case EntryOnboarding() when onboarding != null:
 return onboarding();case EntryLogin() when login != null:
 return login();case EntryCheckingAccount() when checkingAccount != null:
-return checkingAccount(_that.account);case EntryAccountUnavailable() when accountUnavailable != null:
-return accountUnavailable(_that.account);case EntrySetupRequired() when setupRequired != null:
-return setupRequired(_that.account);case EntryReady() when ready != null:
-return ready(_that.account);case _:
+return checkingAccount(_that.uid);case EntryAccountUnavailable() when accountUnavailable != null:
+return accountUnavailable(_that.uid);case EntrySetupRequired() when setupRequired != null:
+return setupRequired(_that.uid);case EntryReady() when ready != null:
+return ready(_that.uid);case _:
   return null;
 
 }
@@ -346,10 +346,10 @@ String toString() {
 
 
 class EntryCheckingAccount extends AppEntryState {
-  const EntryCheckingAccount(this.account): super._();
+  const EntryCheckingAccount(this.uid): super._();
   
 
- final  EntryAccount account;
+ final  String uid;
 
 /// Create a copy of AppEntryState
 /// with the given fields replaced by the non-null parameter values.
@@ -361,18 +361,18 @@ $EntryCheckingAccountCopyWith<EntryCheckingAccount> get copyWith => _$EntryCheck
 
 @override
 bool operator ==(Object other) {
-    return identical(this, other) || (other.runtimeType == runtimeType&&other is EntryCheckingAccount&&(identical(other.account, account) || other.account == account));
+    return identical(this, other) || (other.runtimeType == runtimeType&&other is EntryCheckingAccount&&(identical(other.uid, uid) || other.uid == uid));
 }
 
 
 @override
 int get hashCode {
-    return Object.hash(runtimeType,account);
+    return Object.hash(runtimeType,uid);
 }
 
 @override
 String toString() {
-    return 'AppEntryState.checkingAccount(account: $account)';
+    return 'AppEntryState.checkingAccount(uid: $uid)';
 }
 
 
@@ -383,7 +383,7 @@ abstract mixin class $EntryCheckingAccountCopyWith<$Res> implements $AppEntrySta
   factory $EntryCheckingAccountCopyWith(EntryCheckingAccount value, $Res Function(EntryCheckingAccount) _then) = _$EntryCheckingAccountCopyWithImpl;
 @useResult
 $Res call({
- EntryAccount account
+ String uid
 });
 
 
@@ -400,10 +400,10 @@ class _$EntryCheckingAccountCopyWithImpl<$Res>
 
 /// Create a copy of AppEntryState
 /// with the given fields replaced by the non-null parameter values.
-@pragma('vm:prefer-inline') $Res call({Object? account = null,}) {
+@pragma('vm:prefer-inline') $Res call({Object? uid = null,}) {
   return _then(EntryCheckingAccount(
-null == account ? _self.account : account // ignore: cast_nullable_to_non_nullable
-as EntryAccount,
+null == uid ? _self.uid : uid // ignore: cast_nullable_to_non_nullable
+as String,
   ));
 }
 
@@ -414,10 +414,10 @@ as EntryAccount,
 
 
 class EntryAccountUnavailable extends AppEntryState {
-  const EntryAccountUnavailable(this.account): super._();
+  const EntryAccountUnavailable(this.uid): super._();
   
 
- final  EntryAccount account;
+ final  String uid;
 
 /// Create a copy of AppEntryState
 /// with the given fields replaced by the non-null parameter values.
@@ -429,18 +429,18 @@ $EntryAccountUnavailableCopyWith<EntryAccountUnavailable> get copyWith => _$Entr
 
 @override
 bool operator ==(Object other) {
-    return identical(this, other) || (other.runtimeType == runtimeType&&other is EntryAccountUnavailable&&(identical(other.account, account) || other.account == account));
+    return identical(this, other) || (other.runtimeType == runtimeType&&other is EntryAccountUnavailable&&(identical(other.uid, uid) || other.uid == uid));
 }
 
 
 @override
 int get hashCode {
-    return Object.hash(runtimeType,account);
+    return Object.hash(runtimeType,uid);
 }
 
 @override
 String toString() {
-    return 'AppEntryState.accountUnavailable(account: $account)';
+    return 'AppEntryState.accountUnavailable(uid: $uid)';
 }
 
 
@@ -451,7 +451,7 @@ abstract mixin class $EntryAccountUnavailableCopyWith<$Res> implements $AppEntry
   factory $EntryAccountUnavailableCopyWith(EntryAccountUnavailable value, $Res Function(EntryAccountUnavailable) _then) = _$EntryAccountUnavailableCopyWithImpl;
 @useResult
 $Res call({
- EntryAccount account
+ String uid
 });
 
 
@@ -468,10 +468,10 @@ class _$EntryAccountUnavailableCopyWithImpl<$Res>
 
 /// Create a copy of AppEntryState
 /// with the given fields replaced by the non-null parameter values.
-@pragma('vm:prefer-inline') $Res call({Object? account = null,}) {
+@pragma('vm:prefer-inline') $Res call({Object? uid = null,}) {
   return _then(EntryAccountUnavailable(
-null == account ? _self.account : account // ignore: cast_nullable_to_non_nullable
-as EntryAccount,
+null == uid ? _self.uid : uid // ignore: cast_nullable_to_non_nullable
+as String,
   ));
 }
 
@@ -482,10 +482,10 @@ as EntryAccount,
 
 
 class EntrySetupRequired extends AppEntryState {
-  const EntrySetupRequired(this.account): super._();
+  const EntrySetupRequired(this.uid): super._();
   
 
- final  EntryAccount account;
+ final  String uid;
 
 /// Create a copy of AppEntryState
 /// with the given fields replaced by the non-null parameter values.
@@ -497,18 +497,18 @@ $EntrySetupRequiredCopyWith<EntrySetupRequired> get copyWith => _$EntrySetupRequ
 
 @override
 bool operator ==(Object other) {
-    return identical(this, other) || (other.runtimeType == runtimeType&&other is EntrySetupRequired&&(identical(other.account, account) || other.account == account));
+    return identical(this, other) || (other.runtimeType == runtimeType&&other is EntrySetupRequired&&(identical(other.uid, uid) || other.uid == uid));
 }
 
 
 @override
 int get hashCode {
-    return Object.hash(runtimeType,account);
+    return Object.hash(runtimeType,uid);
 }
 
 @override
 String toString() {
-    return 'AppEntryState.setupRequired(account: $account)';
+    return 'AppEntryState.setupRequired(uid: $uid)';
 }
 
 
@@ -519,7 +519,7 @@ abstract mixin class $EntrySetupRequiredCopyWith<$Res> implements $AppEntryState
   factory $EntrySetupRequiredCopyWith(EntrySetupRequired value, $Res Function(EntrySetupRequired) _then) = _$EntrySetupRequiredCopyWithImpl;
 @useResult
 $Res call({
- EntryAccount account
+ String uid
 });
 
 
@@ -536,10 +536,10 @@ class _$EntrySetupRequiredCopyWithImpl<$Res>
 
 /// Create a copy of AppEntryState
 /// with the given fields replaced by the non-null parameter values.
-@pragma('vm:prefer-inline') $Res call({Object? account = null,}) {
+@pragma('vm:prefer-inline') $Res call({Object? uid = null,}) {
   return _then(EntrySetupRequired(
-null == account ? _self.account : account // ignore: cast_nullable_to_non_nullable
-as EntryAccount,
+null == uid ? _self.uid : uid // ignore: cast_nullable_to_non_nullable
+as String,
   ));
 }
 
@@ -550,10 +550,10 @@ as EntryAccount,
 
 
 class EntryReady extends AppEntryState {
-  const EntryReady(this.account): super._();
+  const EntryReady(this.uid): super._();
   
 
- final  EntryAccount account;
+ final  String uid;
 
 /// Create a copy of AppEntryState
 /// with the given fields replaced by the non-null parameter values.
@@ -565,18 +565,18 @@ $EntryReadyCopyWith<EntryReady> get copyWith => _$EntryReadyCopyWithImpl<EntryRe
 
 @override
 bool operator ==(Object other) {
-    return identical(this, other) || (other.runtimeType == runtimeType&&other is EntryReady&&(identical(other.account, account) || other.account == account));
+    return identical(this, other) || (other.runtimeType == runtimeType&&other is EntryReady&&(identical(other.uid, uid) || other.uid == uid));
 }
 
 
 @override
 int get hashCode {
-    return Object.hash(runtimeType,account);
+    return Object.hash(runtimeType,uid);
 }
 
 @override
 String toString() {
-    return 'AppEntryState.ready(account: $account)';
+    return 'AppEntryState.ready(uid: $uid)';
 }
 
 
@@ -587,7 +587,7 @@ abstract mixin class $EntryReadyCopyWith<$Res> implements $AppEntryStateCopyWith
   factory $EntryReadyCopyWith(EntryReady value, $Res Function(EntryReady) _then) = _$EntryReadyCopyWithImpl;
 @useResult
 $Res call({
- EntryAccount account
+ String uid
 });
 
 
@@ -604,10 +604,10 @@ class _$EntryReadyCopyWithImpl<$Res>
 
 /// Create a copy of AppEntryState
 /// with the given fields replaced by the non-null parameter values.
-@pragma('vm:prefer-inline') $Res call({Object? account = null,}) {
+@pragma('vm:prefer-inline') $Res call({Object? uid = null,}) {
   return _then(EntryReady(
-null == account ? _self.account : account // ignore: cast_nullable_to_non_nullable
-as EntryAccount,
+null == uid ? _self.uid : uid // ignore: cast_nullable_to_non_nullable
+as String,
   ));
 }
 

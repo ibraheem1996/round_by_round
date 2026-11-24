@@ -93,20 +93,20 @@ final class TestAccountRepository implements AccountRepository {
 
   AccountProfile? profile;
   final saves = <(String, AccountProfile)>[];
-  final observations = <String>[];
+  final checks = <String>[];
   Future<void> Function()? beforeSave;
-  Stream<AccountProfile?> Function(String uid)? onWatch;
+  Stream<AccountProfile?> Function(String uid)? onCheck;
 
   @override
-  Stream<AccountProfile?> watch(String uid) {
-    observations.add(uid);
-    return onWatch?.call(uid) ?? Stream.value(profile);
+  Stream<AccountProfile?> check(String uid) {
+    checks.add(uid);
+    return onCheck?.call(uid) ?? Stream.value(profile);
   }
 
   @override
-  Future<void> save(String uid, AccountProfile profile) async {
+  Future<void> createIfMissing(String uid, AccountProfile profile) async {
     saves.add((uid, profile));
     await beforeSave?.call();
-    this.profile = profile;
+    this.profile ??= profile;
   }
 }

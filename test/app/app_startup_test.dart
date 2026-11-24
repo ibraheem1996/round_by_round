@@ -173,13 +173,13 @@ void main() {
   );
 
   testWidgets(
-    'completes onboarding, login and weight setup with one live account watch',
+    'retries the account check and enters home from confirmed setup',
     (tester) async {
       final gateway = TestAuthGateway()
         ..onSignIn = () async => SignInResult.success;
       final accountRead = StreamController<AccountProfile?>.broadcast();
       final accounts = TestAccountRepository()
-        ..onWatch = (_) => accountRead.stream;
+        ..onCheck = (_) => accountRead.stream;
       final preferences = TestPreferences();
       addTearDown(gateway.close);
       addTearDown(accountRead.close);
@@ -220,10 +220,14 @@ void main() {
         findsOneWidget,
       );
       expect(gateway.sessionListeners, 1);
-      expect(accountRead.hasListener, isTrue);
+      expect(accountRead.hasListener, isFalse);
 
+      await tester.tap(retry);
+      await tester.pump();
+      expect(accountRead.hasListener, isTrue);
       accountRead.add(null);
       await tester.pumpAndSettle();
+      expect(accountRead.hasListener, isFalse);
       final save = find.text('Let’s start');
       await tester.ensureVisible(save);
       await tester.tap(save);
@@ -234,11 +238,8 @@ void main() {
       expect(router.routerDelegate.currentConfiguration.uri, Uri.parse('/'));
       expect(find.byType(AccountSetupPage), findsNothing);
 
-      expect(accountRead.hasListener, isTrue);
-      accountRead.addError(StateError('cloud unavailable after local save'));
-      await tester.pumpAndSettle();
       expect(home, findsOneWidget);
-      expect(accounts.observations, ['owner']);
+      expect(accounts.checks, ['owner', 'owner']);
 
       gateway.emitSession(null);
       await tester.pumpAndSettle();

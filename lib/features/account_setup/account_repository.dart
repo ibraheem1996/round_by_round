@@ -1,9 +1,9 @@
 import 'account_profile.dart';
 
 abstract interface class AccountRepository {
-  /// Emits null only when the backend confirms that setup is missing.
-  Stream<AccountProfile?> watch(String uid);
+  /// Emits one result, with null only for a server-confirmed missing account.
+  Stream<AccountProfile?> check(String uid);
 
-  /// Completes once the weight is durably saved on this device.
-  Future<void> save(String uid, AccountProfile profile);
+  /// Completes after the server creates or confirms an existing valid account.
+  Future<void> createIfMissing(String uid, AccountProfile profile);
 }

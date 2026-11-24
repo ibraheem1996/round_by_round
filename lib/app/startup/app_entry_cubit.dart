@@ -1,7 +1,6 @@
 import 'dart:async';
 
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:injectable/injectable.dart';
 
 import '../../core/services/logger_service.dart';
 import '../../features/account_setup/account_profile.dart';
@@ -9,125 +8,114 @@ import '../../features/account_setup/account_repository.dart';
 import '../../features/authentication/auth_gateway.dart';
 import 'app_entry_state.dart';
 
-typedef SaveIntro = Future<void> Function();
-
-@injectable
 final class AppEntryCubit extends Cubit<AppEntryState> {
   AppEntryCubit(
     this._auth,
     this._accounts,
-    @factoryParam bool introCompleted,
-    @factoryParam SaveIntro persistIntro,
+    bool introCompleted,
+    Future<void> Function() saveOnboardingCompletion,
   ) : _introCompleted = introCompleted,
-      _persistIntro = persistIntro,
+      _saveOnboardingCompletion = saveOnboardingCompletion,
       super(const AppEntryState.restoringSession());
 
   static const _lookupTimeout = Duration(seconds: 10);
 
   final AuthGateway _auth;
   final AccountRepository _accounts;
-  final SaveIntro _persistIntro;
+  final Future<void> Function() _saveOnboardingCompletion;
 
   bool _introCompleted;
-  Object? _authAttempt;
   Timer? _deadline;
   StreamSubscription<String?>? _session;
   StreamSubscription<AccountProfile?>? _account;
 
   void start() {
-    if (_authAttempt == null && !isClosed) unawaited(_restoreSession());
+    if (!isClosed && _session == null && state is EntryRestoringSession) {
+      unawaited(_restoreSession());
+    }
   }
 
   void retry() {
-    if (_authAttempt == null) return;
+    if (isClosed) return;
     switch (state) {
       case EntrySessionUnavailable():
         unawaited(_restoreSession());
-      case EntryAccountUnavailable(:final account):
-        _checkAccount(account.uid);
+      case EntryAccountUnavailable(:final uid):
+        _checkAccount(uid);
       default:
         break;
     }
   }
 
   Future<void> completeIntro() async {
-    await _persistIntro();
-    if (_authAttempt == null) return;
+    await _saveOnboardingCompletion();
+    if (isClosed) return;
     _introCompleted = true;
     if (state is EntryOnboarding) emit(const AppEntryState.login());
   }
 
-  void completeAccountSetup(EntryAccount account) {
-    final current = state;
-    if (_authAttempt != null &&
-        current is EntrySetupRequired &&
-        current.account == account) {
-      emit(AppEntryState.ready(account));
+  void completeAccountSetup(String uid) {
+    if (!isClosed && state == AppEntryState.setupRequired(uid)) {
+      emit(AppEntryState.ready(uid));
     }
   }
 
   Future<void> _restoreSession() async {
-    final attempt = _authAttempt = Object();
     _deadline?.cancel();
     emit(const AppEntryState.restoringSession());
 
-    void unavailable() {
-      if (_authAttempt != attempt) return;
-      _deadline?.cancel();
-      emit(const AppEntryState.sessionUnavailable());
-      unawaited(_stopAccount());
-    }
-
     try {
-      await _session?.cancel();
-      if (_authAttempt != attempt) return;
-      _deadline = Timer(_lookupTimeout, unavailable);
+      if (_session case final previous?) await previous.cancel();
+      if (isClosed) return;
+      _deadline = Timer(_lookupTimeout, _sessionUnavailable);
       _session = _auth.watchUserId().listen(
-        (uid) {
-          if (_authAttempt != attempt) return;
-          if (uid == null) {
-            _deadline?.cancel();
-            emit(
-              _introCompleted
-                  ? const AppEntryState.login()
-                  : const AppEntryState.onboarding(),
-            );
-            unawaited(_stopAccount());
-          } else if (state.activeAccount?.uid != uid) {
-            _checkAccount(uid);
-          }
-        },
-        onError: (Object error) {
-          LoggerService.warning(
-            'Auth session stream failed (${error.runtimeType}).',
-          );
-          unavailable();
-        },
-        onDone: unavailable,
+        _sessionChanged,
+        onError: _sessionFailed,
+        onDone: _sessionUnavailable,
       );
     } catch (error) {
-      LoggerService.warning(
-        'Auth session could not start (${error.runtimeType}).',
-      );
-      unavailable();
+      _sessionFailed(error);
     }
+  }
+
+  void _sessionChanged(String? uid) {
+    if (uid == null) {
+      _deadline?.cancel();
+      unawaited(_stopAccount());
+      emit(
+        _introCompleted
+            ? const AppEntryState.login()
+            : const AppEntryState.onboarding(),
+      );
+    } else if (state.activeUid != uid) {
+      _checkAccount(uid);
+    }
+  }
+
+  void _sessionFailed(Object error) {
+    LoggerService.warning('Auth session failed (${error.runtimeType}).');
+    _sessionUnavailable();
+  }
+
+  void _sessionUnavailable() {
+    if (isClosed) return;
+    _deadline?.cancel();
+    unawaited(_stopAccount());
+    emit(const AppEntryState.sessionUnavailable());
   }
 
   void _checkAccount(String uid) {
     _deadline?.cancel();
-    final account = (uid: uid, lifetime: Object());
-    emit(AppEntryState.checkingAccount(account));
     unawaited(_stopAccount());
+    emit(AppEntryState.checkingAccount(uid));
 
-    void unavailable() {
-      if (_authAttempt == null ||
-          state.activeAccount != account ||
-          state is! EntryCheckingAccount) {
-        return;
-      }
+    void finish(AppEntryState next) {
       _deadline?.cancel();
-      emit(AppEntryState.accountUnavailable(account));
+      unawaited(_stopAccount());
+      emit(next);
     }
+
+    void unavailable() => finish(AppEntryState.accountUnavailable(uid));
 
     void reportError(Object error) {
       LoggerService.warning('Account read failed (${error.runtimeType}).');
@@ -136,25 +124,14 @@ final class AppEntryCubit extends Cubit<AppEntryState> {
 
     _deadline = Timer(_lookupTimeout, unavailable);
     try {
-      // Keep observing after the gate resolves so the repository can reconcile
-      // the recovery file when the device reconnects.
       _account = _accounts
-          .watch(uid)
+          .check(uid)
           .listen(
-            (profile) {
-              if (_authAttempt == null ||
-                  state.activeAccount != account ||
-                  (state is! EntryCheckingAccount &&
-                      state is! EntryAccountUnavailable)) {
-                return;
-              }
-              _deadline?.cancel();
-              emit(
-                profile == null
-                    ? AppEntryState.setupRequired(account)
-                    : AppEntryState.ready(account),
-              );
-            },
+            (profile) => finish(
+              profile == null
+                  ? AppEntryState.setupRequired(uid)
+                  : AppEntryState.ready(uid),
+            ),
             onError: reportError,
             onDone: unavailable,
           );
@@ -170,14 +147,13 @@ final class AppEntryCubit extends Cubit<AppEntryState> {
       await previous?.cancel();
     } catch (error) {
       LoggerService.warning(
-        'Account observation could not close (${error.runtimeType}).',
+        'Account check could not close (${error.runtimeType}).',
       );
     }
   }
 
   @override
   Future<void> close() async {
-    _authAttempt = null;
     _deadline?.cancel();
     await Future.wait([
       super.close(),

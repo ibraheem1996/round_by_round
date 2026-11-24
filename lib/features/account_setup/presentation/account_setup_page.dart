@@ -1,10 +1,11 @@
 // Keep the picker provided by the pinned Flutter SDK.
 // ignore: deprecated_member_use
-import 'package:flutter/cupertino.dart' show CupertinoPicker;
+
 import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:intl/intl.dart';
 import 'package:material_ui/material_ui.dart';
+import 'package:round_by_round/shared/design_system/app_window_class.dart';
 
 import '../../../app/theme/app_theme.dart';
 import '../../../app/theme/app_typography.dart';
@@ -14,9 +15,9 @@ import '../../../shared/design_system/app_radius.dart';
 import '../../../shared/design_system/app_responsive_value.dart';
 import '../../../shared/design_system/app_spacing.dart';
 import '../../../shared/widgets/app_page_frame.dart';
+import '../../../shared/widgets/app_wheel_picker.dart';
 import '../account_profile.dart';
 import 'account_setup_cubit.dart';
-import 'account_setup_state.dart';
 
 class AccountSetupPage extends StatelessWidget {
   const AccountSetupPage({super.key});
@@ -58,7 +59,9 @@ class AccountSetupPage extends StatelessWidget {
                         child: ConstrainedBox(
                           constraints: const BoxConstraints(maxWidth: 340),
                           child: _WeightWheel(
-                            shortWindow: constraints.maxHeight < 480,
+                            shortWindow: isShortWindow(
+                              MediaQuery.sizeOf(context),
+                            ),
                           ),
                         ),
                       ),
@@ -89,7 +92,6 @@ class _WeightWheelState extends State<_WeightWheel> {
   static const _minimum = AccountProfile.minWeight;
   static final _itemCount =
       ((AccountProfile.maxWeight - _minimum) / _step).round() + 1;
-  static const _magnification = 1.15;
 
   late final FixedExtentScrollController _controller;
 
@@ -112,89 +114,48 @@ class _WeightWheelState extends State<_WeightWheel> {
     final weight = context.select(
       (AccountSetupCubit cubit) => cubit.state.weight,
     );
-    final saving = context.select(
-      (AccountSetupCubit cubit) => switch (cubit.state) {
-        AccountSetupEditing(saveStatus: WeightSaveStatus.saving) ||
-        AccountSetupSaved() => true,
-        _ => false,
-      },
+    final canEdit = context.select(
+      (AccountSetupCubit cubit) => cubit.state.saveStatus.canEdit,
     );
     final rowHeight =
-        MediaQuery.textScalerOf(context).scale(valueStyle.fontSize!) * 1.25 +
-        12;
+        MediaQuery.textScalerOf(context).scale(valueStyle.fontSize!) * 1.34;
 
-    return SizedBox(
-      height: rowHeight * (widget.shortWindow ? 3 : 5),
-      child: Stack(
-        alignment: Alignment.center,
-        children: [
-          SizedBox(
-            width: double.infinity,
-            height: rowHeight * _magnification,
-            child: DecoratedBox(
-              decoration: BoxDecoration(
-                color: colors.surfaceContainerHighest,
-                borderRadius: BorderRadius.circular(20),
-              ),
-            ),
-          ),
-          AbsorbPointer(
-            absorbing: saving,
-            child: ShaderMask(
-              blendMode: BlendMode.dstIn,
-              shaderCallback: (bounds) => const LinearGradient(
-                begin: Alignment.topCenter,
-                end: Alignment.bottomCenter,
-                colors: [
-                  Colors.transparent,
-                  Colors.white,
-                  Colors.white,
-                  Colors.transparent,
-                ],
-                stops: [0, 0.27, 0.73, 1],
-              ).createShader(bounds),
-              child: CupertinoPicker.builder(
-                scrollController: _controller,
-                itemExtent: rowHeight,
-                childCount: _itemCount,
-                diameterRatio: 1.35,
-                useMagnifier: true,
-                magnification: _magnification,
-                selectionOverlay: null,
-                onSelectedItemChanged: (index) => context
-                    .read<AccountSetupCubit>()
-                    .selectWeight(_minimum + index * _step),
-                itemBuilder: (context, index) {
-                  final value = _minimum + index * _step;
-                  final number = numbers.format(value);
-                  final selected = value == weight;
-                  return Center(
-                    child: Text.rich(
+    return AppWheelPicker(
+      controller: _controller,
+      itemExtent: rowHeight,
+      itemCount: _itemCount,
+      visibleItemCount: widget.shortWindow ? 3 : 5,
+      canEdit: canEdit,
+      onSelectedItemChanged: (index) {
+        context.read<AccountSetupCubit>().selectWeight(
+          _minimum + index * _step,
+        );
+      },
+      itemBuilder: (context, index) {
+        final value = _minimum + index * _step;
+        final number = numbers.format(value);
+        final selected = value == weight;
+
+        return Center(
+          child: Text.rich(
+            TextSpan(
+              text: number,
+              children: selected
+                  ? [
                       TextSpan(
-                        text: number,
-                        children: selected
-                            ? [
-                                TextSpan(
-                                  text: '  ${strings.accountWeightUnit}',
-                                  style: unitStyle,
-                                ),
-                              ]
-                            : null,
+                        text: '  ${strings.accountWeightUnit}',
+                        style: unitStyle,
                       ),
-                      semanticsLabel: strings.accountWeightReading(number),
-                      style: valueStyle.copyWith(
-                        color: selected
-                            ? colors.onSurface
-                            : colors.onSurfaceVariant,
-                      ),
-                    ),
-                  );
-                },
-              ),
+                    ]
+                  : null,
+            ),
+            semanticsLabel: strings.accountWeightReading(number),
+            style: valueStyle.copyWith(
+              color: selected ? colors.onSurface : colors.onSurfaceVariant,
             ),
           ),
-        ],
-      ),
+        );
+      },
     );
   }
 
@@ -212,10 +173,7 @@ class _SaveWeightAction extends StatelessWidget {
   Widget build(BuildContext context) {
     final strings = AppLocalizations.of(context)!;
     final status = context.select(
-      (AccountSetupCubit cubit) => switch (cubit.state) {
-        AccountSetupEditing(:final saveStatus) => saveStatus,
-        _ => WeightSaveStatus.saving,
-      },
+      (AccountSetupCubit cubit) => cubit.state.saveStatus,
     );
     return Padding(
       padding: const EdgeInsets.symmetric(vertical: AppSpacing.sectionGap),
@@ -233,9 +191,9 @@ class _SaveWeightAction extends StatelessWidget {
             const SizedBox(height: AppSpacing.relatedItemGap),
           ],
           FilledButton(
-            onPressed: status == WeightSaveStatus.saving
-                ? null
-                : context.read<AccountSetupCubit>().save,
+            onPressed: status.canEdit
+                ? context.read<AccountSetupCubit>().save
+                : null,
             style: FilledButton.styleFrom(
               textStyle: context.appTypography.buttonLabel,
               minimumSize: const Size(
@@ -258,7 +216,16 @@ class _SaveWeightAction extends StatelessWidget {
               crossAxisAlignment: WrapCrossAlignment.center,
               children: [
                 Text(strings.accountWeightContinue),
-                const Icon(Icons.arrow_forward),
+                if (status == WeightSaveStatus.saving)
+                  const SizedBox.square(
+                    dimension: 20,
+                    child: CircularProgressIndicator.adaptive(
+                      strokeWidth: 2,
+                      backgroundColor: Colors.white,
+                    ),
+                  )
+                else
+                  const Icon(Icons.arrow_forward),
               ],
             ),
           ),

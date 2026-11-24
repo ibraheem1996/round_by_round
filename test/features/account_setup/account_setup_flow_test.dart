@@ -1,13 +1,12 @@
 import 'dart:async';
 
-// ignore: deprecated_member_use
-import 'package:flutter/cupertino.dart' show CupertinoPicker;
 import 'package:flutter_test/flutter_test.dart';
 import 'package:go_router/go_router.dart';
 import 'package:material_ui/material_ui.dart';
 import 'package:round_by_round/features/account_setup/account_profile.dart';
 import 'package:round_by_round/features/account_setup/presentation/account_setup_page.dart';
 import 'package:round_by_round/l10n/app_localizations.dart';
+import 'package:round_by_round/shared/widgets/app_wheel_picker.dart';
 
 import '../../support/mock_device_orientation.dart';
 import '../../support/test_auth_gateway.dart';
@@ -15,11 +14,12 @@ import '../../support/test_preferences.dart';
 
 void main() {
   final page = find.byType(AccountSetupPage);
+  final picker = find.byType(AppWheelPicker);
 
   setUp(() => mockDeviceOrientation('PortraitUp'));
 
   testWidgets(
-    'keeps the selected weight on failure and waits for durable save',
+    'keeps the selected weight on failure and waits for server confirmation',
     (tester) async {
       final auth = TestAuthGateway(userId: 'owner');
       addTearDown(auth.close);
@@ -30,10 +30,7 @@ void main() {
         testApp(TestPreferences(), auth, accounts: account),
       );
       await tester.pumpAndSettle();
-      final picker = tester.widget<CupertinoPicker>(
-        find.byType(CupertinoPicker),
-      );
-      final controller = picker.scrollController!;
+      final controller = tester.widget<AppWheelPicker>(picker).controller;
       final router = GoRouter.of(tester.element(page));
       expect(controller.selectedItem, 80);
       controller.jumpToItem(220);
@@ -62,7 +59,8 @@ void main() {
       account.beforeSave = () => accepted.future;
       await tester.ensureVisible(save);
       await tester.tap(save);
-      await tester.pumpAndSettle();
+      await tester.pump(const Duration(seconds: 40));
+      expect(find.byType(CircularProgressIndicator), findsOneWidget);
       expect(
         tester
             .widget<FilledButton>(
@@ -98,13 +96,12 @@ void main() {
     );
     await tester.pumpAndSettle();
 
-    final picker = find.byType(CupertinoPicker);
-    tester.widget<CupertinoPicker>(picker).scrollController!.jumpToItem(100);
+    tester.widget<AppWheelPicker>(picker).controller.jumpToItem(100);
     await tester.pumpAndSettle();
     final save = find.text('Let’s start');
     await tester.ensureVisible(save);
     await tester.tap(save);
-    await tester.pumpAndSettle();
+    await tester.pump();
     expect(account.saves.single.$1, 'first');
 
     auth.emitSession('second');
@@ -114,10 +111,7 @@ void main() {
     previousSave.complete();
     await tester.pumpAndSettle();
     expect(page, findsOneWidget);
-    expect(
-      tester.widget<CupertinoPicker>(picker).scrollController!.selectedItem,
-      80,
-    );
+    expect(tester.widget<AppWheelPicker>(picker).controller.selectedItem, 80);
   });
 
   for (final language in ['ar', 'en']) {

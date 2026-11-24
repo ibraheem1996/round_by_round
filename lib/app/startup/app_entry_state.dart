@@ -4,9 +4,6 @@ part 'app_entry_state.freezed.dart';
 
 enum EntryDestination { startup, onboarding, login, accountSetup, ready }
 
-/// Distinguishes separate visits to the same account, even after A → B → A.
-typedef EntryAccount = ({String uid, Object lifetime});
-
 @freezed
 abstract class AppEntryState with _$AppEntryState {
   const AppEntryState._();
@@ -15,13 +12,12 @@ abstract class AppEntryState with _$AppEntryState {
   const factory AppEntryState.sessionUnavailable() = EntrySessionUnavailable;
   const factory AppEntryState.onboarding() = EntryOnboarding;
   const factory AppEntryState.login() = EntryLogin;
-  const factory AppEntryState.checkingAccount(EntryAccount account) =
+  const factory AppEntryState.checkingAccount(String uid) =
       EntryCheckingAccount;
-  const factory AppEntryState.accountUnavailable(EntryAccount account) =
+  const factory AppEntryState.accountUnavailable(String uid) =
       EntryAccountUnavailable;
-  const factory AppEntryState.setupRequired(EntryAccount account) =
-      EntrySetupRequired;
-  const factory AppEntryState.ready(EntryAccount account) = EntryReady;
+  const factory AppEntryState.setupRequired(String uid) = EntrySetupRequired;
+  const factory AppEntryState.ready(String uid) = EntryReady;
 
   EntryDestination get destination => switch (this) {
     EntryOnboarding() => EntryDestination.onboarding,
@@ -31,11 +27,11 @@ abstract class AppEntryState with _$AppEntryState {
     _ => EntryDestination.startup,
   };
 
-  EntryAccount? get activeAccount => switch (this) {
-    EntryCheckingAccount(:final account) ||
-    EntryAccountUnavailable(:final account) ||
-    EntrySetupRequired(:final account) ||
-    EntryReady(:final account) => account,
+  String? get activeUid => switch (this) {
+    EntryCheckingAccount(:final uid) ||
+    EntryAccountUnavailable(:final uid) ||
+    EntrySetupRequired(:final uid) ||
+    EntryReady(:final uid) => uid,
     _ => null,
   };
 }

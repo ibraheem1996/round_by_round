@@ -4,7 +4,6 @@ import 'package:material_ui/material_ui.dart';
 
 import '../features/account_setup/presentation/account_setup_cubit.dart';
 import '../features/account_setup/presentation/account_setup_page.dart';
-import '../features/account_setup/presentation/account_setup_state.dart';
 import '../features/authentication/presentation/login/login_cubit.dart';
 import '../features/authentication/presentation/login/login_page.dart';
 import '../features/onboarding/presentation/onboarding_page.dart';
@@ -17,12 +16,10 @@ import 'theme/app_typography.dart';
 
 GoRouter createAppRouter({
   required AppEntryCubit entry,
-  required Listenable refreshListenable,
   required LoginCubit Function() createLogin,
   required AccountSetupCubit Function(String uid) createAccountSetup,
 }) {
   return GoRouter(
-    refreshListenable: refreshListenable,
     redirect: (_, state) =>
         appRouteRedirect(state.uri, entry.state.destination),
     routes: [
@@ -30,7 +27,7 @@ GoRouter createAppRouter({
         path: AppRoutes.startup,
         builder: (_, _) => BlocBuilder<AppEntryCubit, AppEntryState>(
           builder: (_, state) => StartupPage(
-            checkingAccount: state.activeAccount != null,
+            checkingAccount: state.activeUid != null,
             onRetry: switch (state) {
               EntrySessionUnavailable() ||
               EntryAccountUnavailable() => entry.retry,
@@ -59,28 +56,27 @@ GoRouter createAppRouter({
       ),
       GoRoute(
         path: AppRoutes.accountSetup,
-        builder: (_, _) =>
-            BlocSelector<AppEntryCubit, AppEntryState, EntryAccount?>(
-              selector: (state) => switch (state) {
-                EntrySetupRequired(:final account) => account,
-                _ => null,
-              },
-              builder: (_, account) {
-                // Dispose the old form even if a quick UID switch keeps the URI.
-                if (account == null) {
-                  return const StartupPage(checkingAccount: true);
-                }
-                return BlocProvider(
-                  key: ValueKey(account.lifetime),
-                  create: (_) => createAccountSetup(account.uid),
-                  child: BlocListener<AccountSetupCubit, AccountSetupState>(
-                    listenWhen: (_, current) => current is AccountSetupSaved,
-                    listener: (_, _) => entry.completeAccountSetup(account),
-                    child: const AccountSetupPage(),
-                  ),
-                );
-              },
-            ),
+        builder: (_, _) => BlocSelector<AppEntryCubit, AppEntryState, String?>(
+          selector: (state) => switch (state) {
+            EntrySetupRequired(:final uid) => uid,
+            _ => null,
+          },
+          builder: (_, uid) {
+            if (uid == null) {
+              return const StartupPage(checkingAccount: true);
+            }
+            return BlocProvider(
+              key: ValueKey(uid),
+              create: (_) => createAccountSetup(uid),
+              child: BlocListener<AccountSetupCubit, AccountSetupState>(
+                listenWhen: (_, current) =>
+                    current.saveStatus == WeightSaveStatus.saved,
+                listener: (_, _) => entry.completeAccountSetup(uid),
+                child: const AccountSetupPage(),
+              ),
+            );
+          },
+        ),
       ),
       GoRoute(
         path: AppRoutes.login,
@@ -113,4 +109,13 @@ GoRouter createAppRouter({
       );
     },
   );
+}
+
+void refreshAppRoute(GoRouter router, EntryDestination destination) {
+  final redirect = appRouteRedirect(
+    router.routeInformationProvider.value.uri,
+    destination,
+  );
+  // Replace the stack when the entry gate changes the destination.
+  if (redirect != null) router.go(redirect);
 }

@@ -16,14 +16,14 @@ void main() {
     addTearDown(cubit.close);
     final firstReady = cubit.stream.firstWhere((state) => state is EntryReady);
     cubit.start();
-    expect((await firstReady).activeAccount?.uid, 'cached-user');
+    expect((await firstReady).activeUid, 'cached-user');
     final signedOut = cubit.stream.firstWhere((state) => state is EntryLogin);
     gateway.emitSession(null);
     await signedOut;
     final nextReady = cubit.stream.firstWhere((state) => state is EntryReady);
     gateway.emitSession('other-user');
-    expect((await nextReady).activeAccount?.uid, 'other-user');
-    expect(accounts.observations, ['cached-user', 'other-user']);
+    expect((await nextReady).activeUid, 'other-user');
+    expect(accounts.checks, ['cached-user', 'other-user']);
     expect(gateway.calls, isEmpty);
   });
 
@@ -54,56 +54,47 @@ void main() {
       final ready = cubit.stream.firstWhere((state) => state is EntryReady);
       cubit.retry();
       cubit.retry();
-      expect((await ready).activeAccount?.uid, 'returning-user');
+      expect((await ready).activeUid, 'returning-user');
       expect(gateway.sessionListeners, 1);
       await cubit.close();
       expect(gateway.sessionListeners, 0);
     },
   );
 
-  test(
-    'a completion from an earlier visit to the same UID cannot unlock setup',
-    () async {
-      final gateway = TestAuthGateway(userId: 'A');
-      final cubit = AppEntryCubit(
-        gateway,
-        TestAccountRepository(profile: null),
-        true,
-        () async {},
-      );
-      addTearDown(gateway.close);
-      addTearDown(cubit.close);
+  test('a save for a different UID cannot unlock setup', () async {
+    final gateway = TestAuthGateway(userId: 'A');
+    final cubit = AppEntryCubit(
+      gateway,
+      TestAccountRepository(profile: null),
+      true,
+      () async {},
+    );
+    addTearDown(gateway.close);
+    addTearDown(cubit.close);
 
-      Future<EntryAccount> setupFor(String uid) async {
-        final setup = await cubit.stream.firstWhere(
-          (state) => state is EntrySetupRequired && state.account.uid == uid,
-        );
-        return (setup as EntrySetupRequired).account;
-      }
+    Future<AppEntryState> setupFor(String uid) => cubit.stream.firstWhere(
+      (state) => state == AppEntryState.setupRequired(uid),
+    );
 
-      final firstSetup = setupFor('A');
-      cubit.start();
-      final original = await firstSetup;
-      final secondSetup = setupFor('B');
-      gateway.emitSession('B');
-      await secondSetup;
-      final reenteredSetup = setupFor('A');
-      gateway.emitSession('A');
-      final current = await reenteredSetup;
+    final firstSetup = setupFor('A');
+    cubit.start();
+    await firstSetup;
+    final secondSetup = setupFor('B');
+    gateway.emitSession('B');
+    final current = await secondSetup;
 
-      cubit.completeAccountSetup(original);
-      expect(cubit.state, AppEntryState.setupRequired(current));
-      cubit.completeAccountSetup(current);
-      expect(cubit.state, AppEntryState.ready(current));
-    },
-  );
+    cubit.completeAccountSetup('A');
+    expect(cubit.state, current);
+    cubit.completeAccountSetup('B');
+    expect(cubit.state, const AppEntryState.ready('B'));
+  });
 
   test(
     'account retry keeps the auth observer and replaces the read that failed',
     () async {
       final gateway = TestAuthGateway(userId: 'owner');
       final failed = StreamController<AccountProfile?>();
-      final accounts = TestAccountRepository()..onWatch = (_) => failed.stream;
+      final accounts = TestAccountRepository()..onCheck = (_) => failed.stream;
       final cubit = AppEntryCubit(gateway, accounts, true, () async {});
       addTearDown(gateway.close);
       addTearDown(failed.close);
@@ -118,13 +109,48 @@ void main() {
       );
       failed.addError(StateError('read unavailable'));
       await unavailable;
-      accounts.onWatch = (_) =>
+      expect(failed.hasListener, isFalse);
+      accounts.onCheck = (_) =>
           Stream.value(const AccountProfile(bodyWeightKg: 85));
       final restored = cubit.stream.firstWhere((state) => state is EntryReady);
       cubit.retry();
-      expect((await restored).activeAccount?.uid, 'owner');
-      expect(accounts.observations, ['owner', 'owner']);
+      expect((await restored).activeUid, 'owner');
+      expect(accounts.checks, ['owner', 'owner']);
       expect(gateway.sessionListeners, 1);
     },
   );
+
+  test('switching UID cancels the previous account check', () async {
+    final gateway = TestAuthGateway(userId: 'first');
+    final firstRead = StreamController<AccountProfile?>.broadcast();
+    final secondRead = StreamController<AccountProfile?>.broadcast();
+    final accounts = TestAccountRepository()
+      ..onCheck = (uid) =>
+          uid == 'first' ? firstRead.stream : secondRead.stream;
+    final cubit = AppEntryCubit(gateway, accounts, true, () async {});
+    addTearDown(gateway.close);
+    addTearDown(firstRead.close);
+    addTearDown(secondRead.close);
+    addTearDown(cubit.close);
+
+    final checkingFirst = cubit.stream.firstWhere(
+      (state) => state == const AppEntryState.checkingAccount('first'),
+    );
+    cubit.start();
+    await checkingFirst;
+    expect(firstRead.hasListener, isTrue);
+
+    final checkingSecond = cubit.stream.firstWhere(
+      (state) => state == const AppEntryState.checkingAccount('second'),
+    );
+    gateway.emitSession('second');
+    await checkingSecond;
+    expect(firstRead.hasListener, isFalse);
+    firstRead.add(const AccountProfile(bodyWeightKg: 85));
+
+    final requiresSetup = cubit.stream.first;
+    secondRead.add(null);
+    expect(await requiresSetup, const AppEntryState.setupRequired('second'));
+    expect(secondRead.hasListener, isFalse);
+  });
 }

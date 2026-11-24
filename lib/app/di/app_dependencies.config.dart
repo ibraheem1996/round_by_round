@@ -18,11 +18,8 @@ import 'package:injectable/injectable.dart' as _i526;
 import 'package:shared_preferences/shared_preferences.dart' as _i460;
 
 import '../../features/account_setup/account_repository.dart' as _i158;
-import '../../features/account_setup/data/account_cloud_store.dart' as _i701;
-import '../../features/account_setup/data/account_recovery_store.dart'
-    as _i1006;
-import '../../features/account_setup/data/local_first_account_repository.dart'
-    as _i473;
+import '../../features/account_setup/data/firestore_account_repository.dart'
+    as _i177;
 import '../../features/account_setup/presentation/account_setup_cubit.dart'
     as _i778;
 import '../../features/authentication/auth_gateway.dart' as _i401;
@@ -31,7 +28,6 @@ import '../../features/authentication/presentation/login/login_cubit.dart'
     as _i514;
 import '../../features/onboarding/data/onboarding_intro_completion.dart'
     as _i1036;
-import '../startup/app_entry_cubit.dart' as _i993;
 import 'firebase_module.dart' as _i616;
 import 'preferences_module.dart' as _i816;
 
@@ -50,23 +46,14 @@ extension GetItInjectableX on _i174.GetIt {
     gh.lazySingleton<_i460.SharedPreferencesAsync>(
       () => preferencesModule.preferences,
     );
-    gh.lazySingleton<_i1006.AccountRecoveryStore>(
-      () => _i1006.AccountRecoveryStore(),
-    );
     gh.lazySingleton<_i1036.OnboardingIntroCompletion>(
       () =>
           _i1036.OnboardingIntroCompletion(gh<_i460.SharedPreferencesAsync>()),
     );
-    gh.lazySingleton<_i701.AccountCloudStore>(
-      () => _i701.FirestoreAccountCloudStore(
+    gh.lazySingleton<_i158.AccountRepository>(
+      () => _i177.FirestoreAccountRepository(
         gh<_i974.FirebaseFirestore>(),
         gh<_i59.FirebaseAuth>(),
-      ),
-    );
-    gh.lazySingleton<_i158.AccountRepository>(
-      () => _i473.LocalFirstAccountRepository(
-        gh<_i1006.AccountRecoveryStore>(),
-        gh<_i701.AccountCloudStore>(),
       ),
     );
     gh.lazySingleton<_i401.AuthGateway>(
@@ -77,14 +64,6 @@ extension GetItInjectableX on _i174.GetIt {
     );
     gh.factoryParam<_i778.AccountSetupCubit, String, dynamic>(
       (uid, _) => _i778.AccountSetupCubit(gh<_i158.AccountRepository>(), uid),
-    );
-    gh.factoryParam<_i993.AppEntryCubit, bool, _i993.SaveIntro>(
-      (introCompleted, persistIntro) => _i993.AppEntryCubit(
-        gh<_i401.AuthGateway>(),
-        gh<_i158.AccountRepository>(),
-        introCompleted,
-        persistIntro,
-      ),
     );
     gh.factory<_i514.LoginCubit>(
       () => _i514.LoginCubit(gh<_i401.AuthGateway>()),
