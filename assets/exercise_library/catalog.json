@@ -1,0 +1,6444 @@
+{
+  "schemaVersion": 1,
+  "catalogVersion": "1.0.0",
+  "exercises": [
+    {
+      "exerciseId": "builtin:barbell_bench_press",
+      "nameAr": "ضغط صدر — بار — مستوٍ",
+      "nameEn": "Chest Press — Barbell — Flat",
+      "aliases": {
+        "ar": [
+          "بنش برس",
+          "بنش بار",
+          "بنش برس بالبار",
+          "بنش مستوي"
+        ],
+        "en": [
+          "Barbell Bench Press",
+          "Flat Barbell Bench Press",
+          "Flat Bench Press"
+        ]
+      },
+      "activity": "strength",
+      "primaryMuscle": "chest",
+      "equipment": "barbell",
+      "trackingType": "weightReps",
+      "imageRef": "images/bench-press__end.webp",
+      "frames": [
+        {
+          "path": "images/bench-press__start.webp",
+          "role": "start"
+        },
+        {
+          "path": "images/bench-press__end.webp",
+          "role": "end"
+        }
+      ],
+      "animationAvailable": true,
+      "sortOrder": 0
+    },
+    {
+      "exerciseId": "builtin:dumbbell_chest_press",
+      "nameAr": "ضغط صدر — دمبل — مستوٍ",
+      "nameEn": "Chest Press — Dumbbell — Flat",
+      "aliases": {
+        "ar": [
+          "بنش دمبل",
+          "بنش برس بالدمبل"
+        ],
+        "en": [
+          "Dumbbell Bench Press",
+          "Flat Dumbbell Bench Press"
+        ]
+      },
+      "activity": "strength",
+      "primaryMuscle": "chest",
+      "equipment": "dumbbell",
+      "trackingType": "weightReps",
+      "imageRef": "images/dumbbell-chest-press__end.webp",
+      "frames": [
+        {
+          "path": "images/dumbbell-chest-press__end.webp",
+          "role": "end"
+        }
+      ],
+      "animationAvailable": false,
+      "sortOrder": 1
+    },
+    {
+      "exerciseId": "builtin:incline_bench_press",
+      "nameAr": "ضغط صدر — بار — مائل",
+      "nameEn": "Chest Press — Barbell — Incline",
+      "aliases": {
+        "ar": [
+          "بنش بار مائل",
+          "بنش بار علوي"
+        ],
+        "en": [
+          "Incline Bench Press",
+          "Incline Barbell Bench Press"
+        ]
+      },
+      "activity": "strength",
+      "primaryMuscle": "chest",
+      "equipment": "barbell",
+      "trackingType": "weightReps",
+      "imageRef": "images/incline-bench-press__start.webp",
+      "frames": [
+        {
+          "path": "images/incline-bench-press__start.webp",
+          "role": "start"
+        },
+        {
+          "path": "images/incline-bench-press__end.webp",
+          "role": "end"
+        }
+      ],
+      "animationAvailable": true,
+      "sortOrder": 2
+    },
+    {
+      "exerciseId": "builtin:incline_dumbbell_press",
+      "nameAr": "ضغط صدر — دمبل — مائل",
+      "nameEn": "Chest Press — Dumbbell — Incline",
+      "aliases": {
+        "ar": [
+          "بنش دمبل مائل",
+          "بنش دمبل علوي"
+        ],
+        "en": [
+          "Incline Dumbbell Press",
+          "Incline Dumbbell Bench Press"
+        ]
+      },
+      "activity": "strength",
+      "primaryMuscle": "chest",
+      "equipment": "dumbbell",
+      "trackingType": "weightReps",
+      "imageRef": "images/incline-dumbbell-press__start.webp",
+      "frames": [
+        {
+          "path": "images/incline-dumbbell-press__start.webp",
+          "role": "start"
+        },
+        {
+          "path": "images/incline-dumbbell-press__end.webp",
+          "role": "end"
+        }
+      ],
+      "animationAvailable": true,
+      "sortOrder": 3
+    },
+    {
+      "exerciseId": "builtin:chest_press_machine",
+      "nameAr": "ضغط صدر — جهاز — أفقي",
+      "nameEn": "Chest Press — Machine — Horizontal",
+      "aliases": {
+        "ar": [
+          "جهاز ضغط صدر جالس"
+        ],
+        "en": [
+          "Machine Chest Press",
+          "Seated Chest Press Machine"
+        ]
+      },
+      "activity": "strength",
+      "primaryMuscle": "chest",
+      "equipment": "machines",
+      "trackingType": "weightReps",
+      "imageRef": "images/chest-press-machine__end.webp",
+      "frames": [
+        {
+          "path": "images/chest-press-machine__start.webp",
+          "role": "start"
+        },
+        {
+          "path": "images/chest-press-machine__end.webp",
+          "role": "end"
+        }
+      ],
+      "animationAvailable": true,
+      "sortOrder": 4
+    },
+    {
+      "exerciseId": "builtin:cable_crossover",
+      "nameAr": "تفتيح صدر — كيبل — من أعلى لأسفل",
+      "nameEn": "Chest Fly — Cable — High to Low",
+      "aliases": {
+        "ar": [
+          "كيبل كروس أوفر",
+          "تفتيح كيبل عالي"
+        ],
+        "en": [
+          "Cable Crossover",
+          "High-to-Low Cable Fly",
+          "Cable Fly High To Low"
+        ]
+      },
+      "activity": "strength",
+      "primaryMuscle": "chest",
+      "equipment": "machines",
+      "trackingType": "weightReps",
+      "imageRef": "images/cable-crossover__start.webp",
+      "frames": [
+        {
+          "path": "images/cable-crossover__start.webp",
+          "role": "start"
+        },
+        {
+          "path": "images/cable-crossover__end.webp",
+          "role": "end"
+        }
+      ],
+      "animationAvailable": false,
+      "sortOrder": 5
+    },
+    {
+      "exerciseId": "builtin:dumbbell_fly",
+      "nameAr": "تفتيح صدر — دمبل — مستوٍ",
+      "nameEn": "Chest Fly — Dumbbell — Flat",
+      "aliases": {
+        "ar": [
+          "تفتيح صدر دمبل"
+        ],
+        "en": [
+          "Dumbbell Fly",
+          "Flat Dumbbell Fly"
+        ]
+      },
+      "activity": "strength",
+      "primaryMuscle": "chest",
+      "equipment": "dumbbell",
+      "trackingType": "weightReps",
+      "imageRef": "images/dumbbell-fly__start.webp",
+      "frames": [
+        {
+          "path": "images/dumbbell-fly__start.webp",
+          "role": "start"
+        },
+        {
+          "path": "images/dumbbell-fly__end.webp",
+          "role": "end"
+        }
+      ],
+      "animationAvailable": true,
+      "sortOrder": 6
+    },
+    {
+      "exerciseId": "builtin:pec_deck",
+      "nameAr": "تفتيح صدر — جهاز — بيك ديك",
+      "nameEn": "Chest Fly — Machine — Pec Deck",
+      "aliases": {
+        "ar": [
+          "جهاز فراشة للصدر",
+          "بيك ديك"
+        ],
+        "en": [
+          "Pec Deck",
+          "Machine Chest Fly"
+        ]
+      },
+      "activity": "strength",
+      "primaryMuscle": "chest",
+      "equipment": "machines",
+      "trackingType": "weightReps",
+      "imageRef": "images/pec-deck__start.webp",
+      "frames": [
+        {
+          "path": "images/pec-deck__start.webp",
+          "role": "start"
+        },
+        {
+          "path": "images/pec-deck__end.webp",
+          "role": "end"
+        }
+      ],
+      "animationAvailable": true,
+      "sortOrder": 7
+    },
+    {
+      "exerciseId": "builtin:cable_fly_low_to_high",
+      "nameAr": "تفتيح صدر — كيبل — من أسفل لأعلى",
+      "nameEn": "Chest Fly — Cable — Low to High",
+      "aliases": {
+        "ar": [
+          "تفتيح كيبل منخفض"
+        ],
+        "en": [
+          "Low-to-High Cable Fly",
+          "Low Cable Fly"
+        ]
+      },
+      "activity": "strength",
+      "primaryMuscle": "chest",
+      "equipment": "machines",
+      "trackingType": "weightReps",
+      "imageRef": "images/cable-fly-low-to-high__start.webp",
+      "frames": [
+        {
+          "path": "images/cable-fly-low-to-high__start.webp",
+          "role": "start"
+        },
+        {
+          "path": "images/cable-fly-low-to-high__end.webp",
+          "role": "end"
+        }
+      ],
+      "animationAvailable": false,
+      "sortOrder": 8
+    },
+    {
+      "exerciseId": "builtin:incline_dumbbell_fly",
+      "nameAr": "تفتيح صدر — دمبل — مائل",
+      "nameEn": "Chest Fly — Dumbbell — Incline",
+      "aliases": {
+        "ar": [
+          "تفتيح دمبل علوي"
+        ],
+        "en": [
+          "Incline Dumbbell Fly"
+        ]
+      },
+      "activity": "strength",
+      "primaryMuscle": "chest",
+      "equipment": "dumbbell",
+      "trackingType": "weightReps",
+      "imageRef": "images/incline-dumbbell-fly__start.webp",
+      "frames": [
+        {
+          "path": "images/incline-dumbbell-fly__start.webp",
+          "role": "start"
+        },
+        {
+          "path": "images/incline-dumbbell-fly__end.webp",
+          "role": "end"
+        }
+      ],
+      "animationAvailable": true,
+      "sortOrder": 9
+    },
+    {
+      "exerciseId": "builtin:decline_bench_press",
+      "nameAr": "ضغط صدر — بار — منحدر",
+      "nameEn": "Chest Press — Barbell — Decline",
+      "aliases": {
+        "ar": [
+          "بنش بار منحدر"
+        ],
+        "en": [
+          "Decline Bench Press",
+          "Decline Barbell Bench Press"
+        ]
+      },
+      "activity": "strength",
+      "primaryMuscle": "chest",
+      "equipment": "barbell",
+      "trackingType": "weightReps",
+      "imageRef": "images/decline-bench-press__start.webp",
+      "frames": [
+        {
+          "path": "images/decline-bench-press__start.webp",
+          "role": "start"
+        },
+        {
+          "path": "images/decline-bench-press__end.webp",
+          "role": "end"
+        }
+      ],
+      "animationAvailable": true,
+      "sortOrder": 10
+    },
+    {
+      "exerciseId": "builtin:barbell_floor_press",
+      "nameAr": "ضغط صدر — بار — أرضي",
+      "nameEn": "Chest Press — Barbell — Floor",
+      "aliases": {
+        "ar": [
+          "فلور برس بار"
+        ],
+        "en": [
+          "Barbell Floor Press"
+        ]
+      },
+      "activity": "strength",
+      "primaryMuscle": "chest",
+      "equipment": "barbell",
+      "trackingType": "weightReps",
+      "imageRef": "images/barbell-floor-press__start.webp",
+      "frames": [
+        {
+          "path": "images/barbell-floor-press__start.webp",
+          "role": "start"
+        },
+        {
+          "path": "images/barbell-floor-press__end.webp",
+          "role": "end"
+        }
+      ],
+      "animationAvailable": true,
+      "sortOrder": 11
+    },
+    {
+      "exerciseId": "builtin:standing_cable_chest_press",
+      "nameAr": "ضغط صدر — كيبل — وقوف",
+      "nameEn": "Chest Press — Cable — Standing",
+      "aliases": {
+        "ar": [
+          "ضغط كيبل صدر واقف"
+        ],
+        "en": [
+          "Standing Cable Chest Press"
+        ]
+      },
+      "activity": "strength",
+      "primaryMuscle": "chest",
+      "equipment": "machines",
+      "trackingType": "weightReps",
+      "imageRef": "images/standing-cable-chest-press__start.webp",
+      "frames": [
+        {
+          "path": "images/standing-cable-chest-press__start.webp",
+          "role": "start"
+        },
+        {
+          "path": "images/standing-cable-chest-press__end.webp",
+          "role": "end"
+        }
+      ],
+      "animationAvailable": true,
+      "sortOrder": 12
+    },
+    {
+      "exerciseId": "builtin:dumbbell_decline_press",
+      "nameAr": "ضغط صدر — دمبل — منحدر",
+      "nameEn": "Chest Press — Dumbbell — Decline",
+      "aliases": {
+        "ar": [
+          "بنش دمبل منحدر"
+        ],
+        "en": [
+          "Decline Dumbbell Press",
+          "Dumbbell Decline Bench Press"
+        ]
+      },
+      "activity": "strength",
+      "primaryMuscle": "chest",
+      "equipment": "dumbbell",
+      "trackingType": "weightReps",
+      "imageRef": "images/dumbbell-decline-press__start.webp",
+      "frames": [
+        {
+          "path": "images/dumbbell-decline-press__start.webp",
+          "role": "start"
+        },
+        {
+          "path": "images/dumbbell-decline-press__end.webp",
+          "role": "end"
+        }
+      ],
+      "animationAvailable": true,
+      "sortOrder": 13
+    },
+    {
+      "exerciseId": "builtin:dumbbell_floor_press",
+      "nameAr": "ضغط صدر — دمبل — أرضي",
+      "nameEn": "Chest Press — Dumbbell — Floor",
+      "aliases": {
+        "ar": [
+          "فلور برس دمبل"
+        ],
+        "en": [
+          "Dumbbell Floor Press"
+        ]
+      },
+      "activity": "strength",
+      "primaryMuscle": "chest",
+      "equipment": "dumbbell",
+      "trackingType": "weightReps",
+      "imageRef": "images/dumbbell-floor-press__start.webp",
+      "frames": [
+        {
+          "path": "images/dumbbell-floor-press__start.webp",
+          "role": "start"
+        }
+      ],
+      "animationAvailable": false,
+      "sortOrder": 14
+    },
+    {
+      "exerciseId": "builtin:plate_loaded_incline_chest_press",
+      "nameAr": "ضغط صدر — جهاز — مائل محمّل بالأقراص",
+      "nameEn": "Chest Press — Machine — Incline, Plate-Loaded",
+      "aliases": {
+        "ar": [
+          "ضغط صدر علوي جهاز أقراص"
+        ],
+        "en": [
+          "Plate-Loaded Incline Chest Press"
+        ]
+      },
+      "activity": "strength",
+      "primaryMuscle": "chest",
+      "equipment": "machines",
+      "trackingType": "weightReps",
+      "imageRef": "images/plate-loaded-incline-chest-press__start.webp",
+      "frames": [
+        {
+          "path": "images/plate-loaded-incline-chest-press__start.webp",
+          "role": "start"
+        },
+        {
+          "path": "images/plate-loaded-incline-chest-press__end.webp",
+          "role": "end"
+        }
+      ],
+      "animationAvailable": true,
+      "sortOrder": 15
+    },
+    {
+      "exerciseId": "builtin:band_chest_press",
+      "nameAr": "ضغط صدر — شريط مقاومة",
+      "nameEn": "Chest Press — Resistance Band",
+      "aliases": {
+        "ar": [
+          "دفع صدر بالمطاط"
+        ],
+        "en": [
+          "Band Chest Press"
+        ]
+      },
+      "activity": "strength",
+      "primaryMuscle": "chest",
+      "equipment": "resistanceBand",
+      "trackingType": "repsOnly",
+      "imageRef": "images/band-chest-press__start.webp",
+      "frames": [
+        {
+          "path": "images/band-chest-press__start.webp",
+          "role": "start"
+        },
+        {
+          "path": "images/band-chest-press__end.webp",
+          "role": "end"
+        }
+      ],
+      "animationAvailable": true,
+      "sortOrder": 16
+    },
+    {
+      "exerciseId": "builtin:smith_machine_bench_press",
+      "nameAr": "ضغط صدر — جهاز سميث — مستوٍ",
+      "nameEn": "Chest Press — Smith Machine — Flat",
+      "aliases": {
+        "ar": [
+          "بنش سميث مستوي"
+        ],
+        "en": [
+          "Smith Machine Bench Press",
+          "Flat Smith Press"
+        ]
+      },
+      "activity": "strength",
+      "primaryMuscle": "chest",
+      "equipment": "machines",
+      "trackingType": "weightReps",
+      "imageRef": "images/smith-machine-bench-press__start.webp",
+      "frames": [
+        {
+          "path": "images/smith-machine-bench-press__start.webp",
+          "role": "start"
+        },
+        {
+          "path": "images/smith-machine-bench-press__end.webp",
+          "role": "end"
+        }
+      ],
+      "animationAvailable": true,
+      "sortOrder": 17
+    },
+    {
+      "exerciseId": "builtin:smith_machine_incline_press",
+      "nameAr": "ضغط صدر — جهاز سميث — مائل",
+      "nameEn": "Chest Press — Smith Machine — Incline",
+      "aliases": {
+        "ar": [
+          "بنش سميث علوي"
+        ],
+        "en": [
+          "Smith Machine Incline Press"
+        ]
+      },
+      "activity": "strength",
+      "primaryMuscle": "chest",
+      "equipment": "machines",
+      "trackingType": "weightReps",
+      "imageRef": "images/smith-machine-incline-press__start.webp",
+      "frames": [
+        {
+          "path": "images/smith-machine-incline-press__start.webp",
+          "role": "start"
+        },
+        {
+          "path": "images/smith-machine-incline-press__end.webp",
+          "role": "end"
+        }
+      ],
+      "animationAvailable": true,
+      "sortOrder": 18
+    },
+    {
+      "exerciseId": "builtin:dips",
+      "nameAr": "متوازي — عارضتان",
+      "nameEn": "Dip — Parallel Bars",
+      "aliases": {
+        "ar": [
+          "ديبس",
+          "غطس متوازي"
+        ],
+        "en": [
+          "Parallel-Bar Dip",
+          "Bodyweight Dip"
+        ]
+      },
+      "activity": "strength",
+      "primaryMuscle": "chest",
+      "equipment": "other",
+      "trackingType": "bodyweightAddedReps",
+      "imageRef": "images/dips__start.webp",
+      "frames": [
+        {
+          "path": "images/dips__start.webp",
+          "role": "start"
+        },
+        {
+          "path": "images/dips__end.webp",
+          "role": "end"
+        }
+      ],
+      "animationAvailable": true,
+      "sortOrder": 19
+    },
+    {
+      "exerciseId": "builtin:archer_push_up",
+      "nameAr": "ضغط أرضي — آرتشر",
+      "nameEn": "Push-Up — Archer",
+      "aliases": {
+        "ar": [
+          "ضغط الرامي"
+        ],
+        "en": [
+          "Archer Push-Up"
+        ]
+      },
+      "activity": "strength",
+      "primaryMuscle": "chest",
+      "equipment": "noEquipment",
+      "trackingType": "repsOnly",
+      "imageRef": "images/archer-push-up__start.webp",
+      "frames": [
+        {
+          "path": "images/archer-push-up__start.webp",
+          "role": "start"
+        },
+        {
+          "path": "images/archer-push-up__end.webp",
+          "role": "end"
+        }
+      ],
+      "animationAvailable": true,
+      "sortOrder": 20
+    },
+    {
+      "exerciseId": "builtin:clap_push_up",
+      "nameAr": "ضغط أرضي — مع تصفيق",
+      "nameEn": "Push-Up — Clapping",
+      "aliases": {
+        "ar": [
+          "ضغط انفجاري بتصفيق"
+        ],
+        "en": [
+          "Clap Push-Up",
+          "Clapping Push-Up"
+        ]
+      },
+      "activity": "strength",
+      "primaryMuscle": "chest",
+      "equipment": "noEquipment",
+      "trackingType": "repsOnly",
+      "imageRef": "images/clap-push-up__start.webp",
+      "frames": [
+        {
+          "path": "images/clap-push-up__start.webp",
+          "role": "start"
+        },
+        {
+          "path": "images/clap-push-up__end.webp",
+          "role": "end"
+        }
+      ],
+      "animationAvailable": true,
+      "sortOrder": 21
+    },
+    {
+      "exerciseId": "builtin:deficit_push_up",
+      "nameAr": "ضغط أرضي — مدى نزول إضافي",
+      "nameEn": "Push-Up — Deficit",
+      "aliases": {
+        "ar": [
+          "ضغط بين دعامتين"
+        ],
+        "en": [
+          "Deficit Push-Up"
+        ]
+      },
+      "activity": "strength",
+      "primaryMuscle": "chest",
+      "equipment": "noEquipment",
+      "trackingType": "repsOnly",
+      "imageRef": "images/deficit-push-up__start.webp",
+      "frames": [
+        {
+          "path": "images/deficit-push-up__start.webp",
+          "role": "start"
+        },
+        {
+          "path": "images/deficit-push-up__end.webp",
+          "role": "end"
+        }
+      ],
+      "animationAvailable": false,
+      "sortOrder": 22
+    },
+    {
+      "exerciseId": "builtin:decline_push_up",
+      "nameAr": "ضغط أرضي — القدمان مرتفعتان",
+      "nameEn": "Push-Up — Feet Elevated",
+      "aliases": {
+        "ar": [
+          "ضغط أرضي والقدمين على مقعد"
+        ],
+        "en": [
+          "Decline Push-Up",
+          "Feet-Elevated Push-Up"
+        ]
+      },
+      "activity": "strength",
+      "primaryMuscle": "chest",
+      "equipment": "noEquipment",
+      "trackingType": "repsOnly",
+      "imageRef": "images/decline-push-up__start.webp",
+      "frames": [
+        {
+          "path": "images/decline-push-up__start.webp",
+          "role": "start"
+        },
+        {
+          "path": "images/decline-push-up__end.webp",
+          "role": "end"
+        }
+      ],
+      "animationAvailable": true,
+      "sortOrder": 23
+    },
+    {
+      "exerciseId": "builtin:incline_push_up",
+      "nameAr": "ضغط أرضي — اليدان مرتفعتان",
+      "nameEn": "Push-Up — Hands Elevated",
+      "aliases": {
+        "ar": [
+          "ضغط أرضي واليدين على مقعد"
+        ],
+        "en": [
+          "Incline Push-Up",
+          "Hands-Elevated Push-Up"
+        ]
+      },
+      "activity": "strength",
+      "primaryMuscle": "chest",
+      "equipment": "noEquipment",
+      "trackingType": "repsOnly",
+      "imageRef": "images/incline-push-up__start.webp",
+      "frames": [
+        {
+          "path": "images/incline-push-up__start.webp",
+          "role": "start"
+        },
+        {
+          "path": "images/incline-push-up__end.webp",
+          "role": "end"
+        }
+      ],
+      "animationAvailable": true,
+      "sortOrder": 24
+    },
+    {
+      "exerciseId": "builtin:lat_pulldown",
+      "nameAr": "سحب علوي — كيبل — ذراعان",
+      "nameEn": "Lat Pulldown — Cable — Two Arms",
+      "aliases": {
+        "ar": [
+          "لات بول داون",
+          "سحب أمامي علوي",
+          "لات بول داون قبضة ضيقة",
+          "لات بول داون قبضة عكسية"
+        ],
+        "en": [
+          "Lat Pulldown",
+          "Wide-Grip Lat Pulldown",
+          "Close-Grip Lat Pulldown",
+          "Reverse-Grip Lat Pulldown",
+          "Underhand Lat Pulldown"
+        ]
+      },
+      "activity": "strength",
+      "primaryMuscle": "back",
+      "equipment": "machines",
+      "trackingType": "weightReps",
+      "imageRef": "images/lat-pulldown__start.webp",
+      "frames": [
+        {
+          "path": "images/lat-pulldown__start.webp",
+          "role": "start"
+        },
+        {
+          "path": "images/lat-pulldown__end.webp",
+          "role": "end"
+        }
+      ],
+      "animationAvailable": false,
+      "sortOrder": 25
+    },
+    {
+      "exerciseId": "builtin:pull_up",
+      "nameAr": "عقلة",
+      "nameEn": "Pull-Up",
+      "aliases": {
+        "ar": [
+          "بول أب",
+          "عقلة قبضة أمامية",
+          "عقلة مسكة متوازية"
+        ],
+        "en": [
+          "Overhand Pull-Up",
+          "Neutral Grip Pull Up",
+          "Neutral-Grip Pull-Up",
+          "Parallel-Grip Pull-Up"
+        ]
+      },
+      "activity": "strength",
+      "primaryMuscle": "back",
+      "equipment": "other",
+      "trackingType": "bodyweightAddedReps",
+      "imageRef": "images/pull-up__start.webp",
+      "frames": [
+        {
+          "path": "images/pull-up__start.webp",
+          "role": "start"
+        },
+        {
+          "path": "images/pull-up__end.webp",
+          "role": "end"
+        }
+      ],
+      "animationAvailable": true,
+      "sortOrder": 26
+    },
+    {
+      "exerciseId": "builtin:seated_cable_row",
+      "nameAr": "تجديف — كيبل — جلوس",
+      "nameEn": "Row — Cable — Seated",
+      "aliases": {
+        "ar": [
+          "سحب أرضي كيبل",
+          "تجديف كيبل جالس"
+        ],
+        "en": [
+          "Seated Cable Row",
+          "Seated Cable Pull",
+          "Neutral-Grip Seated Row",
+          "V-Bar Row"
+        ]
+      },
+      "activity": "strength",
+      "primaryMuscle": "back",
+      "equipment": "machines",
+      "trackingType": "weightReps",
+      "imageRef": "images/seated-cable-row__end.webp",
+      "frames": [
+        {
+          "path": "images/seated-cable-row__start.webp",
+          "role": "start"
+        },
+        {
+          "path": "images/seated-cable-row__end.webp",
+          "role": "end"
+        }
+      ],
+      "animationAvailable": true,
+      "sortOrder": 27
+    },
+    {
+      "exerciseId": "builtin:bent_over_row",
+      "nameAr": "تجديف منحني — بار",
+      "nameEn": "Bent-Over Row — Barbell",
+      "aliases": {
+        "ar": [
+          "باربل رو",
+          "تجديف بار",
+          "تجديف بار مسكة عكسية"
+        ],
+        "en": [
+          "Barbell Row",
+          "Barbell Bent-Over Row",
+          "Reverse Grip Barbell Row",
+          "Reverse-Grip Barbell Row",
+          "Underhand Barbell Row"
+        ]
+      },
+      "activity": "strength",
+      "primaryMuscle": "back",
+      "equipment": "barbell",
+      "trackingType": "weightReps",
+      "imageRef": "images/bent-over-row__start.webp",
+      "frames": [
+        {
+          "path": "images/bent-over-row__start.webp",
+          "role": "start"
+        },
+        {
+          "path": "images/bent-over-row__end.webp",
+          "role": "end"
+        }
+      ],
+      "animationAvailable": true,
+      "sortOrder": 28
+    },
+    {
+      "exerciseId": "builtin:dumbbell_row",
+      "nameAr": "تجديف — دمبل — ذراع واحدة مع دعم المقعد",
+      "nameEn": "Row — Dumbbell — One Arm, Bench-Supported",
+      "aliases": {
+        "ar": [
+          "تجديف دمبل يد واحدة",
+          "ون آرم دمبل رو"
+        ],
+        "en": [
+          "One-Arm Dumbbell Row",
+          "Bench-Supported Dumbbell Row"
+        ]
+      },
+      "activity": "strength",
+      "primaryMuscle": "back",
+      "equipment": "dumbbell",
+      "trackingType": "weightReps",
+      "imageRef": "images/dumbbell-row__end.webp",
+      "frames": [
+        {
+          "path": "images/dumbbell-row__start.webp",
+          "role": "start"
+        },
+        {
+          "path": "images/dumbbell-row__end.webp",
+          "role": "end"
+        }
+      ],
+      "animationAvailable": true,
+      "sortOrder": 29
+    },
+    {
+      "exerciseId": "builtin:machine_row",
+      "nameAr": "تجديف — جهاز — جلوس",
+      "nameEn": "Row — Machine — Seated",
+      "aliases": {
+        "ar": [
+          "جهاز تجديف جالس"
+        ],
+        "en": [
+          "Seated Machine Row"
+        ]
+      },
+      "activity": "strength",
+      "primaryMuscle": "back",
+      "equipment": "machines",
+      "trackingType": "weightReps",
+      "imageRef": "images/machine-row__start.webp",
+      "frames": [
+        {
+          "path": "images/machine-row__start.webp",
+          "role": "start"
+        },
+        {
+          "path": "images/machine-row__end.webp",
+          "role": "end"
+        }
+      ],
+      "animationAvailable": false,
+      "sortOrder": 30
+    },
+    {
+      "exerciseId": "builtin:chin_up",
+      "nameAr": "عقلة — قبضة معكوسة",
+      "nameEn": "Chin-Up",
+      "aliases": {
+        "ar": [
+          "تشين أب",
+          "عقلة بقبضة سفلية"
+        ],
+        "en": [
+          "Underhand Pull-Up",
+          "Supinated Pull-Up"
+        ]
+      },
+      "activity": "strength",
+      "primaryMuscle": "back",
+      "equipment": "other",
+      "trackingType": "bodyweightAddedReps",
+      "imageRef": "images/chin-up__start.webp",
+      "frames": [
+        {
+          "path": "images/chin-up__start.webp",
+          "role": "start"
+        },
+        {
+          "path": "images/chin-up__end.webp",
+          "role": "end"
+        }
+      ],
+      "animationAvailable": true,
+      "sortOrder": 31
+    },
+    {
+      "exerciseId": "builtin:assisted_pull_up",
+      "nameAr": "عقلة — جهاز — بمساعدة",
+      "nameEn": "Pull-Up — Machine — Assisted",
+      "aliases": {
+        "ar": [
+          "عقلة مساعدة"
+        ],
+        "en": [
+          "Assisted Pull-Up"
+        ]
+      },
+      "activity": "strength",
+      "primaryMuscle": "back",
+      "equipment": "machines",
+      "trackingType": "assistedReps",
+      "imageRef": "images/assisted-pull-up__start.webp",
+      "frames": [
+        {
+          "path": "images/assisted-pull-up__start.webp",
+          "role": "start"
+        },
+        {
+          "path": "images/assisted-pull-up__end.webp",
+          "role": "end"
+        }
+      ],
+      "animationAvailable": false,
+      "sortOrder": 32
+    },
+    {
+      "exerciseId": "builtin:t_bar_row",
+      "nameAr": "تجديف تي بار — لاندماين",
+      "nameEn": "T-Bar Row — Landmine",
+      "aliases": {
+        "ar": [
+          "تي بار رو"
+        ],
+        "en": [
+          "Landmine T-Bar Row",
+          "T-Bar Row"
+        ]
+      },
+      "activity": "strength",
+      "primaryMuscle": "back",
+      "equipment": "barbell",
+      "trackingType": "weightReps",
+      "imageRef": "images/t-bar-row__start.webp",
+      "frames": [
+        {
+          "path": "images/t-bar-row__start.webp",
+          "role": "start"
+        },
+        {
+          "path": "images/t-bar-row__end.webp",
+          "role": "end"
+        }
+      ],
+      "animationAvailable": true,
+      "sortOrder": 33
+    },
+    {
+      "exerciseId": "builtin:back_extensions",
+      "nameAr": "تمديد أسفل الظهر — مقعد 45°",
+      "nameEn": "Back Extension — 45° Bench",
+      "aliases": {
+        "ar": [
+          "هايبر إكستنشن",
+          "تمديد الظهر على المقعد المائل",
+          "تمديد أسفل الضهر"
+        ],
+        "en": [
+          "45 Degree Back Extension",
+          "Roman Chair Back Extension",
+          "Hyperextension"
+        ]
+      },
+      "activity": "strength",
+      "primaryMuscle": "lowerBack",
+      "equipment": "other",
+      "trackingType": "weightReps",
+      "imageRef": "images/back-extensions__end.webp",
+      "frames": [
+        {
+          "path": "images/back-extensions__start.webp",
+          "role": "start"
+        },
+        {
+          "path": "images/back-extensions__end.webp",
+          "role": "end"
+        }
+      ],
+      "animationAvailable": true,
+      "sortOrder": 34
+    },
+    {
+      "exerciseId": "builtin:smith_machine_bent_over_row",
+      "nameAr": "تجديف منحني — جهاز سميث",
+      "nameEn": "Bent-Over Row — Smith Machine",
+      "aliases": {
+        "ar": [
+          "تجديف سميث"
+        ],
+        "en": [
+          "Smith Machine Bent-Over Row"
+        ]
+      },
+      "activity": "strength",
+      "primaryMuscle": "back",
+      "equipment": "machines",
+      "trackingType": "weightReps",
+      "imageRef": "images/smith-machine-bent-over-row__start.webp",
+      "frames": [
+        {
+          "path": "images/smith-machine-bent-over-row__start.webp",
+          "role": "start"
+        },
+        {
+          "path": "images/smith-machine-bent-over-row__end.webp",
+          "role": "end"
+        }
+      ],
+      "animationAvailable": true,
+      "sortOrder": 35
+    },
+    {
+      "exerciseId": "builtin:machine_high_row",
+      "nameAr": "تجديف عالٍ — جهاز",
+      "nameEn": "High Row — Machine",
+      "aliases": {
+        "ar": [
+          "هاي رو جهاز"
+        ],
+        "en": [
+          "Machine High Row"
+        ]
+      },
+      "activity": "strength",
+      "primaryMuscle": "back",
+      "equipment": "machines",
+      "trackingType": "weightReps",
+      "imageRef": "images/machine-high-row__start.webp",
+      "frames": [
+        {
+          "path": "images/machine-high-row__start.webp",
+          "role": "start"
+        },
+        {
+          "path": "images/machine-high-row__end.webp",
+          "role": "end"
+        }
+      ],
+      "animationAvailable": true,
+      "sortOrder": 36
+    },
+    {
+      "exerciseId": "builtin:table_inverted_row",
+      "nameAr": "تجديف مقلوب — دعم على طاولة",
+      "nameEn": "Inverted Row — Table-Supported",
+      "aliases": {
+        "ar": [
+          "سحب مقلوب تحت الطاولة"
+        ],
+        "en": [
+          "Table Inverted Row",
+          "Table Bodyweight Row"
+        ]
+      },
+      "activity": "strength",
+      "primaryMuscle": "back",
+      "equipment": "noEquipment",
+      "trackingType": "repsOnly",
+      "imageRef": "images/table-inverted-row__start.webp",
+      "frames": [
+        {
+          "path": "images/table-inverted-row__start.webp",
+          "role": "start"
+        },
+        {
+          "path": "images/table-inverted-row__end.webp",
+          "role": "end"
+        }
+      ],
+      "animationAvailable": false,
+      "sortOrder": 37
+    },
+    {
+      "exerciseId": "builtin:single_arm_cable_lat_pulldown",
+      "nameAr": "سحب علوي — كيبل — ذراع واحدة من الركوع",
+      "nameEn": "Lat Pulldown — Cable — One Arm, Kneeling",
+      "aliases": {
+        "ar": [
+          "سحب لاتس كيبل يد واحدة راكع"
+        ],
+        "en": [
+          "Single-Arm Cable Lat Pulldown",
+          "Kneeling One-Arm Lat Pulldown"
+        ]
+      },
+      "activity": "strength",
+      "primaryMuscle": "back",
+      "equipment": "machines",
+      "trackingType": "weightReps",
+      "imageRef": "images/lat-pulldown__start.webp",
+      "frames": [
+        {
+          "path": "images/lat-pulldown__start.webp",
+          "role": "start"
+        },
+        {
+          "path": "images/lat-pulldown__end.webp",
+          "role": "end"
+        }
+      ],
+      "animationAvailable": false,
+      "sortOrder": 38
+    },
+    {
+      "exerciseId": "builtin:straight_arm_pulldown",
+      "nameAr": "سحب علوي — كيبل — ذراعان ممدودتان",
+      "nameEn": "Lat Pulldown — Cable — Straight Arms",
+      "aliases": {
+        "ar": [
+          "سحب لاتس بذراعين مفرودتين"
+        ],
+        "en": [
+          "Straight-Arm Pulldown",
+          "Cable Straight-Arm Pulldown"
+        ]
+      },
+      "activity": "strength",
+      "primaryMuscle": "back",
+      "equipment": "machines",
+      "trackingType": "weightReps",
+      "imageRef": "images/straight-arm-pulldown__start.webp",
+      "frames": [
+        {
+          "path": "images/straight-arm-pulldown__start.webp",
+          "role": "start"
+        },
+        {
+          "path": "images/straight-arm-pulldown__end.webp",
+          "role": "end"
+        }
+      ],
+      "animationAvailable": true,
+      "sortOrder": 39
+    },
+    {
+      "exerciseId": "builtin:band_lat_pulldown",
+      "nameAr": "سحب علوي — شريط مقاومة",
+      "nameEn": "Lat Pulldown — Resistance Band",
+      "aliases": {
+        "ar": [
+          "لات بول داون بالمطاط"
+        ],
+        "en": [
+          "Band Lat Pulldown"
+        ]
+      },
+      "activity": "strength",
+      "primaryMuscle": "back",
+      "equipment": "resistanceBand",
+      "trackingType": "repsOnly",
+      "imageRef": "images/band-lat-pulldown__start.webp",
+      "frames": [
+        {
+          "path": "images/band-lat-pulldown__start.webp",
+          "role": "start"
+        },
+        {
+          "path": "images/band-lat-pulldown__end.webp",
+          "role": "end"
+        }
+      ],
+      "animationAvailable": true,
+      "sortOrder": 40
+    },
+    {
+      "exerciseId": "builtin:meadows_row",
+      "nameAr": "تجديف ميدوز — لاندماين",
+      "nameEn": "Meadows Row — Landmine",
+      "aliases": {
+        "ar": [
+          "ميدوز رو"
+        ],
+        "en": [
+          "Landmine Meadows Row"
+        ]
+      },
+      "activity": "strength",
+      "primaryMuscle": "back",
+      "equipment": "barbell",
+      "trackingType": "weightReps",
+      "imageRef": "images/meadows-row__start.webp",
+      "frames": [
+        {
+          "path": "images/meadows-row__start.webp",
+          "role": "start"
+        },
+        {
+          "path": "images/meadows-row__end.webp",
+          "role": "end"
+        }
+      ],
+      "animationAvailable": true,
+      "sortOrder": 41
+    },
+    {
+      "exerciseId": "builtin:muscle_up",
+      "nameAr": "ماسل أب — عقلة",
+      "nameEn": "Muscle-Up — Bar",
+      "aliases": {
+        "ar": [
+          "ماسل اب على العقلة"
+        ],
+        "en": [
+          "Bar Muscle-Up"
+        ]
+      },
+      "activity": "strength",
+      "primaryMuscle": "back",
+      "equipment": "other",
+      "trackingType": "repsOnly",
+      "imageRef": "images/muscle-up__start.webp",
+      "frames": [
+        {
+          "path": "images/muscle-up__start.webp",
+          "role": "start"
+        },
+        {
+          "path": "images/muscle-up__mid.webp",
+          "role": "mid"
+        },
+        {
+          "path": "images/muscle-up__end.webp",
+          "role": "end"
+        }
+      ],
+      "animationAvailable": false,
+      "sortOrder": 42
+    },
+    {
+      "exerciseId": "builtin:pendlay_row",
+      "nameAr": "تجديف بندلاي — بار",
+      "nameEn": "Pendlay Row — Barbell",
+      "aliases": {
+        "ar": [
+          "بندلاي رو"
+        ],
+        "en": [
+          "Barbell Pendlay Row",
+          "Dead-Stop Pendlay Row"
+        ]
+      },
+      "activity": "strength",
+      "primaryMuscle": "back",
+      "equipment": "barbell",
+      "trackingType": "weightReps",
+      "imageRef": "images/pendlay-row__start.webp",
+      "frames": [
+        {
+          "path": "images/pendlay-row__start.webp",
+          "role": "start"
+        },
+        {
+          "path": "images/pendlay-row__end.webp",
+          "role": "end"
+        }
+      ],
+      "animationAvailable": true,
+      "sortOrder": 43
+    },
+    {
+      "exerciseId": "builtin:dumbbell_pullover",
+      "nameAr": "بول أوفر — دمبل",
+      "nameEn": "Pullover — Dumbbell",
+      "aliases": {
+        "ar": [
+          "بول اوفر بالدمبل"
+        ],
+        "en": [
+          "Dumbbell Pullover"
+        ]
+      },
+      "activity": "strength",
+      "primaryMuscle": "back",
+      "equipment": "dumbbell",
+      "trackingType": "weightReps",
+      "imageRef": "images/dumbbell-pullover__start.webp",
+      "frames": [
+        {
+          "path": "images/dumbbell-pullover__start.webp",
+          "role": "start"
+        },
+        {
+          "path": "images/dumbbell-pullover__end.webp",
+          "role": "end"
+        }
+      ],
+      "animationAvailable": true,
+      "sortOrder": 44
+    },
+    {
+      "exerciseId": "builtin:machine_pullover",
+      "nameAr": "بول أوفر — جهاز",
+      "nameEn": "Pullover — Machine",
+      "aliases": {
+        "ar": [
+          "جهاز بول اوفر"
+        ],
+        "en": [
+          "Machine Pullover"
+        ]
+      },
+      "activity": "strength",
+      "primaryMuscle": "back",
+      "equipment": "machines",
+      "trackingType": "weightReps",
+      "imageRef": "images/machine-pullover__start.webp",
+      "frames": [
+        {
+          "path": "images/machine-pullover__start.webp",
+          "role": "start"
+        },
+        {
+          "path": "images/machine-pullover__end.webp",
+          "role": "end"
+        }
+      ],
+      "animationAvailable": true,
+      "sortOrder": 45
+    },
+    {
+      "exerciseId": "builtin:single_arm_cable_row",
+      "nameAr": "تجديف — كيبل — ذراع واحدة من الوقوف",
+      "nameEn": "Row — Cable — One Arm, Standing",
+      "aliases": {
+        "ar": [
+          "سحب كيبل يد واحدة واقف"
+        ],
+        "en": [
+          "Single-Arm Cable Row",
+          "Standing One-Arm Cable Row"
+        ]
+      },
+      "activity": "strength",
+      "primaryMuscle": "back",
+      "equipment": "machines",
+      "trackingType": "weightReps",
+      "imageRef": "images/single-arm-cable-row__end.webp",
+      "frames": [
+        {
+          "path": "images/single-arm-cable-row__start.webp",
+          "role": "start"
+        },
+        {
+          "path": "images/single-arm-cable-row__end.webp",
+          "role": "end"
+        }
+      ],
+      "animationAvailable": true,
+      "sortOrder": 46
+    },
+    {
+      "exerciseId": "builtin:chest_supported_dumbbell_row",
+      "nameAr": "تجديف — دمبل — بإسناد الصدر على مقعد مائل",
+      "nameEn": "Row — Dumbbell — Chest-Supported Incline",
+      "aliases": {
+        "ar": [
+          "تجديف دمبل والصدر مسنود"
+        ],
+        "en": [
+          "Chest-Supported Dumbbell Row",
+          "Incline Dumbbell Row"
+        ]
+      },
+      "activity": "strength",
+      "primaryMuscle": "back",
+      "equipment": "dumbbell",
+      "trackingType": "weightReps",
+      "imageRef": "images/chest-supported-dumbbell-row__start.webp",
+      "frames": [
+        {
+          "path": "images/chest-supported-dumbbell-row__start.webp",
+          "role": "start"
+        },
+        {
+          "path": "images/chest-supported-dumbbell-row__end.webp",
+          "role": "end"
+        }
+      ],
+      "animationAvailable": true,
+      "sortOrder": 47
+    },
+    {
+      "exerciseId": "builtin:seal_row",
+      "nameAr": "تجديف — دمبل — استلقاء أفقي على المقعد",
+      "nameEn": "Row — Dumbbell — Seal",
+      "aliases": {
+        "ar": [
+          "سيل رو دمبل"
+        ],
+        "en": [
+          "Seal Row",
+          "Dumbbell Seal Row"
+        ]
+      },
+      "activity": "strength",
+      "primaryMuscle": "back",
+      "equipment": "dumbbell",
+      "trackingType": "weightReps",
+      "imageRef": "images/seal-row__start.webp",
+      "frames": [
+        {
+          "path": "images/seal-row__start.webp",
+          "role": "start"
+        },
+        {
+          "path": "images/seal-row__end.webp",
+          "role": "end"
+        }
+      ],
+      "animationAvailable": true,
+      "sortOrder": 48
+    },
+    {
+      "exerciseId": "builtin:kettlebell_row",
+      "nameAr": "تجديف — كيتل بيل — ذراع واحدة مع دعم المقعد",
+      "nameEn": "Row — Kettlebell — One Arm, Bench-Supported",
+      "aliases": {
+        "ar": [
+          "تجديف كتل بيل"
+        ],
+        "en": [
+          "One-Arm Kettlebell Row",
+          "Kettlebell Row"
+        ]
+      },
+      "activity": "strength",
+      "primaryMuscle": "back",
+      "equipment": "kettlebell",
+      "trackingType": "weightReps",
+      "imageRef": "images/kettlebell-row__start.webp",
+      "frames": [
+        {
+          "path": "images/kettlebell-row__start.webp",
+          "role": "start"
+        },
+        {
+          "path": "images/kettlebell-row__end.webp",
+          "role": "end"
+        }
+      ],
+      "animationAvailable": true,
+      "sortOrder": 49
+    },
+    {
+      "exerciseId": "builtin:band_row",
+      "nameAr": "تجديف — شريط مقاومة — جلوس",
+      "nameEn": "Row — Resistance Band — Seated",
+      "aliases": {
+        "ar": [
+          "سحب أفقي بالمطاط"
+        ],
+        "en": [
+          "Seated Band Row",
+          "Resistance Band Row"
+        ]
+      },
+      "activity": "strength",
+      "primaryMuscle": "back",
+      "equipment": "resistanceBand",
+      "trackingType": "repsOnly",
+      "imageRef": "images/band-row__end.webp",
+      "frames": [
+        {
+          "path": "images/band-row__start.webp",
+          "role": "start"
+        },
+        {
+          "path": "images/band-row__end.webp",
+          "role": "end"
+        }
+      ],
+      "animationAvailable": true,
+      "sortOrder": 50
+    },
+    {
+      "exerciseId": "builtin:shrugs",
+      "nameAr": "هز الكتفين — بار",
+      "nameEn": "Shrug — Barbell",
+      "aliases": {
+        "ar": [
+          "ترابيس بار"
+        ],
+        "en": [
+          "Barbell Shrug"
+        ]
+      },
+      "activity": "strength",
+      "primaryMuscle": "traps",
+      "equipment": "barbell",
+      "trackingType": "weightReps",
+      "imageRef": "images/shrugs__start.webp",
+      "frames": [
+        {
+          "path": "images/shrugs__start.webp",
+          "role": "start"
+        }
+      ],
+      "animationAvailable": false,
+      "sortOrder": 51
+    },
+    {
+      "exerciseId": "builtin:cable_shrug",
+      "nameAr": "هز الكتفين — كيبل",
+      "nameEn": "Shrug — Cable",
+      "aliases": {
+        "ar": [
+          "ترابيس كيبل"
+        ],
+        "en": [
+          "Cable Shrug"
+        ]
+      },
+      "activity": "strength",
+      "primaryMuscle": "traps",
+      "equipment": "machines",
+      "trackingType": "weightReps",
+      "imageRef": "images/cable-shrug__start.webp",
+      "frames": [
+        {
+          "path": "images/cable-shrug__start.webp",
+          "role": "start"
+        },
+        {
+          "path": "images/cable-shrug__end.webp",
+          "role": "end"
+        }
+      ],
+      "animationAvailable": false,
+      "sortOrder": 52
+    },
+    {
+      "exerciseId": "builtin:dumbbell_shrug",
+      "nameAr": "هز الكتفين — دمبل",
+      "nameEn": "Shrug — Dumbbell",
+      "aliases": {
+        "ar": [
+          "ترابيس دمبل"
+        ],
+        "en": [
+          "Dumbbell Shrug"
+        ]
+      },
+      "activity": "strength",
+      "primaryMuscle": "traps",
+      "equipment": "dumbbell",
+      "trackingType": "weightReps",
+      "imageRef": "images/dumbbell-shrug__start.webp",
+      "frames": [
+        {
+          "path": "images/dumbbell-shrug__start.webp",
+          "role": "start"
+        },
+        {
+          "path": "images/dumbbell-shrug__end.webp",
+          "role": "end"
+        }
+      ],
+      "animationAvailable": false,
+      "sortOrder": 53
+    },
+    {
+      "exerciseId": "builtin:smith_machine_shrug",
+      "nameAr": "هز الكتفين — جهاز سميث",
+      "nameEn": "Shrug — Smith Machine",
+      "aliases": {
+        "ar": [
+          "ترابيس سميث"
+        ],
+        "en": [
+          "Smith Machine Shrug"
+        ]
+      },
+      "activity": "strength",
+      "primaryMuscle": "traps",
+      "equipment": "machines",
+      "trackingType": "weightReps",
+      "imageRef": "images/smith-machine-shrug__start.webp",
+      "frames": [
+        {
+          "path": "images/smith-machine-shrug__start.webp",
+          "role": "start"
+        }
+      ],
+      "animationAvailable": false,
+      "sortOrder": 54
+    },
+    {
+      "exerciseId": "builtin:chest_supported_t_bar_row",
+      "nameAr": "تجديف تي بار — جهاز — بإسناد الصدر",
+      "nameEn": "T-Bar Row — Machine — Chest-Supported",
+      "aliases": {
+        "ar": [
+          "تي بار رو بإسناد الصدر"
+        ],
+        "en": [
+          "Chest-Supported T-Bar Row"
+        ]
+      },
+      "activity": "strength",
+      "primaryMuscle": "back",
+      "equipment": "machines",
+      "trackingType": "weightReps",
+      "imageRef": "images/chest-supported-t-bar-row__start.webp",
+      "frames": [
+        {
+          "path": "images/chest-supported-t-bar-row__start.webp",
+          "role": "start"
+        },
+        {
+          "path": "images/chest-supported-t-bar-row__end.webp",
+          "role": "end"
+        }
+      ],
+      "animationAvailable": true,
+      "sortOrder": 55
+    },
+    {
+      "exerciseId": "builtin:squat",
+      "nameAr": "سكوات — بار — خلفي",
+      "nameEn": "Squat — Barbell — Back",
+      "aliases": {
+        "ar": [
+          "باك سكوات",
+          "قرفصاء بالبار خلفي"
+        ],
+        "en": [
+          "Barbell Back Squat",
+          "Back Squat"
+        ]
+      },
+      "activity": "strength",
+      "primaryMuscle": "quads",
+      "equipment": "barbell",
+      "trackingType": "weightReps",
+      "imageRef": "images/squat__start.webp",
+      "frames": [
+        {
+          "path": "images/squat__start.webp",
+          "role": "start"
+        },
+        {
+          "path": "images/squat__end.webp",
+          "role": "end"
+        }
+      ],
+      "animationAvailable": true,
+      "sortOrder": 56
+    },
+    {
+      "exerciseId": "builtin:leg_press",
+      "nameAr": "ضغط الساق — جهاز — سكة مائلة",
+      "nameEn": "Leg Press — Machine — Incline Sled",
+      "aliases": {
+        "ar": [
+          "ليغ برس مائل"
+        ],
+        "en": [
+          "Incline Sled Leg Press",
+          "Incline Leg Press"
+        ]
+      },
+      "activity": "strength",
+      "primaryMuscle": "quads",
+      "equipment": "machines",
+      "trackingType": "weightReps",
+      "imageRef": "images/leg-press__start.webp",
+      "frames": [
+        {
+          "path": "images/leg-press__start.webp",
+          "role": "start"
+        },
+        {
+          "path": "images/leg-press__end.webp",
+          "role": "end"
+        }
+      ],
+      "animationAvailable": false,
+      "sortOrder": 57
+    },
+    {
+      "exerciseId": "builtin:deadlift",
+      "nameAr": "رفعة ميتة — بار — تقليدية",
+      "nameEn": "Deadlift — Barbell — Conventional",
+      "aliases": {
+        "ar": [
+          "ديدلفت بار",
+          "رفعة ميتة تقليدية"
+        ],
+        "en": [
+          "Conventional Deadlift",
+          "Barbell Deadlift"
+        ]
+      },
+      "activity": "strength",
+      "primaryMuscle": "glutes",
+      "equipment": "barbell",
+      "trackingType": "weightReps",
+      "imageRef": "images/deadlift__start.webp",
+      "frames": [
+        {
+          "path": "images/deadlift__start.webp",
+          "role": "start"
+        },
+        {
+          "path": "images/deadlift__end.webp",
+          "role": "end"
+        }
+      ],
+      "animationAvailable": true,
+      "sortOrder": 58
+    },
+    {
+      "exerciseId": "builtin:leg_extension",
+      "nameAr": "تمديد الركبة — جهاز",
+      "nameEn": "Leg Extension — Machine",
+      "aliases": {
+        "ar": [
+          "ليغ إكستنشن",
+          "جهاز الفخذ الأمامي"
+        ],
+        "en": [
+          "Machine Leg Extension",
+          "Seated Leg Extension"
+        ]
+      },
+      "activity": "strength",
+      "primaryMuscle": "quads",
+      "equipment": "machines",
+      "trackingType": "weightReps",
+      "imageRef": "images/leg-extension__end.webp",
+      "frames": [
+        {
+          "path": "images/leg-extension__start.webp",
+          "role": "start"
+        },
+        {
+          "path": "images/leg-extension__end.webp",
+          "role": "end"
+        }
+      ],
+      "animationAvailable": true,
+      "sortOrder": 59
+    },
+    {
+      "exerciseId": "builtin:leg_curl",
+      "nameAr": "كيرل خلف الفخذ — جهاز — استلقاء",
+      "nameEn": "Leg Curl — Machine — Lying",
+      "aliases": {
+        "ar": [
+          "ليغ كيرل مستلقي",
+          "خلفية على البطن"
+        ],
+        "en": [
+          "Lying Leg Curl",
+          "Prone Leg Curl",
+          "Lying Hamstring Curl"
+        ]
+      },
+      "activity": "strength",
+      "primaryMuscle": "hamstrings",
+      "equipment": "machines",
+      "trackingType": "weightReps",
+      "imageRef": "images/leg-curl__start.webp",
+      "frames": [
+        {
+          "path": "images/leg-curl__start.webp",
+          "role": "start"
+        },
+        {
+          "path": "images/leg-curl__end.webp",
+          "role": "end"
+        }
+      ],
+      "animationAvailable": false,
+      "sortOrder": 60
+    },
+    {
+      "exerciseId": "builtin:seated_leg_curl",
+      "nameAr": "كيرل خلف الفخذ — جهاز — جلوس",
+      "nameEn": "Leg Curl — Machine — Seated",
+      "aliases": {
+        "ar": [
+          "ليغ كيرل جالس"
+        ],
+        "en": [
+          "Seated Leg Curl",
+          "Seated Hamstring Curl"
+        ]
+      },
+      "activity": "strength",
+      "primaryMuscle": "hamstrings",
+      "equipment": "machines",
+      "trackingType": "weightReps",
+      "imageRef": "images/seated-leg-curl__start.webp",
+      "frames": [
+        {
+          "path": "images/seated-leg-curl__start.webp",
+          "role": "start"
+        },
+        {
+          "path": "images/seated-leg-curl__end.webp",
+          "role": "end"
+        }
+      ],
+      "animationAvailable": true,
+      "sortOrder": 61
+    },
+    {
+      "exerciseId": "builtin:hip_thrusts",
+      "nameAr": "دفع الورك — بار",
+      "nameEn": "Hip Thrust — Barbell",
+      "aliases": {
+        "ar": [
+          "هيب ثرست بار"
+        ],
+        "en": [
+          "Barbell Hip Thrust"
+        ]
+      },
+      "activity": "strength",
+      "primaryMuscle": "glutes",
+      "equipment": "barbell",
+      "trackingType": "weightReps",
+      "imageRef": "images/hip-thrusts__start.webp",
+      "frames": [
+        {
+          "path": "images/hip-thrusts__start.webp",
+          "role": "start"
+        },
+        {
+          "path": "images/hip-thrusts__end.webp",
+          "role": "end"
+        }
+      ],
+      "animationAvailable": true,
+      "sortOrder": 62
+    },
+    {
+      "exerciseId": "builtin:bulgarian_split_squat",
+      "nameAr": "سكوات بلغاري — دمبل",
+      "nameEn": "Bulgarian Split Squat — Dumbbell",
+      "aliases": {
+        "ar": [
+          "سكوات بلغاري دمبل",
+          "بلغاريان سبليت سكوات"
+        ],
+        "en": [
+          "Dumbbell Bulgarian Split Squat",
+          "Rear-Foot Elevated Split Squat"
+        ]
+      },
+      "activity": "strength",
+      "primaryMuscle": "quads",
+      "equipment": "dumbbell",
+      "trackingType": "weightReps",
+      "imageRef": "images/bulgarian-split-squat__start.webp",
+      "frames": [
+        {
+          "path": "images/bulgarian-split-squat__start.webp",
+          "role": "start"
+        },
+        {
+          "path": "images/bulgarian-split-squat__end.webp",
+          "role": "end"
+        }
+      ],
+      "animationAvailable": true,
+      "sortOrder": 63
+    },
+    {
+      "exerciseId": "builtin:bodyweight_squat",
+      "nameAr": "سكوات — وزن الجسم",
+      "nameEn": "Squat — Bodyweight",
+      "aliases": {
+        "ar": [
+          "سكوات بدون وزن",
+          "قرفصاء بوزن الجسم"
+        ],
+        "en": [
+          "Bodyweight Squat",
+          "Air Squat",
+          "Bodyweight Squats"
+        ]
+      },
+      "activity": "strength",
+      "primaryMuscle": "quads",
+      "equipment": "noEquipment",
+      "trackingType": "repsOnly",
+      "imageRef": "images/bodyweight-squat__end.webp",
+      "frames": [
+        {
+          "path": "images/bodyweight-squat__start.webp",
+          "role": "start"
+        },
+        {
+          "path": "images/bodyweight-squat__end.webp",
+          "role": "end"
+        }
+      ],
+      "animationAvailable": true,
+      "sortOrder": 64
+    },
+    {
+      "exerciseId": "builtin:hack_squat",
+      "nameAr": "هاك سكوات — جهاز",
+      "nameEn": "Hack Squat — Machine",
+      "aliases": {
+        "ar": [
+          "جهاز هاك سكوات"
+        ],
+        "en": [
+          "Hack Squat Machine",
+          "Sled Hack Squat"
+        ]
+      },
+      "activity": "strength",
+      "primaryMuscle": "quads",
+      "equipment": "machines",
+      "trackingType": "weightReps",
+      "imageRef": "images/hack-squat__start.webp",
+      "frames": [
+        {
+          "path": "images/hack-squat__start.webp",
+          "role": "start"
+        },
+        {
+          "path": "images/hack-squat__end.webp",
+          "role": "end"
+        }
+      ],
+      "animationAvailable": true,
+      "sortOrder": 65
+    },
+    {
+      "exerciseId": "builtin:calf_raises",
+      "nameAr": "رفع السمانة — عتبة — ساقان",
+      "nameEn": "Calf Raise — Step — Two Legs",
+      "aliases": {
+        "ar": [
+          "سمانة على عتبة بالقدمين"
+        ],
+        "en": [
+          "Two-Leg Step Calf Raise",
+          "Standing Step Calf Raise"
+        ]
+      },
+      "activity": "strength",
+      "primaryMuscle": "calves",
+      "equipment": "noEquipment",
+      "trackingType": "repsOnly",
+      "imageRef": "images/calf-raises__start.webp",
+      "frames": [
+        {
+          "path": "images/calf-raises__start.webp",
+          "role": "start"
+        },
+        {
+          "path": "images/calf-raises__end.webp",
+          "role": "end"
+        }
+      ],
+      "animationAvailable": true,
+      "sortOrder": 66
+    },
+    {
+      "exerciseId": "builtin:goblet_squat",
+      "nameAr": "سكوات غوبلت — دمبل",
+      "nameEn": "Goblet Squat — Dumbbell",
+      "aliases": {
+        "ar": [
+          "جوبلت سكوات دمبل"
+        ],
+        "en": [
+          "Dumbbell Goblet Squat"
+        ]
+      },
+      "activity": "strength",
+      "primaryMuscle": "quads",
+      "equipment": "dumbbell",
+      "trackingType": "weightReps",
+      "imageRef": "images/goblet-squat__start.webp",
+      "frames": [
+        {
+          "path": "images/goblet-squat__start.webp",
+          "role": "start"
+        },
+        {
+          "path": "images/goblet-squat__end.webp",
+          "role": "end"
+        }
+      ],
+      "animationAvailable": true,
+      "sortOrder": 67
+    },
+    {
+      "exerciseId": "builtin:box_jump",
+      "nameAr": "قفز على الصندوق",
+      "nameEn": "Box Jump",
+      "aliases": {
+        "ar": [
+          "بوكس جمب"
+        ],
+        "en": [
+          "Plyo Box Jump"
+        ]
+      },
+      "activity": "strength",
+      "primaryMuscle": "quads",
+      "equipment": "other",
+      "trackingType": "repsOnly",
+      "imageRef": "images/box-jump__end.webp",
+      "frames": [
+        {
+          "path": "images/box-jump__start.webp",
+          "role": "start"
+        },
+        {
+          "path": "images/box-jump__end.webp",
+          "role": "end"
+        }
+      ],
+      "animationAvailable": true,
+      "sortOrder": 68
+    },
+    {
+      "exerciseId": "builtin:leg_press_calf_raise",
+      "nameAr": "رفع السمانة — جهاز ضغط الساق",
+      "nameEn": "Calf Raise — Leg Press Machine",
+      "aliases": {
+        "ar": [
+          "سمانة ليغ برس"
+        ],
+        "en": [
+          "Leg Press Calf Raise",
+          "Calf Press on Leg Press"
+        ]
+      },
+      "activity": "strength",
+      "primaryMuscle": "calves",
+      "equipment": "machines",
+      "trackingType": "weightReps",
+      "imageRef": "images/leg-press-calf-raise__start.webp",
+      "frames": [
+        {
+          "path": "images/leg-press-calf-raise__start.webp",
+          "role": "start"
+        },
+        {
+          "path": "images/leg-press-calf-raise__end.webp",
+          "role": "end"
+        }
+      ],
+      "animationAvailable": false,
+      "sortOrder": 69
+    },
+    {
+      "exerciseId": "builtin:seated_calf_raise_machine",
+      "nameAr": "رفع السمانة — جهاز — جلوس",
+      "nameEn": "Calf Raise — Machine — Seated",
+      "aliases": {
+        "ar": [
+          "سمانة جهاز جالس"
+        ],
+        "en": [
+          "Seated Calf Raise Machine"
+        ]
+      },
+      "activity": "strength",
+      "primaryMuscle": "calves",
+      "equipment": "machines",
+      "trackingType": "weightReps",
+      "imageRef": "images/seated-calf-raise-machine__start.webp",
+      "frames": [
+        {
+          "path": "images/seated-calf-raise-machine__start.webp",
+          "role": "start"
+        },
+        {
+          "path": "images/seated-calf-raise-machine__end.webp",
+          "role": "end"
+        }
+      ],
+      "animationAvailable": true,
+      "sortOrder": 70
+    },
+    {
+      "exerciseId": "builtin:standing_calf_raise_machine",
+      "nameAr": "رفع السمانة — جهاز — وقوف",
+      "nameEn": "Calf Raise — Machine — Standing",
+      "aliases": {
+        "ar": [
+          "سمانة جهاز واقف"
+        ],
+        "en": [
+          "Standing Calf Raise Machine"
+        ]
+      },
+      "activity": "strength",
+      "primaryMuscle": "calves",
+      "equipment": "machines",
+      "trackingType": "weightReps",
+      "imageRef": "images/standing-calf-raise-machine__start.webp",
+      "frames": [
+        {
+          "path": "images/standing-calf-raise-machine__start.webp",
+          "role": "start"
+        },
+        {
+          "path": "images/standing-calf-raise-machine__end.webp",
+          "role": "end"
+        }
+      ],
+      "animationAvailable": true,
+      "sortOrder": 71
+    },
+    {
+      "exerciseId": "builtin:smith_machine_calf_raise",
+      "nameAr": "رفع السمانة — جهاز سميث — وقوف",
+      "nameEn": "Calf Raise — Smith Machine — Standing",
+      "aliases": {
+        "ar": [
+          "سمانة سميث واقف"
+        ],
+        "en": [
+          "Smith Machine Calf Raise"
+        ]
+      },
+      "activity": "strength",
+      "primaryMuscle": "calves",
+      "equipment": "machines",
+      "trackingType": "weightReps",
+      "imageRef": "images/smith-machine-calf-raise__start.webp",
+      "frames": [
+        {
+          "path": "images/smith-machine-calf-raise__start.webp",
+          "role": "start"
+        },
+        {
+          "path": "images/smith-machine-calf-raise__end.webp",
+          "role": "end"
+        }
+      ],
+      "animationAvailable": true,
+      "sortOrder": 72
+    },
+    {
+      "exerciseId": "builtin:single_leg_calf_raise",
+      "nameAr": "رفع السمانة — عتبة — ساق واحدة",
+      "nameEn": "Calf Raise — Step — One Leg",
+      "aliases": {
+        "ar": [
+          "سمانة على عتبة بقدم واحدة"
+        ],
+        "en": [
+          "Single-Leg Calf Raise",
+          "One-Leg Step Calf Raise"
+        ]
+      },
+      "activity": "strength",
+      "primaryMuscle": "calves",
+      "equipment": "dumbbell",
+      "trackingType": "repsOnly",
+      "imageRef": "images/single-leg-calf-raise__start.webp",
+      "frames": [
+        {
+          "path": "images/single-leg-calf-raise__start.webp",
+          "role": "start"
+        },
+        {
+          "path": "images/single-leg-calf-raise__end.webp",
+          "role": "end"
+        }
+      ],
+      "animationAvailable": true,
+      "sortOrder": 73
+    },
+    {
+      "exerciseId": "builtin:kettlebell_clean",
+      "nameAr": "كلين — كيتل بيل — ذراع واحدة",
+      "nameEn": "Clean — Kettlebell — One Arm",
+      "aliases": {
+        "ar": [
+          "كلين كتل بيل"
+        ],
+        "en": [
+          "Kettlebell Clean",
+          "One-Arm Kettlebell Clean"
+        ]
+      },
+      "activity": "strength",
+      "primaryMuscle": "glutes",
+      "equipment": "kettlebell",
+      "trackingType": "weightReps",
+      "imageRef": "images/kettlebell-clean__start.webp",
+      "frames": [
+        {
+          "path": "images/kettlebell-clean__start.webp",
+          "role": "start"
+        },
+        {
+          "path": "images/kettlebell-clean__end.webp",
+          "role": "end"
+        }
+      ],
+      "animationAvailable": false,
+      "sortOrder": 74
+    },
+    {
+      "exerciseId": "builtin:cossack_squat",
+      "nameAr": "سكوات كوساك — وزن الجسم",
+      "nameEn": "Cossack Squat — Bodyweight",
+      "aliases": {
+        "ar": [
+          "قرفصاء كوساك"
+        ],
+        "en": [
+          "Bodyweight Cossack Squat"
+        ]
+      },
+      "activity": "strength",
+      "primaryMuscle": "quads",
+      "equipment": "noEquipment",
+      "trackingType": "repsOnly",
+      "imageRef": "images/cossack-squat__start.webp",
+      "frames": [
+        {
+          "path": "images/cossack-squat__start.webp",
+          "role": "start"
+        },
+        {
+          "path": "images/cossack-squat__end.webp",
+          "role": "end"
+        }
+      ],
+      "animationAvailable": true,
+      "sortOrder": 75
+    },
+    {
+      "exerciseId": "builtin:stiff_leg_deadlift",
+      "nameAr": "رفعة ميتة — بار — ساقان شبه مستقيمتين",
+      "nameEn": "Deadlift — Barbell — Stiff-Leg",
+      "aliases": {
+        "ar": [
+          "ستيف ليغ ديدلفت"
+        ],
+        "en": [
+          "Stiff-Leg Deadlift",
+          "Stiff-Legged Deadlift"
+        ]
+      },
+      "activity": "strength",
+      "primaryMuscle": "hamstrings",
+      "equipment": "barbell",
+      "trackingType": "weightReps",
+      "imageRef": "images/romanian-deadlift__start.webp",
+      "frames": [
+        {
+          "path": "images/romanian-deadlift__start.webp",
+          "role": "start"
+        },
+        {
+          "path": "images/romanian-deadlift__end.webp",
+          "role": "end"
+        }
+      ],
+      "animationAvailable": false,
+      "sortOrder": 76
+    },
+    {
+      "exerciseId": "builtin:sumo_deadlift",
+      "nameAr": "رفعة ميتة — بار — سومو",
+      "nameEn": "Deadlift — Barbell — Sumo",
+      "aliases": {
+        "ar": [
+          "سومو ديدلفت بار"
+        ],
+        "en": [
+          "Sumo Deadlift",
+          "Barbell Sumo Deadlift"
+        ]
+      },
+      "activity": "strength",
+      "primaryMuscle": "glutes",
+      "equipment": "barbell",
+      "trackingType": "weightReps",
+      "imageRef": "images/sumo-deadlift__start.webp",
+      "frames": [
+        {
+          "path": "images/sumo-deadlift__start.webp",
+          "role": "start"
+        },
+        {
+          "path": "images/sumo-deadlift__end.webp",
+          "role": "end"
+        }
+      ],
+      "animationAvailable": true,
+      "sortOrder": 77
+    },
+    {
+      "exerciseId": "builtin:dumbbell_deadlift",
+      "nameAr": "رفعة ميتة — دمبل",
+      "nameEn": "Deadlift — Dumbbell",
+      "aliases": {
+        "ar": [
+          "ديدلفت دمبل"
+        ],
+        "en": [
+          "Dumbbell Deadlift"
+        ]
+      },
+      "activity": "strength",
+      "primaryMuscle": "glutes",
+      "equipment": "dumbbell",
+      "trackingType": "weightReps",
+      "imageRef": "images/dumbbell-deadlift__start.webp",
+      "frames": [
+        {
+          "path": "images/dumbbell-deadlift__start.webp",
+          "role": "start"
+        },
+        {
+          "path": "images/dumbbell-deadlift__end.webp",
+          "role": "end"
+        }
+      ],
+      "animationAvailable": true,
+      "sortOrder": 78
+    },
+    {
+      "exerciseId": "builtin:kettlebell_deadlift",
+      "nameAr": "رفعة ميتة — كيتل بيل",
+      "nameEn": "Deadlift — Kettlebell",
+      "aliases": {
+        "ar": [
+          "ديدلفت كتل بيل"
+        ],
+        "en": [
+          "Kettlebell Deadlift"
+        ]
+      },
+      "activity": "strength",
+      "primaryMuscle": "glutes",
+      "equipment": "kettlebell",
+      "trackingType": "weightReps",
+      "imageRef": "images/kettlebell-deadlift__start.webp",
+      "frames": [
+        {
+          "path": "images/kettlebell-deadlift__start.webp",
+          "role": "start"
+        },
+        {
+          "path": "images/kettlebell-deadlift__end.webp",
+          "role": "end"
+        }
+      ],
+      "animationAvailable": true,
+      "sortOrder": 79
+    },
+    {
+      "exerciseId": "builtin:kettlebell_sumo_deadlift",
+      "nameAr": "رفعة ميتة — كيتل بيل — سومو",
+      "nameEn": "Deadlift — Kettlebell — Sumo",
+      "aliases": {
+        "ar": [
+          "سومو ديدلفت كتل بيل"
+        ],
+        "en": [
+          "Kettlebell Sumo Deadlift"
+        ]
+      },
+      "activity": "strength",
+      "primaryMuscle": "glutes",
+      "equipment": "kettlebell",
+      "trackingType": "weightReps",
+      "imageRef": "images/kettlebell-sumo-deadlift__start.webp",
+      "frames": [
+        {
+          "path": "images/kettlebell-sumo-deadlift__start.webp",
+          "role": "start"
+        },
+        {
+          "path": "images/kettlebell-sumo-deadlift__end.webp",
+          "role": "end"
+        }
+      ],
+      "animationAvailable": true,
+      "sortOrder": 80
+    },
+    {
+      "exerciseId": "builtin:band_deadlift",
+      "nameAr": "رفعة ميتة — شريط مقاومة",
+      "nameEn": "Deadlift — Resistance Band",
+      "aliases": {
+        "ar": [
+          "ديدلفت بالمطاط"
+        ],
+        "en": [
+          "Band Deadlift"
+        ]
+      },
+      "activity": "strength",
+      "primaryMuscle": "glutes",
+      "equipment": "resistanceBand",
+      "trackingType": "repsOnly",
+      "imageRef": "images/band-deadlift__start.webp",
+      "frames": [
+        {
+          "path": "images/band-deadlift__start.webp",
+          "role": "start"
+        },
+        {
+          "path": "images/band-deadlift__end.webp",
+          "role": "end"
+        }
+      ],
+      "animationAvailable": true,
+      "sortOrder": 81
+    },
+    {
+      "exerciseId": "builtin:trap_bar_deadlift",
+      "nameAr": "رفعة ميتة — بار سداسي",
+      "nameEn": "Deadlift — Trap Bar",
+      "aliases": {
+        "ar": [
+          "ديدلفت بار سداسي"
+        ],
+        "en": [
+          "Trap Bar Deadlift",
+          "Hex Bar Deadlift"
+        ]
+      },
+      "activity": "strength",
+      "primaryMuscle": "quads",
+      "equipment": "barbell",
+      "trackingType": "weightReps",
+      "imageRef": "images/trap-bar-deadlift__start.webp",
+      "frames": [
+        {
+          "path": "images/trap-bar-deadlift__start.webp",
+          "role": "start"
+        },
+        {
+          "path": "images/trap-bar-deadlift__end.webp",
+          "role": "end"
+        }
+      ],
+      "animationAvailable": true,
+      "sortOrder": 82
+    },
+    {
+      "exerciseId": "builtin:barbell_glute_bridge",
+      "nameAr": "جسر الأرداف — بار",
+      "nameEn": "Glute Bridge — Barbell",
+      "aliases": {
+        "ar": [
+          "جسر أرداف بار"
+        ],
+        "en": [
+          "Barbell Glute Bridge"
+        ]
+      },
+      "activity": "strength",
+      "primaryMuscle": "glutes",
+      "equipment": "barbell",
+      "trackingType": "weightReps",
+      "imageRef": "images/barbell-glute-bridge__start.webp",
+      "frames": [
+        {
+          "path": "images/barbell-glute-bridge__start.webp",
+          "role": "start"
+        },
+        {
+          "path": "images/barbell-glute-bridge__end.webp",
+          "role": "end"
+        }
+      ],
+      "animationAvailable": true,
+      "sortOrder": 83
+    },
+    {
+      "exerciseId": "builtin:banded_glute_bridge",
+      "nameAr": "جسر الأرداف — شريط مقاومة قصير",
+      "nameEn": "Glute Bridge — Mini Band",
+      "aliases": {
+        "ar": [
+          "جسر أرداف بالمطاط"
+        ],
+        "en": [
+          "Banded Glute Bridge"
+        ]
+      },
+      "activity": "strength",
+      "primaryMuscle": "glutes",
+      "equipment": "resistanceBand",
+      "trackingType": "repsOnly",
+      "imageRef": "images/banded-glute-bridge__start.webp",
+      "frames": [
+        {
+          "path": "images/banded-glute-bridge__start.webp",
+          "role": "start"
+        },
+        {
+          "path": "images/banded-glute-bridge__end.webp",
+          "role": "end"
+        }
+      ],
+      "animationAvailable": true,
+      "sortOrder": 84
+    },
+    {
+      "exerciseId": "builtin:cable_kickback",
+      "nameAr": "رفس للخلف للأرداف — كيبل",
+      "nameEn": "Glute Kickback — Cable",
+      "aliases": {
+        "ar": [
+          "كيك باك أرداف كيبل"
+        ],
+        "en": [
+          "Cable Glute Kickback"
+        ]
+      },
+      "activity": "strength",
+      "primaryMuscle": "glutes",
+      "equipment": "machines",
+      "trackingType": "weightReps",
+      "imageRef": "images/cable-kickback__start.webp",
+      "frames": [
+        {
+          "path": "images/cable-kickback__start.webp",
+          "role": "start"
+        },
+        {
+          "path": "images/cable-kickback__end.webp",
+          "role": "end"
+        }
+      ],
+      "animationAvailable": true,
+      "sortOrder": 85
+    },
+    {
+      "exerciseId": "builtin:machine_glute_kickback",
+      "nameAr": "رفس للخلف للأرداف — جهاز",
+      "nameEn": "Glute Kickback — Machine",
+      "aliases": {
+        "ar": [
+          "جهاز كيك باك أرداف"
+        ],
+        "en": [
+          "Machine Glute Kickback"
+        ]
+      },
+      "activity": "strength",
+      "primaryMuscle": "glutes",
+      "equipment": "machines",
+      "trackingType": "weightReps",
+      "imageRef": "images/machine-glute-kickback__start.webp",
+      "frames": [
+        {
+          "path": "images/machine-glute-kickback__start.webp",
+          "role": "start"
+        },
+        {
+          "path": "images/machine-glute-kickback__end.webp",
+          "role": "end"
+        }
+      ],
+      "animationAvailable": true,
+      "sortOrder": 86
+    },
+    {
+      "exerciseId": "builtin:band_glute_kickback",
+      "nameAr": "رفس للخلف للأرداف — شريط مقاومة",
+      "nameEn": "Glute Kickback — Resistance Band",
+      "aliases": {
+        "ar": [
+          "كيك باك أرداف بالمطاط"
+        ],
+        "en": [
+          "Band Glute Kickback"
+        ]
+      },
+      "activity": "strength",
+      "primaryMuscle": "glutes",
+      "equipment": "resistanceBand",
+      "trackingType": "repsOnly",
+      "imageRef": "images/band-glute-kickback__start.webp",
+      "frames": [
+        {
+          "path": "images/band-glute-kickback__start.webp",
+          "role": "start"
+        },
+        {
+          "path": "images/band-glute-kickback__end.webp",
+          "role": "end"
+        }
+      ],
+      "animationAvailable": true,
+      "sortOrder": 87
+    },
+    {
+      "exerciseId": "builtin:kettlebell_goblet_squat",
+      "nameAr": "سكوات غوبلت — كيتل بيل",
+      "nameEn": "Goblet Squat — Kettlebell",
+      "aliases": {
+        "ar": [
+          "جوبلت سكوات كتل بيل"
+        ],
+        "en": [
+          "Kettlebell Goblet Squat"
+        ]
+      },
+      "activity": "strength",
+      "primaryMuscle": "quads",
+      "equipment": "kettlebell",
+      "trackingType": "weightReps",
+      "imageRef": "images/kettlebell-goblet-squat__start.webp",
+      "frames": [
+        {
+          "path": "images/kettlebell-goblet-squat__start.webp",
+          "role": "start"
+        },
+        {
+          "path": "images/kettlebell-goblet-squat__end.webp",
+          "role": "end"
+        }
+      ],
+      "animationAvailable": true,
+      "sortOrder": 88
+    },
+    {
+      "exerciseId": "builtin:standing_cable_hip_abduction",
+      "nameAr": "تبعيد الورك — كيبل — وقوف",
+      "nameEn": "Hip Abduction — Cable — Standing",
+      "aliases": {
+        "ar": [
+          "فتح الرجل بالكيبل واقف"
+        ],
+        "en": [
+          "Standing Cable Hip Abduction"
+        ]
+      },
+      "activity": "strength",
+      "primaryMuscle": "hipAbductors",
+      "equipment": "machines",
+      "trackingType": "weightReps",
+      "imageRef": "images/standing-cable-hip-abduction__end.webp",
+      "frames": [
+        {
+          "path": "images/standing-cable-hip-abduction__start.webp",
+          "role": "start"
+        },
+        {
+          "path": "images/standing-cable-hip-abduction__end.webp",
+          "role": "end"
+        }
+      ],
+      "animationAvailable": true,
+      "sortOrder": 89
+    },
+    {
+      "exerciseId": "builtin:hip_abduction_machine",
+      "nameAr": "تبعيد الورك — جهاز — جلوس",
+      "nameEn": "Hip Abduction — Machine — Seated",
+      "aliases": {
+        "ar": [
+          "جهاز فتح الفخذين",
+          "هيب أبدكشن"
+        ],
+        "en": [
+          "Seated Machine Hip Abduction",
+          "Hip Abductor Machine"
+        ]
+      },
+      "activity": "strength",
+      "primaryMuscle": "hipAbductors",
+      "equipment": "machines",
+      "trackingType": "weightReps",
+      "imageRef": "images/hip-abduction-machine__end.webp",
+      "frames": [
+        {
+          "path": "images/hip-abduction-machine__start.webp",
+          "role": "start"
+        },
+        {
+          "path": "images/hip-abduction-machine__end.webp",
+          "role": "end"
+        }
+      ],
+      "animationAvailable": true,
+      "sortOrder": 90
+    },
+    {
+      "exerciseId": "builtin:hip_adduction_machine",
+      "nameAr": "ضم الفخذين — جهاز — جلوس",
+      "nameEn": "Hip Adduction — Machine — Seated",
+      "aliases": {
+        "ar": [
+          "جهاز ضم الفخذين",
+          "هيب أدكشن"
+        ],
+        "en": [
+          "Seated Machine Hip Adduction",
+          "Hip Adductor Machine"
+        ]
+      },
+      "activity": "strength",
+      "primaryMuscle": "adductors",
+      "equipment": "machines",
+      "trackingType": "weightReps",
+      "imageRef": "images/hip-adduction-machine__start.webp",
+      "frames": [
+        {
+          "path": "images/hip-adduction-machine__start.webp",
+          "role": "start"
+        },
+        {
+          "path": "images/hip-adduction-machine__end.webp",
+          "role": "end"
+        }
+      ],
+      "animationAvailable": false,
+      "sortOrder": 91
+    },
+    {
+      "exerciseId": "builtin:bodyweight_hip_thrust",
+      "nameAr": "دفع الورك — وزن الجسم",
+      "nameEn": "Hip Thrust — Bodyweight",
+      "aliases": {
+        "ar": [
+          "هيب ثرست بدون وزن"
+        ],
+        "en": [
+          "Bodyweight Hip Thrust"
+        ]
+      },
+      "activity": "strength",
+      "primaryMuscle": "glutes",
+      "equipment": "noEquipment",
+      "trackingType": "repsOnly",
+      "imageRef": "images/bodyweight-hip-thrust__start.webp",
+      "frames": [
+        {
+          "path": "images/bodyweight-hip-thrust__start.webp",
+          "role": "start"
+        },
+        {
+          "path": "images/bodyweight-hip-thrust__end.webp",
+          "role": "end"
+        }
+      ],
+      "animationAvailable": true,
+      "sortOrder": 92
+    },
+    {
+      "exerciseId": "builtin:dumbbell_hip_thrust",
+      "nameAr": "دفع الورك — دمبل",
+      "nameEn": "Hip Thrust — Dumbbell",
+      "aliases": {
+        "ar": [
+          "هيب ثرست دمبل"
+        ],
+        "en": [
+          "Dumbbell Hip Thrust"
+        ]
+      },
+      "activity": "strength",
+      "primaryMuscle": "glutes",
+      "equipment": "dumbbell",
+      "trackingType": "weightReps",
+      "imageRef": "images/dumbbell-hip-thrust__start.webp",
+      "frames": [
+        {
+          "path": "images/dumbbell-hip-thrust__start.webp",
+          "role": "start"
+        },
+        {
+          "path": "images/dumbbell-hip-thrust__end.webp",
+          "role": "end"
+        }
+      ],
+      "animationAvailable": true,
+      "sortOrder": 93
+    },
+    {
+      "exerciseId": "builtin:smith_machine_hip_thrust",
+      "nameAr": "دفع الورك — جهاز سميث",
+      "nameEn": "Hip Thrust — Smith Machine",
+      "aliases": {
+        "ar": [
+          "هيب ثرست سميث"
+        ],
+        "en": [
+          "Smith Machine Hip Thrust"
+        ]
+      },
+      "activity": "strength",
+      "primaryMuscle": "glutes",
+      "equipment": "machines",
+      "trackingType": "weightReps",
+      "imageRef": "images/smith-machine-hip-thrust__start.webp",
+      "frames": [
+        {
+          "path": "images/smith-machine-hip-thrust__start.webp",
+          "role": "start"
+        },
+        {
+          "path": "images/smith-machine-hip-thrust__end.webp",
+          "role": "end"
+        }
+      ],
+      "animationAvailable": true,
+      "sortOrder": 94
+    },
+    {
+      "exerciseId": "builtin:band_lateral_walk",
+      "nameAr": "مشي جانبي — شريط مقاومة",
+      "nameEn": "Lateral Walk — Resistance Band",
+      "aliases": {
+        "ar": [
+          "خطوات جانبية بالمطاط",
+          "مونستر ووك جانبي"
+        ],
+        "en": [
+          "Band Lateral Walk",
+          "Lateral Monster Walk"
+        ]
+      },
+      "activity": "strength",
+      "primaryMuscle": "hipAbductors",
+      "equipment": "resistanceBand",
+      "trackingType": "repsOnly",
+      "imageRef": "images/band-lateral-walk__start.webp",
+      "frames": [
+        {
+          "path": "images/band-lateral-walk__start.webp",
+          "role": "start"
+        },
+        {
+          "path": "images/band-lateral-walk__end.webp",
+          "role": "end"
+        }
+      ],
+      "animationAvailable": true,
+      "sortOrder": 95
+    },
+    {
+      "exerciseId": "builtin:cable_lying_leg_curl",
+      "nameAr": "كيرل خلف الفخذ — كيبل — استلقاء بساق واحدة",
+      "nameEn": "Leg Curl — Cable — Lying, One Leg",
+      "aliases": {
+        "ar": [
+          "خلفية بالكيبل مستلقي"
+        ],
+        "en": [
+          "Lying Cable Leg Curl",
+          "Cable Lying Leg Curl"
+        ]
+      },
+      "activity": "strength",
+      "primaryMuscle": "hamstrings",
+      "equipment": "machines",
+      "trackingType": "weightReps",
+      "imageRef": "images/leg-curl__start.webp",
+      "frames": [
+        {
+          "path": "images/leg-curl__start.webp",
+          "role": "start"
+        },
+        {
+          "path": "images/leg-curl__end.webp",
+          "role": "end"
+        }
+      ],
+      "animationAvailable": false,
+      "sortOrder": 96
+    },
+    {
+      "exerciseId": "builtin:standing_leg_curl_machine",
+      "nameAr": "كيرل خلف الفخذ — جهاز — وقوف بساق واحدة",
+      "nameEn": "Leg Curl — Machine — Standing, One Leg",
+      "aliases": {
+        "ar": [
+          "ليغ كيرل جهاز واقف"
+        ],
+        "en": [
+          "Standing Leg Curl",
+          "Standing Machine Leg Curl"
+        ]
+      },
+      "activity": "strength",
+      "primaryMuscle": "hamstrings",
+      "equipment": "machines",
+      "trackingType": "weightReps",
+      "imageRef": "images/standing-leg-curl-machine__start.webp",
+      "frames": [
+        {
+          "path": "images/standing-leg-curl-machine__start.webp",
+          "role": "start"
+        },
+        {
+          "path": "images/standing-leg-curl-machine__end.webp",
+          "role": "end"
+        }
+      ],
+      "animationAvailable": true,
+      "sortOrder": 97
+    },
+    {
+      "exerciseId": "builtin:band_lying_leg_curl",
+      "nameAr": "كيرل خلف الفخذ — شريط مقاومة — استلقاء",
+      "nameEn": "Leg Curl — Resistance Band — Lying",
+      "aliases": {
+        "ar": [
+          "ليغ كيرل مطاط مستلقي"
+        ],
+        "en": [
+          "Band Lying Leg Curl"
+        ]
+      },
+      "activity": "strength",
+      "primaryMuscle": "hamstrings",
+      "equipment": "resistanceBand",
+      "trackingType": "repsOnly",
+      "imageRef": "images/band-lying-leg-curl__start.webp",
+      "frames": [
+        {
+          "path": "images/band-lying-leg-curl__start.webp",
+          "role": "start"
+        },
+        {
+          "path": "images/band-lying-leg-curl__end.webp",
+          "role": "end"
+        }
+      ],
+      "animationAvailable": true,
+      "sortOrder": 98
+    },
+    {
+      "exerciseId": "builtin:sliding_hamstring_curl",
+      "nameAr": "كيرل خلف الفخذ — وسائد انزلاق — استلقاء",
+      "nameEn": "Leg Curl — Sliders — Lying",
+      "aliases": {
+        "ar": [
+          "كيرل خلفية بالانزلاق"
+        ],
+        "en": [
+          "Sliding Hamstring Curl",
+          "Slider Leg Curl",
+          "Towel Leg Curl"
+        ]
+      },
+      "activity": "strength",
+      "primaryMuscle": "hamstrings",
+      "equipment": "noEquipment",
+      "trackingType": "repsOnly",
+      "imageRef": "images/sliding-hamstring-curl__start.webp",
+      "frames": [
+        {
+          "path": "images/sliding-hamstring-curl__start.webp",
+          "role": "start"
+        },
+        {
+          "path": "images/sliding-hamstring-curl__end.webp",
+          "role": "end"
+        }
+      ],
+      "animationAvailable": true,
+      "sortOrder": 99
+    },
+    {
+      "exerciseId": "builtin:band_leg_extension",
+      "nameAr": "تمديد الركبة — شريط مقاومة",
+      "nameEn": "Leg Extension — Resistance Band",
+      "aliases": {
+        "ar": [
+          "تمديد الرجل بالمطاط"
+        ],
+        "en": [
+          "Band Leg Extension"
+        ]
+      },
+      "activity": "strength",
+      "primaryMuscle": "quads",
+      "equipment": "resistanceBand",
+      "trackingType": "repsOnly",
+      "imageRef": "images/band-leg-extension__start.webp",
+      "frames": [
+        {
+          "path": "images/band-leg-extension__start.webp",
+          "role": "start"
+        },
+        {
+          "path": "images/band-leg-extension__end.webp",
+          "role": "end"
+        }
+      ],
+      "animationAvailable": false,
+      "sortOrder": 100
+    },
+    {
+      "exerciseId": "builtin:seated_leg_press",
+      "nameAr": "ضغط الساق — جهاز — أفقي",
+      "nameEn": "Leg Press — Machine — Horizontal",
+      "aliases": {
+        "ar": [
+          "ليغ برس أفقي",
+          "ضغط أرجل جالس",
+          "ليغ برس أفقي بصفيحة متحركة"
+        ],
+        "en": [
+          "Seated Leg Press",
+          "Horizontal Leg Press",
+          "Seated Leg Press (Moving Plate)",
+          "Seated Leg Press Moving Plate"
+        ]
+      },
+      "activity": "strength",
+      "primaryMuscle": "quads",
+      "equipment": "machines",
+      "trackingType": "weightReps",
+      "imageRef": "images/seated-leg-press__start.webp",
+      "frames": [
+        {
+          "path": "images/seated-leg-press__start.webp",
+          "role": "start"
+        },
+        {
+          "path": "images/seated-leg-press__end.webp",
+          "role": "end"
+        }
+      ],
+      "animationAvailable": false,
+      "sortOrder": 101
+    },
+    {
+      "exerciseId": "builtin:single_leg_leg_press",
+      "nameAr": "ضغط الساق — جهاز — ساق واحدة",
+      "nameEn": "Leg Press — Machine — One Leg",
+      "aliases": {
+        "ar": [
+          "ليغ برس رجل واحدة"
+        ],
+        "en": [
+          "Single-Leg Leg Press"
+        ]
+      },
+      "activity": "strength",
+      "primaryMuscle": "quads",
+      "equipment": "machines",
+      "trackingType": "weightReps",
+      "imageRef": "images/single-leg-leg-press__start.webp",
+      "frames": [
+        {
+          "path": "images/single-leg-leg-press__start.webp",
+          "role": "start"
+        },
+        {
+          "path": "images/single-leg-leg-press__end.webp",
+          "role": "end"
+        }
+      ],
+      "animationAvailable": true,
+      "sortOrder": 102
+    },
+    {
+      "exerciseId": "builtin:barbell_lunge",
+      "nameAr": "اندفاع — بار",
+      "nameEn": "Lunge — Barbell",
+      "aliases": {
+        "ar": [
+          "لانج بالبار"
+        ],
+        "en": [
+          "Barbell Lunge"
+        ]
+      },
+      "activity": "strength",
+      "primaryMuscle": "quads",
+      "equipment": "barbell",
+      "trackingType": "weightReps",
+      "imageRef": "images/barbell-lunge__start.webp",
+      "frames": [
+        {
+          "path": "images/barbell-lunge__start.webp",
+          "role": "start"
+        },
+        {
+          "path": "images/barbell-lunge__end.webp",
+          "role": "end"
+        }
+      ],
+      "animationAvailable": true,
+      "sortOrder": 103
+    },
+    {
+      "exerciseId": "builtin:curtsy_lunge",
+      "nameAr": "اندفاع — وزن الجسم — خلفي متقاطع",
+      "nameEn": "Lunge — Bodyweight — Curtsy",
+      "aliases": {
+        "ar": [
+          "لانج متقاطع"
+        ],
+        "en": [
+          "Curtsy Lunge"
+        ]
+      },
+      "activity": "strength",
+      "primaryMuscle": "quads",
+      "equipment": "noEquipment",
+      "trackingType": "repsOnly",
+      "imageRef": "images/curtsy-lunge__start.webp",
+      "frames": [
+        {
+          "path": "images/curtsy-lunge__start.webp",
+          "role": "start"
+        },
+        {
+          "path": "images/curtsy-lunge__end.webp",
+          "role": "end"
+        }
+      ],
+      "animationAvailable": true,
+      "sortOrder": 104
+    },
+    {
+      "exerciseId": "builtin:reverse_lunge",
+      "nameAr": "اندفاع — وزن الجسم — خلفي",
+      "nameEn": "Lunge — Bodyweight — Reverse",
+      "aliases": {
+        "ar": [
+          "لانج خلفي وزن الجسم"
+        ],
+        "en": [
+          "Bodyweight Reverse Lunge",
+          "Reverse Lunge"
+        ]
+      },
+      "activity": "strength",
+      "primaryMuscle": "quads",
+      "equipment": "noEquipment",
+      "trackingType": "repsOnly",
+      "imageRef": "images/reverse-lunge__start.webp",
+      "frames": [
+        {
+          "path": "images/reverse-lunge__start.webp",
+          "role": "start"
+        },
+        {
+          "path": "images/reverse-lunge__end.webp",
+          "role": "end"
+        }
+      ],
+      "animationAvailable": true,
+      "sortOrder": 105
+    },
+    {
+      "exerciseId": "builtin:walking_lunge",
+      "nameAr": "اندفاع — وزن الجسم — مشي",
+      "nameEn": "Lunge — Bodyweight — Walking",
+      "aliases": {
+        "ar": [
+          "لانج مشي وزن الجسم"
+        ],
+        "en": [
+          "Bodyweight Walking Lunge",
+          "Walking Lunge"
+        ]
+      },
+      "activity": "strength",
+      "primaryMuscle": "quads",
+      "equipment": "noEquipment",
+      "trackingType": "repsOnly",
+      "imageRef": "images/dumbbell-lunge__start.webp",
+      "frames": [
+        {
+          "path": "images/dumbbell-lunge__start.webp",
+          "role": "start"
+        },
+        {
+          "path": "images/dumbbell-lunge__end.webp",
+          "role": "end"
+        }
+      ],
+      "animationAvailable": false,
+      "sortOrder": 106
+    },
+    {
+      "exerciseId": "builtin:dumbbell_lunge",
+      "nameAr": "اندفاع — دمبل — في المكان",
+      "nameEn": "Lunge — Dumbbell — Stationary",
+      "aliases": {
+        "ar": [
+          "لانج دمبل ثابت"
+        ],
+        "en": [
+          "Stationary Dumbbell Lunge"
+        ]
+      },
+      "activity": "strength",
+      "primaryMuscle": "quads",
+      "equipment": "dumbbell",
+      "trackingType": "weightReps",
+      "imageRef": "images/dumbbell-lunge__start.webp",
+      "frames": [
+        {
+          "path": "images/dumbbell-lunge__start.webp",
+          "role": "start"
+        },
+        {
+          "path": "images/dumbbell-lunge__end.webp",
+          "role": "end"
+        }
+      ],
+      "animationAvailable": true,
+      "sortOrder": 107
+    },
+    {
+      "exerciseId": "builtin:kettlebell_goblet_lunge",
+      "nameAr": "اندفاع — كيتل بيل — حمل أمام الصدر",
+      "nameEn": "Lunge — Kettlebell — Goblet",
+      "aliases": {
+        "ar": [
+          "جوبلت لانج كتل بيل"
+        ],
+        "en": [
+          "Kettlebell Goblet Lunge"
+        ]
+      },
+      "activity": "strength",
+      "primaryMuscle": "quads",
+      "equipment": "kettlebell",
+      "trackingType": "weightReps",
+      "imageRef": "images/kettlebell-goblet-lunge__start.webp",
+      "frames": [
+        {
+          "path": "images/kettlebell-goblet-lunge__start.webp",
+          "role": "start"
+        },
+        {
+          "path": "images/kettlebell-goblet-lunge__end.webp",
+          "role": "end"
+        }
+      ],
+      "animationAvailable": true,
+      "sortOrder": 108
+    },
+    {
+      "exerciseId": "builtin:smith_machine_lunge",
+      "nameAr": "اندفاع — جهاز سميث",
+      "nameEn": "Lunge — Smith Machine",
+      "aliases": {
+        "ar": [
+          "لانج سميث"
+        ],
+        "en": [
+          "Smith Machine Lunge"
+        ]
+      },
+      "activity": "strength",
+      "primaryMuscle": "quads",
+      "equipment": "machines",
+      "trackingType": "weightReps",
+      "imageRef": "images/smith-machine-lunge__start.webp",
+      "frames": [
+        {
+          "path": "images/smith-machine-lunge__start.webp",
+          "role": "start"
+        },
+        {
+          "path": "images/smith-machine-lunge__end.webp",
+          "role": "end"
+        }
+      ],
+      "animationAvailable": true,
+      "sortOrder": 109
+    },
+    {
+      "exerciseId": "builtin:pendulum_squat",
+      "nameAr": "سكوات بندول — جهاز",
+      "nameEn": "Pendulum Squat — Machine",
+      "aliases": {
+        "ar": [
+          "جهاز بندول سكوات"
+        ],
+        "en": [
+          "Pendulum Squat Machine"
+        ]
+      },
+      "activity": "strength",
+      "primaryMuscle": "quads",
+      "equipment": "machines",
+      "trackingType": "weightReps",
+      "imageRef": "images/pendulum-squat__start.webp",
+      "frames": [
+        {
+          "path": "images/pendulum-squat__start.webp",
+          "role": "start"
+        },
+        {
+          "path": "images/pendulum-squat__end.webp",
+          "role": "end"
+        }
+      ],
+      "animationAvailable": true,
+      "sortOrder": 110
+    },
+    {
+      "exerciseId": "builtin:cable_pull_through",
+      "nameAr": "سحب بين الساقين — كيبل",
+      "nameEn": "Pull-Through — Cable",
+      "aliases": {
+        "ar": [
+          "كيبل بول ثرو"
+        ],
+        "en": [
+          "Cable Pull-Through"
+        ]
+      },
+      "activity": "strength",
+      "primaryMuscle": "glutes",
+      "equipment": "machines",
+      "trackingType": "weightReps",
+      "imageRef": "images/cable-pull-through__start.webp",
+      "frames": [
+        {
+          "path": "images/cable-pull-through__start.webp",
+          "role": "start"
+        },
+        {
+          "path": "images/cable-pull-through__end.webp",
+          "role": "end"
+        }
+      ],
+      "animationAvailable": true,
+      "sortOrder": 111
+    },
+    {
+      "exerciseId": "builtin:smith_machine_romanian_deadlift",
+      "nameAr": "رفعة ميتة رومانية — جهاز سميث",
+      "nameEn": "Romanian Deadlift — Smith Machine",
+      "aliases": {
+        "ar": [
+          "ديدلفت روماني سميث"
+        ],
+        "en": [
+          "Smith Machine Romanian Deadlift",
+          "Smith RDL"
+        ]
+      },
+      "activity": "strength",
+      "primaryMuscle": "hamstrings",
+      "equipment": "machines",
+      "trackingType": "weightReps",
+      "imageRef": "images/smith-machine-romanian-deadlift__start.webp",
+      "frames": [
+        {
+          "path": "images/smith-machine-romanian-deadlift__start.webp",
+          "role": "start"
+        },
+        {
+          "path": "images/smith-machine-romanian-deadlift__end.webp",
+          "role": "end"
+        }
+      ],
+      "animationAvailable": true,
+      "sortOrder": 112
+    },
+    {
+      "exerciseId": "builtin:kettlebell_snatch",
+      "nameAr": "خطف — كيتل بيل — ذراع واحدة",
+      "nameEn": "Snatch — Kettlebell — One Arm",
+      "aliases": {
+        "ar": [
+          "سناتش كتل بيل"
+        ],
+        "en": [
+          "Kettlebell Snatch"
+        ]
+      },
+      "activity": "strength",
+      "primaryMuscle": "glutes",
+      "equipment": "kettlebell",
+      "trackingType": "weightReps",
+      "imageRef": "images/kettlebell-snatch__start.webp",
+      "frames": [
+        {
+          "path": "images/kettlebell-snatch__start.webp",
+          "role": "start"
+        },
+        {
+          "path": "images/kettlebell-snatch__end.webp",
+          "role": "end"
+        }
+      ],
+      "animationAvailable": false,
+      "sortOrder": 113
+    },
+    {
+      "exerciseId": "builtin:barbell_split_squat",
+      "nameAr": "سكوات بوقفة متباعدة — بار",
+      "nameEn": "Split Squat — Barbell",
+      "aliases": {
+        "ar": [
+          "سبليت سكوات بار"
+        ],
+        "en": [
+          "Barbell Split Squat"
+        ]
+      },
+      "activity": "strength",
+      "primaryMuscle": "quads",
+      "equipment": "barbell",
+      "trackingType": "weightReps",
+      "imageRef": "images/barbell-split-squat__start.webp",
+      "frames": [
+        {
+          "path": "images/barbell-split-squat__start.webp",
+          "role": "start"
+        },
+        {
+          "path": "images/barbell-split-squat__end.webp",
+          "role": "end"
+        }
+      ],
+      "animationAvailable": true,
+      "sortOrder": 114
+    },
+    {
+      "exerciseId": "builtin:jump_squat",
+      "nameAr": "سكوات قفز — وزن الجسم",
+      "nameEn": "Squat Jump — Bodyweight",
+      "aliases": {
+        "ar": [
+          "سكوات بالقفز"
+        ],
+        "en": [
+          "Jump Squat",
+          "Bodyweight Squat Jump"
+        ]
+      },
+      "activity": "strength",
+      "primaryMuscle": "quads",
+      "equipment": "noEquipment",
+      "trackingType": "repsOnly",
+      "imageRef": "images/jump-squat__start.webp",
+      "frames": [
+        {
+          "path": "images/jump-squat__start.webp",
+          "role": "start"
+        },
+        {
+          "path": "images/jump-squat__end.webp",
+          "role": "end"
+        }
+      ],
+      "animationAvailable": true,
+      "sortOrder": 115
+    },
+    {
+      "exerciseId": "builtin:front_squat",
+      "nameAr": "سكوات — بار — أمامي",
+      "nameEn": "Squat — Barbell — Front",
+      "aliases": {
+        "ar": [
+          "فرونت سكوات"
+        ],
+        "en": [
+          "Barbell Front Squat",
+          "Front Squat"
+        ]
+      },
+      "activity": "strength",
+      "primaryMuscle": "quads",
+      "equipment": "barbell",
+      "trackingType": "weightReps",
+      "imageRef": "images/front-squat__start.webp",
+      "frames": [
+        {
+          "path": "images/front-squat__start.webp",
+          "role": "start"
+        },
+        {
+          "path": "images/front-squat__end.webp",
+          "role": "end"
+        }
+      ],
+      "animationAvailable": true,
+      "sortOrder": 116
+    },
+    {
+      "exerciseId": "builtin:sumo_squat",
+      "nameAr": "سكوات — دمبل — سومو",
+      "nameEn": "Squat — Dumbbell — Sumo",
+      "aliases": {
+        "ar": [
+          "قرفصاء سومو دمبل"
+        ],
+        "en": [
+          "Dumbbell Sumo Squat"
+        ]
+      },
+      "activity": "strength",
+      "primaryMuscle": "quads",
+      "equipment": "dumbbell",
+      "trackingType": "weightReps",
+      "imageRef": "images/sumo-squat__start.webp",
+      "frames": [
+        {
+          "path": "images/sumo-squat__start.webp",
+          "role": "start"
+        },
+        {
+          "path": "images/sumo-squat__end.webp",
+          "role": "end"
+        }
+      ],
+      "animationAvailable": true,
+      "sortOrder": 117
+    },
+    {
+      "exerciseId": "builtin:landmine_squat",
+      "nameAr": "سكوات — لاندماين",
+      "nameEn": "Squat — Landmine",
+      "aliases": {
+        "ar": [
+          "سكوات بار مثبت"
+        ],
+        "en": [
+          "Landmine Squat"
+        ]
+      },
+      "activity": "strength",
+      "primaryMuscle": "quads",
+      "equipment": "barbell",
+      "trackingType": "weightReps",
+      "imageRef": "images/landmine-squat__start.webp",
+      "frames": [
+        {
+          "path": "images/landmine-squat__start.webp",
+          "role": "start"
+        },
+        {
+          "path": "images/landmine-squat__end.webp",
+          "role": "end"
+        }
+      ],
+      "animationAvailable": true,
+      "sortOrder": 118
+    },
+    {
+      "exerciseId": "builtin:smith_machine_squat",
+      "nameAr": "سكوات — جهاز سميث",
+      "nameEn": "Squat — Smith Machine",
+      "aliases": {
+        "ar": [
+          "قرفصاء سميث"
+        ],
+        "en": [
+          "Smith Machine Squat"
+        ]
+      },
+      "activity": "strength",
+      "primaryMuscle": "quads",
+      "equipment": "machines",
+      "trackingType": "weightReps",
+      "imageRef": "images/smith-machine-squat__start.webp",
+      "frames": [
+        {
+          "path": "images/smith-machine-squat__start.webp",
+          "role": "start"
+        },
+        {
+          "path": "images/smith-machine-squat__end.webp",
+          "role": "end"
+        }
+      ],
+      "animationAvailable": true,
+      "sortOrder": 119
+    },
+    {
+      "exerciseId": "builtin:kettlebell_swing",
+      "nameAr": "تأرجح — كيتل بيل — يدان",
+      "nameEn": "Swing — Kettlebell — Two Hands",
+      "aliases": {
+        "ar": [
+          "سوينغ كتل بيل"
+        ],
+        "en": [
+          "Kettlebell Swing",
+          "Two-Hand Kettlebell Swing"
+        ]
+      },
+      "activity": "strength",
+      "primaryMuscle": "glutes",
+      "equipment": "kettlebell",
+      "trackingType": "weightReps",
+      "imageRef": "images/kettlebell-swing__start.webp",
+      "frames": [
+        {
+          "path": "images/kettlebell-swing__start.webp",
+          "role": "start"
+        },
+        {
+          "path": "images/kettlebell-swing__end.webp",
+          "role": "end"
+        }
+      ],
+      "animationAvailable": true,
+      "sortOrder": 120
+    },
+    {
+      "exerciseId": "builtin:v_squat",
+      "nameAr": "سكوات على جهاز V",
+      "nameEn": "V-Squat — Machine",
+      "aliases": {
+        "ar": [
+          "في سكوات جهاز"
+        ],
+        "en": [
+          "V-Squat Machine"
+        ]
+      },
+      "activity": "strength",
+      "primaryMuscle": "quads",
+      "equipment": "machines",
+      "trackingType": "weightReps",
+      "imageRef": "images/v-squat__start.webp",
+      "frames": [
+        {
+          "path": "images/v-squat__start.webp",
+          "role": "start"
+        },
+        {
+          "path": "images/v-squat__end.webp",
+          "role": "end"
+        }
+      ],
+      "animationAvailable": true,
+      "sortOrder": 121
+    },
+    {
+      "exerciseId": "builtin:wall_sit",
+      "nameAr": "جلوس ثابت على الحائط — وزن الجسم",
+      "nameEn": "Wall Sit — Bodyweight",
+      "aliases": {
+        "ar": [
+          "وول سيت",
+          "قرفصاء ثابتة على الحائط"
+        ],
+        "en": [
+          "Wall Squat Hold",
+          "Wall Sit"
+        ]
+      },
+      "activity": "strength",
+      "primaryMuscle": "quads",
+      "equipment": "noEquipment",
+      "trackingType": "durationOptionalWeight",
+      "imageRef": "images/wall-sit__hold.webp",
+      "frames": [
+        {
+          "path": "images/wall-sit__hold.webp",
+          "role": "hold"
+        }
+      ],
+      "animationAvailable": false,
+      "sortOrder": 122
+    },
+    {
+      "exerciseId": "builtin:biceps_curl",
+      "nameAr": "كيرل بايسبس — دمبل — وقوف",
+      "nameEn": "Biceps Curl — Dumbbell — Standing",
+      "aliases": {
+        "ar": [
+          "بايسبس دمبل",
+          "كيرل دمبل واقف",
+          "بايسبس دمبل تبادلي"
+        ],
+        "en": [
+          "Standing Dumbbell Curl",
+          "Dumbbell Biceps Curl",
+          "Alternating Dumbbell Curl"
+        ]
+      },
+      "activity": "strength",
+      "primaryMuscle": "biceps",
+      "equipment": "dumbbell",
+      "trackingType": "weightReps",
+      "imageRef": "images/biceps-curl__end.webp",
+      "frames": [
+        {
+          "path": "images/biceps-curl__start.webp",
+          "role": "start"
+        },
+        {
+          "path": "images/biceps-curl__end.webp",
+          "role": "end"
+        }
+      ],
+      "animationAvailable": true,
+      "sortOrder": 123
+    },
+    {
+      "exerciseId": "builtin:barbell_curl",
+      "nameAr": "كيرل بايسبس — بار",
+      "nameEn": "Biceps Curl — Barbell",
+      "aliases": {
+        "ar": [
+          "بايسبس بار مستقيم"
+        ],
+        "en": [
+          "Barbell Curl",
+          "Straight Bar Curl"
+        ]
+      },
+      "activity": "strength",
+      "primaryMuscle": "biceps",
+      "equipment": "barbell",
+      "trackingType": "weightReps",
+      "imageRef": "images/barbell-curl__start.webp",
+      "frames": [
+        {
+          "path": "images/barbell-curl__start.webp",
+          "role": "start"
+        },
+        {
+          "path": "images/barbell-curl__end.webp",
+          "role": "end"
+        }
+      ],
+      "animationAvailable": true,
+      "sortOrder": 124
+    },
+    {
+      "exerciseId": "builtin:hammer_curls",
+      "nameAr": "كيرل مطرقة — دمبل",
+      "nameEn": "Hammer Curl — Dumbbell",
+      "aliases": {
+        "ar": [
+          "هامر كيرل دمبل",
+          "بايسبس مطرقة",
+          "هامر كيرل متقاطع"
+        ],
+        "en": [
+          "Dumbbell Hammer Curl",
+          "Hammer Curl",
+          "Cross-Body Hammer Curl"
+        ]
+      },
+      "activity": "strength",
+      "primaryMuscle": "biceps",
+      "equipment": "dumbbell",
+      "trackingType": "weightReps",
+      "imageRef": "images/hammer-curls__start.webp",
+      "frames": [
+        {
+          "path": "images/hammer-curls__start.webp",
+          "role": "start"
+        },
+        {
+          "path": "images/hammer-curls__end.webp",
+          "role": "end"
+        }
+      ],
+      "animationAvailable": true,
+      "sortOrder": 125
+    },
+    {
+      "exerciseId": "builtin:cable_curl",
+      "nameAr": "كيرل بايسبس — كيبل — ذراعان",
+      "nameEn": "Biceps Curl — Cable — Two Arms",
+      "aliases": {
+        "ar": [
+          "بايسبس كيبل بالذراعين"
+        ],
+        "en": [
+          "Two-Arm Cable Curl",
+          "Bar Cable Curl"
+        ]
+      },
+      "activity": "strength",
+      "primaryMuscle": "biceps",
+      "equipment": "machines",
+      "trackingType": "weightReps",
+      "imageRef": "images/cable-curl__start.webp",
+      "frames": [
+        {
+          "path": "images/cable-curl__start.webp",
+          "role": "start"
+        },
+        {
+          "path": "images/cable-curl__end.webp",
+          "role": "end"
+        }
+      ],
+      "animationAvailable": false,
+      "sortOrder": 126
+    },
+    {
+      "exerciseId": "builtin:incline_dumbbell_curl",
+      "nameAr": "كيرل بايسبس — دمبل — مقعد مائل",
+      "nameEn": "Biceps Curl — Dumbbell — Incline",
+      "aliases": {
+        "ar": [
+          "بايسبس دمبل مائل"
+        ],
+        "en": [
+          "Incline Dumbbell Curl"
+        ]
+      },
+      "activity": "strength",
+      "primaryMuscle": "biceps",
+      "equipment": "dumbbell",
+      "trackingType": "weightReps",
+      "imageRef": "images/incline-dumbbell-curl__start.webp",
+      "frames": [
+        {
+          "path": "images/incline-dumbbell-curl__start.webp",
+          "role": "start"
+        },
+        {
+          "path": "images/incline-dumbbell-curl__end.webp",
+          "role": "end"
+        }
+      ],
+      "animationAvailable": true,
+      "sortOrder": 127
+    },
+    {
+      "exerciseId": "builtin:preacher_curl",
+      "nameAr": "كيرل على مقعد سكوت — بار متعرج",
+      "nameEn": "Preacher Curl — EZ Bar",
+      "aliases": {
+        "ar": [
+          "بايسبس سكوت بار متعرج"
+        ],
+        "en": [
+          "EZ-Bar Preacher Curl"
+        ]
+      },
+      "activity": "strength",
+      "primaryMuscle": "biceps",
+      "equipment": "barbell",
+      "trackingType": "weightReps",
+      "imageRef": "images/preacher-curl__start.webp",
+      "frames": [
+        {
+          "path": "images/preacher-curl__start.webp",
+          "role": "start"
+        },
+        {
+          "path": "images/preacher-curl__end.webp",
+          "role": "end"
+        }
+      ],
+      "animationAvailable": true,
+      "sortOrder": 128
+    },
+    {
+      "exerciseId": "builtin:single_arm_cable_curl",
+      "nameAr": "كيرل بايسبس — كيبل — ذراع واحدة",
+      "nameEn": "Biceps Curl — Cable — One Arm",
+      "aliases": {
+        "ar": [
+          "بايسبس كيبل يد واحدة"
+        ],
+        "en": [
+          "Single-Arm Cable Curl"
+        ]
+      },
+      "activity": "strength",
+      "primaryMuscle": "biceps",
+      "equipment": "machines",
+      "trackingType": "weightReps",
+      "imageRef": "images/single-arm-cable-curl__start.webp",
+      "frames": [
+        {
+          "path": "images/single-arm-cable-curl__start.webp",
+          "role": "start"
+        },
+        {
+          "path": "images/single-arm-cable-curl__end.webp",
+          "role": "end"
+        }
+      ],
+      "animationAvailable": false,
+      "sortOrder": 129
+    },
+    {
+      "exerciseId": "builtin:seated_dumbbell_curl",
+      "nameAr": "كيرل بايسبس — دمبل — جلوس",
+      "nameEn": "Biceps Curl — Dumbbell — Seated",
+      "aliases": {
+        "ar": [
+          "بايسبس دمبل جالس"
+        ],
+        "en": [
+          "Seated Dumbbell Curl"
+        ]
+      },
+      "activity": "strength",
+      "primaryMuscle": "biceps",
+      "equipment": "dumbbell",
+      "trackingType": "weightReps",
+      "imageRef": "images/seated-dumbbell-curl__start.webp",
+      "frames": [
+        {
+          "path": "images/seated-dumbbell-curl__start.webp",
+          "role": "start"
+        },
+        {
+          "path": "images/seated-dumbbell-curl__end.webp",
+          "role": "end"
+        }
+      ],
+      "animationAvailable": true,
+      "sortOrder": 130
+    },
+    {
+      "exerciseId": "builtin:ez_bar_curl",
+      "nameAr": "كيرل بايسبس — بار متعرج",
+      "nameEn": "Biceps Curl — EZ Bar",
+      "aliases": {
+        "ar": [
+          "كيرل بار زجزاج"
+        ],
+        "en": [
+          "EZ-Bar Curl",
+          "EZ Bar Biceps Curl"
+        ]
+      },
+      "activity": "strength",
+      "primaryMuscle": "biceps",
+      "equipment": "barbell",
+      "trackingType": "weightReps",
+      "imageRef": "images/ez-bar-curl__start.webp",
+      "frames": [
+        {
+          "path": "images/ez-bar-curl__start.webp",
+          "role": "start"
+        },
+        {
+          "path": "images/ez-bar-curl__end.webp",
+          "role": "end"
+        }
+      ],
+      "animationAvailable": true,
+      "sortOrder": 131
+    },
+    {
+      "exerciseId": "builtin:band_bicep_curl",
+      "nameAr": "كيرل بايسبس — شريط مقاومة",
+      "nameEn": "Biceps Curl — Resistance Band",
+      "aliases": {
+        "ar": [
+          "بايسبس بالمطاط"
+        ],
+        "en": [
+          "Band Biceps Curl",
+          "Band Bicep Curl"
+        ]
+      },
+      "activity": "strength",
+      "primaryMuscle": "biceps",
+      "equipment": "resistanceBand",
+      "trackingType": "repsOnly",
+      "imageRef": "images/band-bicep-curl__start.webp",
+      "frames": [
+        {
+          "path": "images/band-bicep-curl__start.webp",
+          "role": "start"
+        },
+        {
+          "path": "images/band-bicep-curl__end.webp",
+          "role": "end"
+        }
+      ],
+      "animationAvailable": true,
+      "sortOrder": 132
+    },
+    {
+      "exerciseId": "builtin:suspension_biceps_curl",
+      "nameAr": "كيرل بايسبس — حبال تعليق",
+      "nameEn": "Biceps Curl — Suspension Trainer",
+      "aliases": {
+        "ar": [
+          "بايسبس تي آر إكس"
+        ],
+        "en": [
+          "TRX Biceps Curl",
+          "Suspension Biceps Curl"
+        ]
+      },
+      "activity": "strength",
+      "primaryMuscle": "biceps",
+      "equipment": "resistanceBand",
+      "trackingType": "repsOnly",
+      "imageRef": "images/suspension-biceps-curl__start.webp",
+      "frames": [
+        {
+          "path": "images/suspension-biceps-curl__start.webp",
+          "role": "start"
+        },
+        {
+          "path": "images/suspension-biceps-curl__end.webp",
+          "role": "end"
+        }
+      ],
+      "animationAvailable": true,
+      "sortOrder": 133
+    },
+    {
+      "exerciseId": "builtin:concentration_curl",
+      "nameAr": "كيرل تركيز — دمبل",
+      "nameEn": "Concentration Curl — Dumbbell",
+      "aliases": {
+        "ar": [
+          "بايسبس تركيز"
+        ],
+        "en": [
+          "Dumbbell Concentration Curl"
+        ]
+      },
+      "activity": "strength",
+      "primaryMuscle": "biceps",
+      "equipment": "dumbbell",
+      "trackingType": "weightReps",
+      "imageRef": "images/concentration-curl__start.webp",
+      "frames": [
+        {
+          "path": "images/concentration-curl__start.webp",
+          "role": "start"
+        },
+        {
+          "path": "images/concentration-curl__end.webp",
+          "role": "end"
+        }
+      ],
+      "animationAvailable": true,
+      "sortOrder": 134
+    },
+    {
+      "exerciseId": "builtin:rope_hammer_curl",
+      "nameAr": "كيرل مطرقة — كيبل — حبل",
+      "nameEn": "Hammer Curl — Cable — Rope",
+      "aliases": {
+        "ar": [
+          "هامر كيبل حبل"
+        ],
+        "en": [
+          "Rope Hammer Curl",
+          "Cable Rope Hammer Curl"
+        ]
+      },
+      "activity": "strength",
+      "primaryMuscle": "biceps",
+      "equipment": "machines",
+      "trackingType": "weightReps",
+      "imageRef": "images/rope-hammer-curl__start.webp",
+      "frames": [
+        {
+          "path": "images/rope-hammer-curl__start.webp",
+          "role": "start"
+        },
+        {
+          "path": "images/rope-hammer-curl__end.webp",
+          "role": "end"
+        }
+      ],
+      "animationAvailable": true,
+      "sortOrder": 135
+    },
+    {
+      "exerciseId": "builtin:dumbbell_preacher_curl",
+      "nameAr": "كيرل على مقعد سكوت — دمبل",
+      "nameEn": "Preacher Curl — Dumbbell",
+      "aliases": {
+        "ar": [
+          "بايسبس سكوت دمبل"
+        ],
+        "en": [
+          "Dumbbell Preacher Curl"
+        ]
+      },
+      "activity": "strength",
+      "primaryMuscle": "biceps",
+      "equipment": "dumbbell",
+      "trackingType": "weightReps",
+      "imageRef": "images/dumbbell-preacher-curl__start.webp",
+      "frames": [
+        {
+          "path": "images/dumbbell-preacher-curl__start.webp",
+          "role": "start"
+        },
+        {
+          "path": "images/dumbbell-preacher-curl__end.webp",
+          "role": "end"
+        }
+      ],
+      "animationAvailable": true,
+      "sortOrder": 136
+    },
+    {
+      "exerciseId": "builtin:machine_preacher_curl",
+      "nameAr": "كيرل على مقعد سكوت — جهاز",
+      "nameEn": "Preacher Curl — Machine",
+      "aliases": {
+        "ar": [
+          "جهاز سكوت للبايسبس"
+        ],
+        "en": [
+          "Machine Preacher Curl"
+        ]
+      },
+      "activity": "strength",
+      "primaryMuscle": "biceps",
+      "equipment": "machines",
+      "trackingType": "weightReps",
+      "imageRef": "images/machine-preacher-curl__start.webp",
+      "frames": [
+        {
+          "path": "images/machine-preacher-curl__start.webp",
+          "role": "start"
+        },
+        {
+          "path": "images/machine-preacher-curl__end.webp",
+          "role": "end"
+        }
+      ],
+      "animationAvailable": true,
+      "sortOrder": 137
+    },
+    {
+      "exerciseId": "builtin:spider_curl",
+      "nameAr": "كيرل سبايدر — بار متعرج",
+      "nameEn": "Spider Curl — EZ Bar",
+      "aliases": {
+        "ar": [
+          "سبايدر كيرل"
+        ],
+        "en": [
+          "EZ-Bar Spider Curl",
+          "Spider Curl"
+        ]
+      },
+      "activity": "strength",
+      "primaryMuscle": "biceps",
+      "equipment": "barbell",
+      "trackingType": "weightReps",
+      "imageRef": "images/spider-curl__start.webp",
+      "frames": [
+        {
+          "path": "images/spider-curl__start.webp",
+          "role": "start"
+        },
+        {
+          "path": "images/spider-curl__end.webp",
+          "role": "end"
+        }
+      ],
+      "animationAvailable": true,
+      "sortOrder": 138
+    },
+    {
+      "exerciseId": "builtin:tricep_pushdowns",
+      "nameAr": "دفع ترايسبس للأسفل — كيبل",
+      "nameEn": "Triceps Pushdown — Cable",
+      "aliases": {
+        "ar": [
+          "بوش داون ترايسبس",
+          "ضغط كيبل للأسفل"
+        ],
+        "en": [
+          "Cable Triceps Pushdown",
+          "Triceps Pressdown",
+          "Rope Pushdown"
+        ]
+      },
+      "activity": "strength",
+      "primaryMuscle": "triceps",
+      "equipment": "machines",
+      "trackingType": "weightReps",
+      "imageRef": "images/tricep-pushdowns__start.webp",
+      "frames": [
+        {
+          "path": "images/tricep-pushdowns__start.webp",
+          "role": "start"
+        },
+        {
+          "path": "images/tricep-pushdowns__end.webp",
+          "role": "end"
+        }
+      ],
+      "animationAvailable": false,
+      "sortOrder": 139
+    },
+    {
+      "exerciseId": "builtin:cable_overhead_triceps_extension",
+      "nameAr": "تمديد ترايسبس فوق الرأس — كيبل",
+      "nameEn": "Overhead Triceps Extension — Cable",
+      "aliases": {
+        "ar": [
+          "ترايسبس كيبل فوق الرأس"
+        ],
+        "en": [
+          "Cable Overhead Triceps Extension"
+        ]
+      },
+      "activity": "strength",
+      "primaryMuscle": "triceps",
+      "equipment": "machines",
+      "trackingType": "weightReps",
+      "imageRef": "images/cable-overhead-triceps-extension__start.webp",
+      "frames": [
+        {
+          "path": "images/cable-overhead-triceps-extension__start.webp",
+          "role": "start"
+        },
+        {
+          "path": "images/cable-overhead-triceps-extension__end.webp",
+          "role": "end"
+        }
+      ],
+      "animationAvailable": true,
+      "sortOrder": 140
+    },
+    {
+      "exerciseId": "builtin:skull_crushers",
+      "nameAr": "تمديد ترايسبس مستلقيًا — بار متعرج",
+      "nameEn": "Lying Triceps Extension — EZ Bar",
+      "aliases": {
+        "ar": [
+          "سكال كراشر بار",
+          "سكَل كراشر بار"
+        ],
+        "en": [
+          "EZ-Bar Skull Crusher",
+          "Skull Crusher",
+          "EZ-Bar Lying Triceps Extension"
+        ]
+      },
+      "activity": "strength",
+      "primaryMuscle": "triceps",
+      "equipment": "barbell",
+      "trackingType": "weightReps",
+      "imageRef": "images/skull-crushers__start.webp",
+      "frames": [
+        {
+          "path": "images/skull-crushers__start.webp",
+          "role": "start"
+        },
+        {
+          "path": "images/skull-crushers__end.webp",
+          "role": "end"
+        }
+      ],
+      "animationAvailable": true,
+      "sortOrder": 141
+    },
+    {
+      "exerciseId": "builtin:overhead_triceps_extension",
+      "nameAr": "تمديد ترايسبس فوق الرأس — دمبل",
+      "nameEn": "Overhead Triceps Extension — Dumbbell",
+      "aliases": {
+        "ar": [
+          "ترايسبس دمبل فوق الرأس"
+        ],
+        "en": [
+          "Dumbbell Overhead Triceps Extension"
+        ]
+      },
+      "activity": "strength",
+      "primaryMuscle": "triceps",
+      "equipment": "dumbbell",
+      "trackingType": "weightReps",
+      "imageRef": "images/overhead-triceps-extension__start.webp",
+      "frames": [
+        {
+          "path": "images/overhead-triceps-extension__start.webp",
+          "role": "start"
+        },
+        {
+          "path": "images/overhead-triceps-extension__end.webp",
+          "role": "end"
+        }
+      ],
+      "animationAvailable": true,
+      "sortOrder": 142
+    },
+    {
+      "exerciseId": "builtin:close_grip_bench_press",
+      "nameAr": "ضغط صدر — بار — قبضة ضيقة",
+      "nameEn": "Chest Press — Barbell — Close Grip",
+      "aliases": {
+        "ar": [
+          "بنش ضيق",
+          "بنش ترايسبس"
+        ],
+        "en": [
+          "Close-Grip Bench Press",
+          "Narrow-Grip Bench Press"
+        ]
+      },
+      "activity": "strength",
+      "primaryMuscle": "triceps",
+      "equipment": "barbell",
+      "trackingType": "weightReps",
+      "imageRef": "images/close-grip-bench-press__start.webp",
+      "frames": [
+        {
+          "path": "images/close-grip-bench-press__start.webp",
+          "role": "start"
+        },
+        {
+          "path": "images/close-grip-bench-press__end.webp",
+          "role": "end"
+        }
+      ],
+      "animationAvailable": true,
+      "sortOrder": 143
+    },
+    {
+      "exerciseId": "builtin:dumbbell_skull_crusher",
+      "nameAr": "تمديد ترايسبس مستلقيًا — دمبل",
+      "nameEn": "Lying Triceps Extension — Dumbbell",
+      "aliases": {
+        "ar": [
+          "سكَل كراشر دمبل"
+        ],
+        "en": [
+          "Dumbbell Skull Crusher",
+          "Dumbbell Lying Triceps Extension"
+        ]
+      },
+      "activity": "strength",
+      "primaryMuscle": "triceps",
+      "equipment": "dumbbell",
+      "trackingType": "weightReps",
+      "imageRef": "images/dumbbell-skull-crusher__start.webp",
+      "frames": [
+        {
+          "path": "images/dumbbell-skull-crusher__start.webp",
+          "role": "start"
+        },
+        {
+          "path": "images/dumbbell-skull-crusher__end.webp",
+          "role": "end"
+        }
+      ],
+      "animationAvailable": true,
+      "sortOrder": 144
+    },
+    {
+      "exerciseId": "builtin:bench_dip",
+      "nameAr": "متوازي — مقعد",
+      "nameEn": "Dip — Bench",
+      "aliases": {
+        "ar": [
+          "ديبس على مقعد"
+        ],
+        "en": [
+          "Bench Dip",
+          "Triceps Bench Dip"
+        ]
+      },
+      "activity": "strength",
+      "primaryMuscle": "triceps",
+      "equipment": "noEquipment",
+      "trackingType": "repsOnly",
+      "imageRef": "images/bench-dip__start.webp",
+      "frames": [
+        {
+          "path": "images/bench-dip__start.webp",
+          "role": "start"
+        },
+        {
+          "path": "images/bench-dip__end.webp",
+          "role": "end"
+        }
+      ],
+      "animationAvailable": true,
+      "sortOrder": 145
+    },
+    {
+      "exerciseId": "builtin:assisted_dip_machine",
+      "nameAr": "متوازي — جهاز — بمساعدة",
+      "nameEn": "Dip — Machine — Assisted",
+      "aliases": {
+        "ar": [
+          "ديبس مساعدة"
+        ],
+        "en": [
+          "Assisted Dip",
+          "Assisted Machine Dip"
+        ]
+      },
+      "activity": "strength",
+      "primaryMuscle": "triceps",
+      "equipment": "machines",
+      "trackingType": "assistedReps",
+      "imageRef": "images/assisted-dip-machine__start.webp",
+      "frames": [
+        {
+          "path": "images/assisted-dip-machine__start.webp",
+          "role": "start"
+        },
+        {
+          "path": "images/assisted-dip-machine__end.webp",
+          "role": "end"
+        }
+      ],
+      "animationAvailable": false,
+      "sortOrder": 146
+    },
+    {
+      "exerciseId": "builtin:seated_dip_machine",
+      "nameAr": "متوازي — جهاز — ضغط من الجلوس",
+      "nameEn": "Dip — Machine — Seated Press",
+      "aliases": {
+        "ar": [
+          "جهاز ديبس جالس"
+        ],
+        "en": [
+          "Seated Dip Machine",
+          "Machine Triceps Dip"
+        ]
+      },
+      "activity": "strength",
+      "primaryMuscle": "triceps",
+      "equipment": "machines",
+      "trackingType": "weightReps",
+      "imageRef": "images/seated-dip-machine__start.webp",
+      "frames": [
+        {
+          "path": "images/seated-dip-machine__start.webp",
+          "role": "start"
+        },
+        {
+          "path": "images/seated-dip-machine__end.webp",
+          "role": "end"
+        }
+      ],
+      "animationAvailable": true,
+      "sortOrder": 147
+    },
+    {
+      "exerciseId": "builtin:machine_triceps_extension",
+      "nameAr": "تمديد ترايسبس — جهاز",
+      "nameEn": "Triceps Extension — Machine",
+      "aliases": {
+        "ar": [
+          "جهاز ترايسبس إكستنشن"
+        ],
+        "en": [
+          "Machine Triceps Extension"
+        ]
+      },
+      "activity": "strength",
+      "primaryMuscle": "triceps",
+      "equipment": "machines",
+      "trackingType": "weightReps",
+      "imageRef": "images/machine-triceps-extension__start.webp",
+      "frames": [
+        {
+          "path": "images/machine-triceps-extension__start.webp",
+          "role": "start"
+        },
+        {
+          "path": "images/machine-triceps-extension__end.webp",
+          "role": "end"
+        }
+      ],
+      "animationAvailable": true,
+      "sortOrder": 148
+    },
+    {
+      "exerciseId": "builtin:cable_triceps_kickback",
+      "nameAr": "كيك باك ترايسبس — كيبل",
+      "nameEn": "Triceps Kickback — Cable",
+      "aliases": {
+        "ar": [
+          "مد ترايسبس خلفي بالكيبل"
+        ],
+        "en": [
+          "Cable Triceps Kickback"
+        ]
+      },
+      "activity": "strength",
+      "primaryMuscle": "triceps",
+      "equipment": "machines",
+      "trackingType": "weightReps",
+      "imageRef": "images/cable-triceps-kickback__start.webp",
+      "frames": [
+        {
+          "path": "images/cable-triceps-kickback__start.webp",
+          "role": "start"
+        },
+        {
+          "path": "images/cable-triceps-kickback__end.webp",
+          "role": "end"
+        }
+      ],
+      "animationAvailable": true,
+      "sortOrder": 149
+    },
+    {
+      "exerciseId": "builtin:dumbbell_kickback",
+      "nameAr": "كيك باك ترايسبس — دمبل",
+      "nameEn": "Triceps Kickback — Dumbbell",
+      "aliases": {
+        "ar": [
+          "مد ترايسبس خلفي دمبل"
+        ],
+        "en": [
+          "Dumbbell Triceps Kickback"
+        ]
+      },
+      "activity": "strength",
+      "primaryMuscle": "triceps",
+      "equipment": "dumbbell",
+      "trackingType": "weightReps",
+      "imageRef": "images/dumbbell-kickback__start.webp",
+      "frames": [
+        {
+          "path": "images/dumbbell-kickback__start.webp",
+          "role": "start"
+        },
+        {
+          "path": "images/dumbbell-kickback__end.webp",
+          "role": "end"
+        }
+      ],
+      "animationAvailable": true,
+      "sortOrder": 150
+    },
+    {
+      "exerciseId": "builtin:band_tricep_pushdown",
+      "nameAr": "دفع ترايسبس للأسفل — شريط مقاومة",
+      "nameEn": "Triceps Pushdown — Resistance Band",
+      "aliases": {
+        "ar": [
+          "بوش داون بالمطاط"
+        ],
+        "en": [
+          "Band Triceps Pushdown",
+          "Band Tricep Pushdown"
+        ]
+      },
+      "activity": "strength",
+      "primaryMuscle": "triceps",
+      "equipment": "resistanceBand",
+      "trackingType": "repsOnly",
+      "imageRef": "images/band-tricep-pushdown__start.webp",
+      "frames": [
+        {
+          "path": "images/band-tricep-pushdown__start.webp",
+          "role": "start"
+        },
+        {
+          "path": "images/band-tricep-pushdown__end.webp",
+          "role": "end"
+        }
+      ],
+      "animationAvailable": true,
+      "sortOrder": 151
+    },
+    {
+      "exerciseId": "builtin:dumbbell_shoulder_press",
+      "nameAr": "ضغط فوق الرأس — دمبل — جلوس",
+      "nameEn": "Overhead Press — Dumbbell — Seated",
+      "aliases": {
+        "ar": [
+          "ضغط كتف دمبل جالس"
+        ],
+        "en": [
+          "Seated Dumbbell Shoulder Press",
+          "Dumbbell Shoulder Press"
+        ]
+      },
+      "activity": "strength",
+      "primaryMuscle": "shoulders",
+      "equipment": "dumbbell",
+      "trackingType": "weightReps",
+      "imageRef": "images/dumbbell-shoulder-press__start.webp",
+      "frames": [
+        {
+          "path": "images/dumbbell-shoulder-press__start.webp",
+          "role": "start"
+        },
+        {
+          "path": "images/dumbbell-shoulder-press__end.webp",
+          "role": "end"
+        }
+      ],
+      "animationAvailable": true,
+      "sortOrder": 152
+    },
+    {
+      "exerciseId": "builtin:overhead_press",
+      "nameAr": "ضغط فوق الرأس — بار — وقوف",
+      "nameEn": "Overhead Press — Barbell — Standing",
+      "aliases": {
+        "ar": [
+          "أوفرهيد برس بار",
+          "ضغط عسكري"
+        ],
+        "en": [
+          "Standing Barbell Overhead Press",
+          "Strict Press",
+          "Military Press"
+        ]
+      },
+      "activity": "strength",
+      "primaryMuscle": "shoulders",
+      "equipment": "barbell",
+      "trackingType": "weightReps",
+      "imageRef": "images/overhead-press__start.webp",
+      "frames": [
+        {
+          "path": "images/overhead-press__start.webp",
+          "role": "start"
+        },
+        {
+          "path": "images/overhead-press__end.webp",
+          "role": "end"
+        }
+      ],
+      "animationAvailable": true,
+      "sortOrder": 153
+    },
+    {
+      "exerciseId": "builtin:lateral_raises",
+      "nameAr": "رفرفة جانبية — دمبل",
+      "nameEn": "Lateral Raise — Dumbbell",
+      "aliases": {
+        "ar": [
+          "رفرفة كتف دمبل"
+        ],
+        "en": [
+          "Dumbbell Lateral Raise",
+          "Side Lateral Raise",
+          "Dumbbell Side Lateral Raise"
+        ]
+      },
+      "activity": "strength",
+      "primaryMuscle": "shoulders",
+      "equipment": "dumbbell",
+      "trackingType": "weightReps",
+      "imageRef": "images/lateral-raises__start.webp",
+      "frames": [
+        {
+          "path": "images/lateral-raises__start.webp",
+          "role": "start"
+        },
+        {
+          "path": "images/lateral-raises__end.webp",
+          "role": "end"
+        }
+      ],
+      "animationAvailable": true,
+      "sortOrder": 154
+    },
+    {
+      "exerciseId": "builtin:face_pulls",
+      "nameAr": "سحب نحو الوجه — كيبل",
+      "nameEn": "Face Pull — Cable",
+      "aliases": {
+        "ar": [
+          "فيس بول"
+        ],
+        "en": [
+          "Cable Face Pull"
+        ]
+      },
+      "activity": "strength",
+      "primaryMuscle": "shoulders",
+      "equipment": "machines",
+      "trackingType": "weightReps",
+      "imageRef": "images/face-pulls__start.webp",
+      "frames": [
+        {
+          "path": "images/face-pulls__start.webp",
+          "role": "start"
+        },
+        {
+          "path": "images/face-pulls__end.webp",
+          "role": "end"
+        }
+      ],
+      "animationAvailable": true,
+      "sortOrder": 155
+    },
+    {
+      "exerciseId": "builtin:shoulder_press_machine",
+      "nameAr": "ضغط فوق الرأس — جهاز — جلوس",
+      "nameEn": "Overhead Press — Machine — Seated",
+      "aliases": {
+        "ar": [
+          "جهاز ضغط الأكتاف"
+        ],
+        "en": [
+          "Machine Shoulder Press",
+          "Seated Machine Shoulder Press"
+        ]
+      },
+      "activity": "strength",
+      "primaryMuscle": "shoulders",
+      "equipment": "machines",
+      "trackingType": "weightReps",
+      "imageRef": "images/shoulder-press-machine__start.webp",
+      "frames": [
+        {
+          "path": "images/shoulder-press-machine__start.webp",
+          "role": "start"
+        },
+        {
+          "path": "images/shoulder-press-machine__end.webp",
+          "role": "end"
+        }
+      ],
+      "animationAvailable": true,
+      "sortOrder": 156
+    },
+    {
+      "exerciseId": "builtin:arnold_press",
+      "nameAr": "ضغط أرنولد — دمبل",
+      "nameEn": "Arnold Press — Dumbbell",
+      "aliases": {
+        "ar": [
+          "أرنولد برس"
+        ],
+        "en": [
+          "Arnold Dumbbell Press"
+        ]
+      },
+      "activity": "strength",
+      "primaryMuscle": "shoulders",
+      "equipment": "dumbbell",
+      "trackingType": "weightReps",
+      "imageRef": "images/arnold-press__start.webp",
+      "frames": [
+        {
+          "path": "images/arnold-press__start.webp",
+          "role": "start"
+        },
+        {
+          "path": "images/arnold-press__end.webp",
+          "role": "end"
+        }
+      ],
+      "animationAvailable": true,
+      "sortOrder": 157
+    },
+    {
+      "exerciseId": "builtin:rear_delt_fly",
+      "nameAr": "رفرفة عكسية — دمبل — انحناء",
+      "nameEn": "Reverse Fly — Dumbbell — Bent-Over",
+      "aliases": {
+        "ar": [
+          "تفتيح دمبل للكتف الخلفي",
+          "رفرفة خلفية دمبل"
+        ],
+        "en": [
+          "Bent-Over Dumbbell Reverse Fly",
+          "Rear Delt Fly"
+        ]
+      },
+      "activity": "strength",
+      "primaryMuscle": "shoulders",
+      "equipment": "dumbbell",
+      "trackingType": "weightReps",
+      "imageRef": "images/rear-delt-fly__start.webp",
+      "frames": [
+        {
+          "path": "images/rear-delt-fly__start.webp",
+          "role": "start"
+        },
+        {
+          "path": "images/rear-delt-fly__end.webp",
+          "role": "end"
+        }
+      ],
+      "animationAvailable": true,
+      "sortOrder": 158
+    },
+    {
+      "exerciseId": "builtin:reverse_pec_deck",
+      "nameAr": "رفرفة عكسية — جهاز — بيك ديك",
+      "nameEn": "Reverse Fly — Machine — Pec Deck",
+      "aliases": {
+        "ar": [
+          "فراشة عكسية",
+          "جهاز كتف خلفي"
+        ],
+        "en": [
+          "Reverse Pec Deck",
+          "Rear Delt Machine Fly"
+        ]
+      },
+      "activity": "strength",
+      "primaryMuscle": "shoulders",
+      "equipment": "machines",
+      "trackingType": "weightReps",
+      "imageRef": "images/reverse-pec-deck__start.webp",
+      "frames": [
+        {
+          "path": "images/reverse-pec-deck__start.webp",
+          "role": "start"
+        },
+        {
+          "path": "images/reverse-pec-deck__end.webp",
+          "role": "end"
+        }
+      ],
+      "animationAvailable": false,
+      "sortOrder": 159
+    },
+    {
+      "exerciseId": "builtin:band_pull_apart",
+      "nameAr": "فتح شريط المقاومة",
+      "nameEn": "Band Pull-Apart",
+      "aliases": {
+        "ar": [
+          "تفتيح مطاط للكتف الخلفي"
+        ],
+        "en": [
+          "Resistance Band Pull-Apart",
+          "Band Pull Aparts"
+        ]
+      },
+      "activity": "strength",
+      "primaryMuscle": "shoulders",
+      "equipment": "resistanceBand",
+      "trackingType": "repsOnly",
+      "imageRef": "images/band-pull-apart__start.webp",
+      "frames": [
+        {
+          "path": "images/band-pull-apart__start.webp",
+          "role": "start"
+        },
+        {
+          "path": "images/band-pull-apart__end.webp",
+          "role": "end"
+        }
+      ],
+      "animationAvailable": true,
+      "sortOrder": 160
+    },
+    {
+      "exerciseId": "builtin:cable_front_raise",
+      "nameAr": "رفع أمامي — كيبل",
+      "nameEn": "Front Raise — Cable",
+      "aliases": {
+        "ar": [
+          "رفرفة أمامية كيبل"
+        ],
+        "en": [
+          "Cable Front Raise"
+        ]
+      },
+      "activity": "strength",
+      "primaryMuscle": "shoulders",
+      "equipment": "machines",
+      "trackingType": "weightReps",
+      "imageRef": "images/cable-front-raise__end.webp",
+      "frames": [
+        {
+          "path": "images/cable-front-raise__start.webp",
+          "role": "start"
+        },
+        {
+          "path": "images/cable-front-raise__end.webp",
+          "role": "end"
+        }
+      ],
+      "animationAvailable": true,
+      "sortOrder": 161
+    },
+    {
+      "exerciseId": "builtin:front_raises",
+      "nameAr": "رفع أمامي — دمبل",
+      "nameEn": "Front Raise — Dumbbell",
+      "aliases": {
+        "ar": [
+          "رفرفة أمامية دمبل"
+        ],
+        "en": [
+          "Dumbbell Front Raise"
+        ]
+      },
+      "activity": "strength",
+      "primaryMuscle": "shoulders",
+      "equipment": "dumbbell",
+      "trackingType": "weightReps",
+      "imageRef": "images/front-raises__start.webp",
+      "frames": [
+        {
+          "path": "images/front-raises__start.webp",
+          "role": "start"
+        },
+        {
+          "path": "images/front-raises__end.webp",
+          "role": "end"
+        }
+      ],
+      "animationAvailable": true,
+      "sortOrder": 162
+    },
+    {
+      "exerciseId": "builtin:plate_front_raise",
+      "nameAr": "رفع أمامي — قرص أوزان",
+      "nameEn": "Front Raise — Weight Plate",
+      "aliases": {
+        "ar": [
+          "رفع أمامي بالقرص"
+        ],
+        "en": [
+          "Plate Front Raise",
+          "Weight Plate Front Raise"
+        ]
+      },
+      "activity": "strength",
+      "primaryMuscle": "shoulders",
+      "equipment": "other",
+      "trackingType": "weightReps",
+      "imageRef": "images/plate-front-raise__start.webp",
+      "frames": [
+        {
+          "path": "images/plate-front-raise__start.webp",
+          "role": "start"
+        },
+        {
+          "path": "images/plate-front-raise__end.webp",
+          "role": "end"
+        }
+      ],
+      "animationAvailable": true,
+      "sortOrder": 163
+    },
+    {
+      "exerciseId": "builtin:cable_lateral_raise",
+      "nameAr": "رفرفة جانبية — كيبل",
+      "nameEn": "Lateral Raise — Cable",
+      "aliases": {
+        "ar": [
+          "رفع جانبي كيبل"
+        ],
+        "en": [
+          "Cable Lateral Raise"
+        ]
+      },
+      "activity": "strength",
+      "primaryMuscle": "shoulders",
+      "equipment": "machines",
+      "trackingType": "weightReps",
+      "imageRef": "images/cable-lateral-raise__start.webp",
+      "frames": [
+        {
+          "path": "images/cable-lateral-raise__start.webp",
+          "role": "start"
+        },
+        {
+          "path": "images/cable-lateral-raise__end.webp",
+          "role": "end"
+        }
+      ],
+      "animationAvailable": true,
+      "sortOrder": 164
+    },
+    {
+      "exerciseId": "builtin:machine_lateral_raise",
+      "nameAr": "رفرفة جانبية — جهاز",
+      "nameEn": "Lateral Raise — Machine",
+      "aliases": {
+        "ar": [
+          "جهاز الرفع الجانبي"
+        ],
+        "en": [
+          "Machine Lateral Raise"
+        ]
+      },
+      "activity": "strength",
+      "primaryMuscle": "shoulders",
+      "equipment": "machines",
+      "trackingType": "weightReps",
+      "imageRef": "images/machine-lateral-raise__start.webp",
+      "frames": [
+        {
+          "path": "images/machine-lateral-raise__start.webp",
+          "role": "start"
+        },
+        {
+          "path": "images/machine-lateral-raise__end.webp",
+          "role": "end"
+        }
+      ],
+      "animationAvailable": true,
+      "sortOrder": 165
+    },
+    {
+      "exerciseId": "builtin:band_lateral_raise",
+      "nameAr": "رفرفة جانبية — شريط مقاومة",
+      "nameEn": "Lateral Raise — Resistance Band",
+      "aliases": {
+        "ar": [
+          "رفرفة جانبية بالمطاط"
+        ],
+        "en": [
+          "Band Lateral Raise"
+        ]
+      },
+      "activity": "strength",
+      "primaryMuscle": "shoulders",
+      "equipment": "resistanceBand",
+      "trackingType": "repsOnly",
+      "imageRef": "images/band-lateral-raise__start.webp",
+      "frames": [
+        {
+          "path": "images/band-lateral-raise__start.webp",
+          "role": "start"
+        },
+        {
+          "path": "images/band-lateral-raise__end.webp",
+          "role": "end"
+        }
+      ],
+      "animationAvailable": true,
+      "sortOrder": 166
+    },
+    {
+      "exerciseId": "builtin:kettlebell_press",
+      "nameAr": "ضغط فوق الرأس — كيتل بيل — ذراع واحدة",
+      "nameEn": "Overhead Press — Kettlebell — One Arm",
+      "aliases": {
+        "ar": [
+          "ضغط كتف كتل بيل يد واحدة"
+        ],
+        "en": [
+          "Single-Arm Kettlebell Overhead Press",
+          "Kettlebell Press"
+        ]
+      },
+      "activity": "strength",
+      "primaryMuscle": "shoulders",
+      "equipment": "kettlebell",
+      "trackingType": "weightReps",
+      "imageRef": "images/kettlebell-press__start.webp",
+      "frames": [
+        {
+          "path": "images/kettlebell-press__start.webp",
+          "role": "start"
+        },
+        {
+          "path": "images/kettlebell-press__end.webp",
+          "role": "end"
+        }
+      ],
+      "animationAvailable": true,
+      "sortOrder": 167
+    },
+    {
+      "exerciseId": "builtin:band_overhead_press",
+      "nameAr": "ضغط فوق الرأس — شريط مقاومة",
+      "nameEn": "Overhead Press — Resistance Band",
+      "aliases": {
+        "ar": [
+          "ضغط كتف بالمطاط"
+        ],
+        "en": [
+          "Band Overhead Press"
+        ]
+      },
+      "activity": "strength",
+      "primaryMuscle": "shoulders",
+      "equipment": "resistanceBand",
+      "trackingType": "repsOnly",
+      "imageRef": "images/band-overhead-press__start.webp",
+      "frames": [
+        {
+          "path": "images/band-overhead-press__start.webp",
+          "role": "start"
+        },
+        {
+          "path": "images/band-overhead-press__end.webp",
+          "role": "end"
+        }
+      ],
+      "animationAvailable": true,
+      "sortOrder": 168
+    },
+    {
+      "exerciseId": "builtin:smith_machine_overhead_press",
+      "nameAr": "ضغط فوق الرأس — جهاز سميث — وقوف",
+      "nameEn": "Overhead Press — Smith Machine — Standing",
+      "aliases": {
+        "ar": [
+          "ضغط كتف سميث واقف"
+        ],
+        "en": [
+          "Smith Machine Overhead Press"
+        ]
+      },
+      "activity": "strength",
+      "primaryMuscle": "shoulders",
+      "equipment": "machines",
+      "trackingType": "weightReps",
+      "imageRef": "images/smith-machine-overhead-press__start.webp",
+      "frames": [
+        {
+          "path": "images/smith-machine-overhead-press__start.webp",
+          "role": "start"
+        },
+        {
+          "path": "images/smith-machine-overhead-press__end.webp",
+          "role": "end"
+        }
+      ],
+      "animationAvailable": true,
+      "sortOrder": 169
+    },
+    {
+      "exerciseId": "builtin:dumbbell_scaption",
+      "nameAr": "رفع الذراعين في مستوى لوح الكتف — دمبل",
+      "nameEn": "Scaption — Dumbbell",
+      "aliases": {
+        "ar": [
+          "سكابشن دمبل"
+        ],
+        "en": [
+          "Dumbbell Scaption",
+          "Scapular Plane Raise"
+        ]
+      },
+      "activity": "strength",
+      "primaryMuscle": "shoulders",
+      "equipment": "dumbbell",
+      "trackingType": "weightReps",
+      "imageRef": "images/dumbbell-scaption__start.webp",
+      "frames": [
+        {
+          "path": "images/dumbbell-scaption__start.webp",
+          "role": "start"
+        },
+        {
+          "path": "images/dumbbell-scaption__end.webp",
+          "role": "end"
+        }
+      ],
+      "animationAvailable": true,
+      "sortOrder": 170
+    },
+    {
+      "exerciseId": "builtin:cable_external_rotation",
+      "nameAr": "دوران الكتف للخارج — كيبل",
+      "nameEn": "Shoulder External Rotation — Cable",
+      "aliases": {
+        "ar": [
+          "دوران خارجي للكتف بالكيبل"
+        ],
+        "en": [
+          "Cable External Rotation"
+        ]
+      },
+      "activity": "strength",
+      "primaryMuscle": "shoulders",
+      "equipment": "machines",
+      "trackingType": "weightReps",
+      "imageRef": "images/cable-external-rotation__start.webp",
+      "frames": [
+        {
+          "path": "images/cable-external-rotation__start.webp",
+          "role": "start"
+        }
+      ],
+      "animationAvailable": false,
+      "sortOrder": 171
+    },
+    {
+      "exerciseId": "builtin:upright_row",
+      "nameAr": "تجديف قائم — بار",
+      "nameEn": "Upright Row — Barbell",
+      "aliases": {
+        "ar": [
+          "أبرايت رو بالبار"
+        ],
+        "en": [
+          "Barbell Upright Row"
+        ]
+      },
+      "activity": "strength",
+      "primaryMuscle": "shoulders",
+      "equipment": "barbell",
+      "trackingType": "weightReps",
+      "imageRef": "images/upright-row__start.webp",
+      "frames": [
+        {
+          "path": "images/upright-row__start.webp",
+          "role": "start"
+        },
+        {
+          "path": "images/upright-row__end.webp",
+          "role": "end"
+        }
+      ],
+      "animationAvailable": true,
+      "sortOrder": 172
+    },
+    {
+      "exerciseId": "builtin:cable_upright_row",
+      "nameAr": "تجديف قائم — كيبل",
+      "nameEn": "Upright Row — Cable",
+      "aliases": {
+        "ar": [
+          "أبرايت رو كيبل"
+        ],
+        "en": [
+          "Cable Upright Row"
+        ]
+      },
+      "activity": "strength",
+      "primaryMuscle": "shoulders",
+      "equipment": "machines",
+      "trackingType": "weightReps",
+      "imageRef": "images/cable-upright-row__start.webp",
+      "frames": [
+        {
+          "path": "images/cable-upright-row__start.webp",
+          "role": "start"
+        },
+        {
+          "path": "images/cable-upright-row__end.webp",
+          "role": "end"
+        }
+      ],
+      "animationAvailable": false,
+      "sortOrder": 173
+    },
+    {
+      "exerciseId": "builtin:dumbbell_upright_row",
+      "nameAr": "تجديف قائم — دمبل",
+      "nameEn": "Upright Row — Dumbbell",
+      "aliases": {
+        "ar": [
+          "أبرايت رو دمبل"
+        ],
+        "en": [
+          "Dumbbell Upright Row"
+        ]
+      },
+      "activity": "strength",
+      "primaryMuscle": "shoulders",
+      "equipment": "dumbbell",
+      "trackingType": "weightReps",
+      "imageRef": "images/dumbbell-upright-row__start.webp",
+      "frames": [
+        {
+          "path": "images/dumbbell-upright-row__start.webp",
+          "role": "start"
+        },
+        {
+          "path": "images/dumbbell-upright-row__end.webp",
+          "role": "end"
+        }
+      ],
+      "animationAvailable": true,
+      "sortOrder": 174
+    },
+    {
+      "exerciseId": "builtin:crunches",
+      "nameAr": "كرنش — أرضي",
+      "nameEn": "Crunch — Floor",
+      "aliases": {
+        "ar": [
+          "كرنش بطن",
+          "طحن البطن"
+        ],
+        "en": [
+          "Floor Crunch",
+          "Abdominal Crunch"
+        ]
+      },
+      "activity": "strength",
+      "primaryMuscle": "abs",
+      "equipment": "noEquipment",
+      "trackingType": "repsOnly",
+      "imageRef": "images/crunches__start.webp",
+      "frames": [
+        {
+          "path": "images/crunches__start.webp",
+          "role": "start"
+        },
+        {
+          "path": "images/crunches__end.webp",
+          "role": "end"
+        }
+      ],
+      "animationAvailable": true,
+      "sortOrder": 175
+    },
+    {
+      "exerciseId": "builtin:leg_raises",
+      "nameAr": "رفع الساقين — أرضي",
+      "nameEn": "Leg Raise — Floor",
+      "aliases": {
+        "ar": [
+          "رفع الرجلين استلقاء",
+          "ليغ ريز أرضي"
+        ],
+        "en": [
+          "Lying Leg Raise",
+          "Floor Leg Raise"
+        ]
+      },
+      "activity": "strength",
+      "primaryMuscle": "abs",
+      "equipment": "noEquipment",
+      "trackingType": "repsOnly",
+      "imageRef": "images/leg-raises__end.webp",
+      "frames": [
+        {
+          "path": "images/leg-raises__end.webp",
+          "role": "end"
+        }
+      ],
+      "animationAvailable": false,
+      "sortOrder": 176
+    },
+    {
+      "exerciseId": "builtin:russian_twists",
+      "nameAr": "لف روسي — وزن الجسم",
+      "nameEn": "Russian Twist — Bodyweight",
+      "aliases": {
+        "ar": [
+          "روشن تويست",
+          "تويست روسي"
+        ],
+        "en": [
+          "Bodyweight Russian Twist"
+        ]
+      },
+      "activity": "strength",
+      "primaryMuscle": "abs",
+      "equipment": "noEquipment",
+      "trackingType": "repsOnly",
+      "imageRef": "images/russian-twists__start.webp",
+      "frames": [
+        {
+          "path": "images/russian-twists__start.webp",
+          "role": "start"
+        },
+        {
+          "path": "images/russian-twists__end.webp",
+          "role": "end"
+        }
+      ],
+      "animationAvailable": false,
+      "sortOrder": 177
+    },
+    {
+      "exerciseId": "builtin:cable_crunch",
+      "nameAr": "كرنش — كيبل — ركوع",
+      "nameEn": "Crunch — Cable — Kneeling",
+      "aliases": {
+        "ar": [
+          "كرنش كيبل"
+        ],
+        "en": [
+          "Cable Crunch",
+          "Kneeling Cable Crunch"
+        ]
+      },
+      "activity": "strength",
+      "primaryMuscle": "abs",
+      "equipment": "machines",
+      "trackingType": "weightReps",
+      "imageRef": "images/cable-crunch__start.webp",
+      "frames": [
+        {
+          "path": "images/cable-crunch__start.webp",
+          "role": "start"
+        },
+        {
+          "path": "images/cable-crunch__end.webp",
+          "role": "end"
+        }
+      ],
+      "animationAvailable": true,
+      "sortOrder": 178
+    },
+    {
+      "exerciseId": "builtin:bicycle_crunch",
+      "nameAr": "كرنش الدراجة",
+      "nameEn": "Bicycle Crunch",
+      "aliases": {
+        "ar": [
+          "بطن الدراجة",
+          "كرنش بايسكل"
+        ],
+        "en": [
+          "Bicycle Ab Crunch"
+        ]
+      },
+      "activity": "strength",
+      "primaryMuscle": "abs",
+      "equipment": "noEquipment",
+      "trackingType": "repsOnly",
+      "imageRef": "images/bicycle-crunch__start.webp",
+      "frames": [
+        {
+          "path": "images/bicycle-crunch__start.webp",
+          "role": "start"
+        },
+        {
+          "path": "images/bicycle-crunch__end.webp",
+          "role": "end"
+        }
+      ],
+      "animationAvailable": true,
+      "sortOrder": 179
+    },
+    {
+      "exerciseId": "builtin:dead_hang",
+      "nameAr": "تعليق ثابت — استرخاء الكتفين",
+      "nameEn": "Dead Hang — Passive",
+      "aliases": {
+        "ar": [
+          "ديد هانغ",
+          "تعليق على العقلة"
+        ],
+        "en": [
+          "Passive Dead Hang"
+        ]
+      },
+      "activity": "strength",
+      "primaryMuscle": "forearms",
+      "equipment": "other",
+      "trackingType": "durationOptionalWeight",
+      "imageRef": "images/dead-hang__hold.webp",
+      "frames": [
+        {
+          "path": "images/dead-hang__hold.webp",
+          "role": "hold"
+        }
+      ],
+      "animationAvailable": false,
+      "sortOrder": 180
+    },
+    {
+      "exerciseId": "builtin:side_plank",
+      "nameAr": "بلانك جانبي — ارتكاز على القدمين",
+      "nameEn": "Side Plank — Feet Supported",
+      "aliases": {
+        "ar": [
+          "بلانك جانبي كامل"
+        ],
+        "en": [
+          "Full Side Plank",
+          "Side Plank"
+        ]
+      },
+      "activity": "strength",
+      "primaryMuscle": "abs",
+      "equipment": "noEquipment",
+      "trackingType": "durationOptionalWeight",
+      "imageRef": "images/side-plank__hold.webp",
+      "frames": [
+        {
+          "path": "images/side-plank__hold.webp",
+          "role": "hold"
+        }
+      ],
+      "animationAvailable": false,
+      "sortOrder": 181
+    },
+    {
+      "exerciseId": "builtin:bear_plank",
+      "nameAr": "بلانك الدب",
+      "nameEn": "Bear Plank",
+      "aliases": {
+        "ar": [
+          "بير بلانك"
+        ],
+        "en": [
+          "Bear Hold"
+        ]
+      },
+      "activity": "strength",
+      "primaryMuscle": "abs",
+      "equipment": "noEquipment",
+      "trackingType": "durationOptionalWeight",
+      "imageRef": "images/bear-plank__hold.webp",
+      "frames": [
+        {
+          "path": "images/bear-plank__hold.webp",
+          "role": "hold"
+        }
+      ],
+      "animationAvailable": false,
+      "sortOrder": 182
+    },
+    {
+      "exerciseId": "builtin:decline_crunch",
+      "nameAr": "كرنش — مقعد منحدر",
+      "nameEn": "Crunch — Decline Bench",
+      "aliases": {
+        "ar": [
+          "كرنش بنش منحدر"
+        ],
+        "en": [
+          "Decline Crunch"
+        ]
+      },
+      "activity": "strength",
+      "primaryMuscle": "abs",
+      "equipment": "noEquipment",
+      "trackingType": "repsOnly",
+      "imageRef": "images/decline-crunch__start.webp",
+      "frames": [
+        {
+          "path": "images/decline-crunch__start.webp",
+          "role": "start"
+        },
+        {
+          "path": "images/decline-crunch__end.webp",
+          "role": "end"
+        }
+      ],
+      "animationAvailable": true,
+      "sortOrder": 183
+    },
+    {
+      "exerciseId": "builtin:oblique_crunch",
+      "nameAr": "كرنش — أرضي — جانبي",
+      "nameEn": "Crunch — Floor — Oblique",
+      "aliases": {
+        "ar": [
+          "كرنش للبطن الجانبي"
+        ],
+        "en": [
+          "Oblique Crunch",
+          "Side Crunch"
+        ]
+      },
+      "activity": "strength",
+      "primaryMuscle": "abs",
+      "equipment": "noEquipment",
+      "trackingType": "repsOnly",
+      "imageRef": "images/oblique-crunch__start.webp",
+      "frames": [
+        {
+          "path": "images/oblique-crunch__start.webp",
+          "role": "start"
+        },
+        {
+          "path": "images/oblique-crunch__end.webp",
+          "role": "end"
+        }
+      ],
+      "animationAvailable": true,
+      "sortOrder": 184
+    },
+    {
+      "exerciseId": "builtin:machine_abdominal_crunch",
+      "nameAr": "كرنش — جهاز",
+      "nameEn": "Crunch — Machine",
+      "aliases": {
+        "ar": [
+          "جهاز كرنش البطن"
+        ],
+        "en": [
+          "Machine Abdominal Crunch",
+          "Ab Crunch Machine"
+        ]
+      },
+      "activity": "strength",
+      "primaryMuscle": "abs",
+      "equipment": "machines",
+      "trackingType": "weightReps",
+      "imageRef": "images/machine-abdominal-crunch__start.webp",
+      "frames": [
+        {
+          "path": "images/machine-abdominal-crunch__start.webp",
+          "role": "start"
+        },
+        {
+          "path": "images/machine-abdominal-crunch__end.webp",
+          "role": "end"
+        }
+      ],
+      "animationAvailable": true,
+      "sortOrder": 185
+    },
+    {
+      "exerciseId": "builtin:dragon_flag",
+      "nameAr": "دراغون فلاغ — مقعد",
+      "nameEn": "Dragon Flag — Bench",
+      "aliases": {
+        "ar": [
+          "علم التنين"
+        ],
+        "en": [
+          "Bench Dragon Flag"
+        ]
+      },
+      "activity": "strength",
+      "primaryMuscle": "abs",
+      "equipment": "noEquipment",
+      "trackingType": "repsOnly",
+      "imageRef": "images/dragon-flag__start.webp",
+      "frames": [
+        {
+          "path": "images/dragon-flag__start.webp",
+          "role": "start"
+        },
+        {
+          "path": "images/dragon-flag__end.webp",
+          "role": "end"
+        }
+      ],
+      "animationAvailable": true,
+      "sortOrder": 186
+    },
+    {
+      "exerciseId": "builtin:flutter_kicks",
+      "nameAr": "رفرفة الساقين — أرضي",
+      "nameEn": "Flutter Kick",
+      "aliases": {
+        "ar": [
+          "فلاتر كيك",
+          "رفرفة رجلين"
+        ],
+        "en": [
+          "Flutter Kicks",
+          "Vertical Flutter Kick"
+        ]
+      },
+      "activity": "strength",
+      "primaryMuscle": "abs",
+      "equipment": "noEquipment",
+      "trackingType": "repsOnly",
+      "imageRef": "images/flutter-kicks__start.webp",
+      "frames": [
+        {
+          "path": "images/flutter-kicks__start.webp",
+          "role": "start"
+        }
+      ],
+      "animationAvailable": false,
+      "sortOrder": 187
+    },
+    {
+      "exerciseId": "builtin:dumbbell_front_rack_carry",
+      "nameAr": "مشي بالحمل أمام الكتفين — دمبل",
+      "nameEn": "Front Rack Carry — Dumbbell",
+      "aliases": {
+        "ar": [
+          "فرونت راك كاري دمبل"
+        ],
+        "en": [
+          "Dumbbell Front Rack Carry"
+        ]
+      },
+      "activity": "strength",
+      "primaryMuscle": "abs",
+      "equipment": "dumbbell",
+      "trackingType": "durationOptionalWeight",
+      "imageRef": "images/dumbbell-front-rack-carry__start.webp",
+      "frames": [
+        {
+          "path": "images/dumbbell-front-rack-carry__start.webp",
+          "role": "start"
+        },
+        {
+          "path": "images/dumbbell-front-rack-carry__end.webp",
+          "role": "end"
+        }
+      ],
+      "animationAvailable": false,
+      "sortOrder": 188
+    },
+    {
+      "exerciseId": "builtin:captains_chair_knee_raise",
+      "nameAr": "رفع الركبتين — كرسي الكابتن",
+      "nameEn": "Knee Raise — Captain’s Chair",
+      "aliases": {
+        "ar": [
+          "رفع ركبة على مسند الساعدين"
+        ],
+        "en": [
+          "Captain's Chair Knee Raise",
+          "Vertical Knee Raise"
+        ]
+      },
+      "activity": "strength",
+      "primaryMuscle": "abs",
+      "equipment": "other",
+      "trackingType": "repsOnly",
+      "imageRef": "images/captains-chair-knee-raise__start.webp",
+      "frames": [
+        {
+          "path": "images/captains-chair-knee-raise__start.webp",
+          "role": "start"
+        },
+        {
+          "path": "images/captains-chair-knee-raise__end.webp",
+          "role": "end"
+        }
+      ],
+      "animationAvailable": true,
+      "sortOrder": 189
+    },
+    {
+      "exerciseId": "builtin:cable_reverse_curl",
+      "nameAr": "كيرل عكسي — كيبل",
+      "nameEn": "Reverse Curl — Cable",
+      "aliases": {
+        "ar": [
+          "كيرل كيبل قبضة عكسية"
+        ],
+        "en": [
+          "Cable Reverse Curl"
+        ]
+      },
+      "activity": "strength",
+      "primaryMuscle": "forearms",
+      "equipment": "machines",
+      "trackingType": "weightReps",
+      "imageRef": "images/reverse-curl__start.webp",
+      "frames": [
+        {
+          "path": "images/reverse-curl__start.webp",
+          "role": "start"
+        },
+        {
+          "path": "images/reverse-curl__end.webp",
+          "role": "end"
+        }
+      ],
+      "animationAvailable": false,
+      "sortOrder": 190
+    },
+    {
+      "exerciseId": "builtin:dumbbell_reverse_wrist_curl",
+      "nameAr": "تمديد الرسغ — دمبل",
+      "nameEn": "Reverse Wrist Curl — Dumbbell",
+      "aliases": {
+        "ar": [
+          "كيرل رسغ عكسي دمبل"
+        ],
+        "en": [
+          "Dumbbell Reverse Wrist Curl",
+          "Dumbbell Wrist Extension"
+        ]
+      },
+      "activity": "strength",
+      "primaryMuscle": "forearms",
+      "equipment": "dumbbell",
+      "trackingType": "weightReps",
+      "imageRef": "images/dumbbell-reverse-wrist-curl__start.webp",
+      "frames": [
+        {
+          "path": "images/dumbbell-reverse-wrist-curl__start.webp",
+          "role": "start"
+        },
+        {
+          "path": "images/dumbbell-reverse-wrist-curl__end.webp",
+          "role": "end"
+        }
+      ],
+      "animationAvailable": true,
+      "sortOrder": 191
+    },
+    {
+      "exerciseId": "builtin:knee_side_plank",
+      "nameAr": "بلانك جانبي — ارتكاز على الركبتين",
+      "nameEn": "Side Plank — Knees Supported",
+      "aliases": {
+        "ar": [
+          "بلانك جانبي على الركبة"
+        ],
+        "en": [
+          "Knee Side Plank",
+          "Bent-Knee Side Plank"
+        ]
+      },
+      "activity": "strength",
+      "primaryMuscle": "abs",
+      "equipment": "noEquipment",
+      "trackingType": "durationOptionalWeight",
+      "imageRef": "images/knee-side-plank__hold.webp",
+      "frames": [
+        {
+          "path": "images/knee-side-plank__hold.webp",
+          "role": "hold"
+        }
+      ],
+      "animationAvailable": false,
+      "sortOrder": 192
+    },
+    {
+      "exerciseId": "builtin:horizontal_cable_twist",
+      "nameAr": "دوران الجذع — كيبل — أفقي",
+      "nameEn": "Torso Rotation — Cable — Horizontal",
+      "aliases": {
+        "ar": [
+          "لف الجذع كيبل"
+        ],
+        "en": [
+          "Horizontal Cable Twist",
+          "Cable Torso Rotation"
+        ]
+      },
+      "activity": "strength",
+      "primaryMuscle": "abs",
+      "equipment": "machines",
+      "trackingType": "weightReps",
+      "imageRef": "images/horizontal-cable-twist__start.webp",
+      "frames": [
+        {
+          "path": "images/horizontal-cable-twist__start.webp",
+          "role": "start"
+        },
+        {
+          "path": "images/horizontal-cable-twist__end.webp",
+          "role": "end"
+        }
+      ],
+      "animationAvailable": false,
+      "sortOrder": 193
+    },
+    {
+      "exerciseId": "builtin:windshield_wipers",
+      "nameAr": "مسّاحات الزجاج — أرضي",
+      "nameEn": "Windshield Wiper — Floor",
+      "aliases": {
+        "ar": [
+          "مساحات بطن أرضية"
+        ],
+        "en": [
+          "Floor Windshield Wipers"
+        ]
+      },
+      "activity": "strength",
+      "primaryMuscle": "abs",
+      "equipment": "noEquipment",
+      "trackingType": "repsOnly",
+      "imageRef": "images/windshield-wipers__start.webp",
+      "frames": [
+        {
+          "path": "images/windshield-wipers__start.webp",
+          "role": "start"
+        },
+        {
+          "path": "images/windshield-wipers__end.webp",
+          "role": "end"
+        }
+      ],
+      "animationAvailable": true,
+      "sortOrder": 194
+    },
+    {
+      "exerciseId": "builtin:cable_woodchopper",
+      "nameAr": "دوران قطري للجذع — كيبل — من أعلى لأسفل",
+      "nameEn": "Woodchop — Cable — High to Low",
+      "aliases": {
+        "ar": [
+          "وود تشوب كيبل"
+        ],
+        "en": [
+          "Cable Woodchopper",
+          "High-to-Low Cable Woodchop"
+        ]
+      },
+      "activity": "strength",
+      "primaryMuscle": "abs",
+      "equipment": "machines",
+      "trackingType": "weightReps",
+      "imageRef": "images/cable-woodchopper__start.webp",
+      "frames": [
+        {
+          "path": "images/cable-woodchopper__start.webp",
+          "role": "start"
+        },
+        {
+          "path": "images/cable-woodchopper__end.webp",
+          "role": "end"
+        }
+      ],
+      "animationAvailable": true,
+      "sortOrder": 195
+    },
+    {
+      "exerciseId": "builtin:treadmill_run",
+      "nameAr": "جري — سير كهربائي",
+      "nameEn": "Running — Treadmill",
+      "aliases": {
+        "ar": [
+          "ركض على السير",
+          "جري على التريدميل"
+        ],
+        "en": [
+          "Treadmill Run",
+          "Treadmill Running"
+        ]
+      },
+      "activity": "cardio",
+      "primaryMuscle": null,
+      "equipment": "machines",
+      "trackingType": "durationDistance",
+      "imageRef": "images/treadmill-run__hold.webp",
+      "frames": [
+        {
+          "path": "images/treadmill-run__hold.webp",
+          "role": "hold"
+        }
+      ],
+      "animationAvailable": false,
+      "sortOrder": 196
+    },
+    {
+      "exerciseId": "builtin:exercise_bike",
+      "nameAr": "دراجة ثابتة",
+      "nameEn": "Indoor Cycling — Stationary Bike",
+      "aliases": {
+        "ar": [
+          "دراجة تمرين ثابتة",
+          "بايك ثابت"
+        ],
+        "en": [
+          "Exercise Bike",
+          "Stationary Cycling",
+          "Stationary Bike"
+        ]
+      },
+      "activity": "cardio",
+      "primaryMuscle": null,
+      "equipment": "machines",
+      "trackingType": "durationDistance",
+      "imageRef": "images/stationary-bike__hold.webp",
+      "frames": [
+        {
+          "path": "images/stationary-bike__hold.webp",
+          "role": "hold"
+        }
+      ],
+      "animationAvailable": false,
+      "sortOrder": 197
+    },
+    {
+      "exerciseId": "builtin:elliptical",
+      "nameAr": "جهاز إليبتيكال",
+      "nameEn": "Elliptical Trainer",
+      "aliases": {
+        "ar": [
+          "إليبتكال",
+          "جهاز المشي البيضاوي",
+          "كروس ترينر"
+        ],
+        "en": [
+          "Elliptical",
+          "Cross Trainer"
+        ]
+      },
+      "activity": "cardio",
+      "primaryMuscle": null,
+      "equipment": "machines",
+      "trackingType": "durationDistance",
+      "imageRef": "images/elliptical__start.webp",
+      "frames": [
+        {
+          "path": "images/elliptical__start.webp",
+          "role": "start"
+        }
+      ],
+      "animationAvailable": false,
+      "sortOrder": 198
+    },
+    {
+      "exerciseId": "builtin:rowing_machine",
+      "nameAr": "تجديف داخلي — جهاز كارديو",
+      "nameEn": "Indoor Rowing",
+      "aliases": {
+        "ar": [
+          "روينغ",
+          "إرغومتر تجديف",
+          "جهاز التجديف الهوائي"
+        ],
+        "en": [
+          "Rowing Machine",
+          "Rowing Ergometer",
+          "RowErg"
+        ]
+      },
+      "activity": "cardio",
+      "primaryMuscle": null,
+      "equipment": "machines",
+      "trackingType": "durationDistance",
+      "imageRef": "images/rowing-machine__end.webp",
+      "frames": [
+        {
+          "path": "images/rowing-machine__start.webp",
+          "role": "start"
+        },
+        {
+          "path": "images/rowing-machine__end.webp",
+          "role": "end"
+        }
+      ],
+      "animationAvailable": true,
+      "sortOrder": 199
+    },
+    {
+      "exerciseId": "builtin:jump_rope",
+      "nameAr": "نط الحبل",
+      "nameEn": "Jump Rope",
+      "aliases": {
+        "ar": [
+          "قفز الحبل",
+          "نط الحبل الرياضي"
+        ],
+        "en": [
+          "Skipping Rope"
+        ]
+      },
+      "activity": "cardio",
+      "primaryMuscle": null,
+      "equipment": "other",
+      "trackingType": "duration",
+      "imageRef": "images/jump-rope__start.webp",
+      "frames": [
+        {
+          "path": "images/jump-rope__start.webp",
+          "role": "start"
+        },
+        {
+          "path": "images/jump-rope__end.webp",
+          "role": "end"
+        }
+      ],
+      "animationAvailable": true,
+      "sortOrder": 200
+    },
+    {
+      "exerciseId": "builtin:air_bike",
+      "nameAr": "دراجة هوائية بمروحة",
+      "nameEn": "Air Bike",
+      "aliases": {
+        "ar": [
+          "إير بايك",
+          "اير بايك",
+          "دراجة المروحة"
+        ],
+        "en": [
+          "Fan Bike",
+          "Assault Bike"
+        ]
+      },
+      "activity": "cardio",
+      "primaryMuscle": null,
+      "equipment": "machines",
+      "trackingType": "durationDistance",
+      "imageRef": "images/air-bike__hold.webp",
+      "frames": [
+        {
+          "path": "images/air-bike__hold.webp",
+          "role": "hold"
+        }
+      ],
+      "animationAvailable": false,
+      "sortOrder": 201
+    },
+    {
+      "exerciseId": "builtin:stair_climber",
+      "nameAr": "جهاز صعود الدرج",
+      "nameEn": "Stair Climber",
+      "aliases": {
+        "ar": [
+          "ستير ماستر",
+          "جهاز السلم"
+        ],
+        "en": [
+          "StepMill",
+          "StairMaster"
+        ]
+      },
+      "activity": "cardio",
+      "primaryMuscle": null,
+      "equipment": "machines",
+      "trackingType": "duration",
+      "imageRef": "images/stair-climber__hold.webp",
+      "frames": [
+        {
+          "path": "images/stair-climber__hold.webp",
+          "role": "hold"
+        }
+      ],
+      "animationAvailable": false,
+      "sortOrder": 202
+    },
+    {
+      "exerciseId": "builtin:battle_rope_alternating_waves",
+      "nameAr": "حبال قتالية — موجات متبادلة",
+      "nameEn": "Battle Rope — Alternating Waves",
+      "aliases": {
+        "ar": [
+          "باتل روب متبادل"
+        ],
+        "en": [
+          "Alternating Battle Rope Waves"
+        ]
+      },
+      "activity": "cardio",
+      "primaryMuscle": null,
+      "equipment": "other",
+      "trackingType": "duration",
+      "imageRef": "images/battle-rope-double-waves__start.webp",
+      "frames": [
+        {
+          "path": "images/battle-rope-double-waves__start.webp",
+          "role": "start"
+        },
+        {
+          "path": "images/battle-rope-double-waves__end.webp",
+          "role": "end"
+        }
+      ],
+      "animationAvailable": false,
+      "sortOrder": 203
+    },
+    {
+      "exerciseId": "builtin:burpees",
+      "nameAr": "بيربي",
+      "nameEn": "Burpee",
+      "aliases": {
+        "ar": [
+          "تمرين بيربي"
+        ],
+        "en": [
+          "Burpees"
+        ]
+      },
+      "activity": "cardio",
+      "primaryMuscle": null,
+      "equipment": "noEquipment",
+      "trackingType": "duration",
+      "imageRef": "images/burpees__start.webp",
+      "frames": [
+        {
+          "path": "images/burpees__start.webp",
+          "role": "start"
+        },
+        {
+          "path": "images/burpees__mid.webp",
+          "role": "mid"
+        },
+        {
+          "path": "images/burpees__end.webp",
+          "role": "end"
+        }
+      ],
+      "animationAvailable": true,
+      "sortOrder": 204
+    },
+    {
+      "exerciseId": "builtin:high_knees",
+      "nameAr": "رفع الركبتين عاليًا — في المكان",
+      "nameEn": "High Knees — In Place",
+      "aliases": {
+        "ar": [
+          "هاي نيز",
+          "هرولة بركب عالية"
+        ],
+        "en": [
+          "High Knees",
+          "High-Knee Run in Place"
+        ]
+      },
+      "activity": "cardio",
+      "primaryMuscle": null,
+      "equipment": "noEquipment",
+      "trackingType": "duration",
+      "imageRef": "images/high-knees__start.webp",
+      "frames": [
+        {
+          "path": "images/high-knees__start.webp",
+          "role": "start"
+        },
+        {
+          "path": "images/high-knees__end.webp",
+          "role": "end"
+        }
+      ],
+      "animationAvailable": false,
+      "sortOrder": 205
+    },
+    {
+      "exerciseId": "builtin:jumping_jacks",
+      "nameAr": "قفز فتح الذراعين والساقين",
+      "nameEn": "Jumping Jack",
+      "aliases": {
+        "ar": [
+          "جامبينغ جاك",
+          "جمبنج جاك"
+        ],
+        "en": [
+          "Jumping Jacks"
+        ]
+      },
+      "activity": "cardio",
+      "primaryMuscle": null,
+      "equipment": "noEquipment",
+      "trackingType": "duration",
+      "imageRef": "images/jumping-jacks__start.webp",
+      "frames": [
+        {
+          "path": "images/jumping-jacks__start.webp",
+          "role": "start"
+        },
+        {
+          "path": "images/jumping-jacks__end.webp",
+          "role": "end"
+        }
+      ],
+      "animationAvailable": true,
+      "sortOrder": 206
+    },
+    {
+      "exerciseId": "builtin:mountain_climbers",
+      "nameAr": "متسلق الجبل",
+      "nameEn": "Mountain Climber",
+      "aliases": {
+        "ar": [
+          "ماونتن كلايمبر",
+          "متسلقو الجبال"
+        ],
+        "en": [
+          "Mountain Climbers"
+        ]
+      },
+      "activity": "cardio",
+      "primaryMuscle": null,
+      "equipment": "noEquipment",
+      "trackingType": "duration",
+      "imageRef": "images/mountain-climbers__start.webp",
+      "frames": [
+        {
+          "path": "images/mountain-climbers__start.webp",
+          "role": "start"
+        },
+        {
+          "path": "images/mountain-climbers__end.webp",
+          "role": "end"
+        }
+      ],
+      "animationAvailable": false,
+      "sortOrder": 207
+    },
+    {
+      "exerciseId": "builtin:shadow_boxing",
+      "nameAr": "ملاكمة الظل",
+      "nameEn": "Shadowboxing",
+      "aliases": {
+        "ar": [
+          "شادو بوكس",
+          "ملاكمة في الهواء"
+        ],
+        "en": [
+          "Shadow Boxing"
+        ]
+      },
+      "activity": "cardio",
+      "primaryMuscle": null,
+      "equipment": "noEquipment",
+      "trackingType": "duration",
+      "imageRef": "images/shadow-boxing__start.webp",
+      "frames": [
+        {
+          "path": "images/shadow-boxing__start.webp",
+          "role": "start"
+        },
+        {
+          "path": "images/shadow-boxing__end.webp",
+          "role": "end"
+        }
+      ],
+      "animationAvailable": true,
+      "sortOrder": 208
+    },
+    {
+      "exerciseId": "builtin:standing_knee_drive",
+      "nameAr": "دفع الركبة للأعلى — من الوقوف",
+      "nameEn": "Standing Knee Drive",
+      "aliases": {
+        "ar": [
+          "رفع الركبة واقف"
+        ],
+        "en": [
+          "Standing Knee Lift"
+        ]
+      },
+      "activity": "cardio",
+      "primaryMuscle": null,
+      "equipment": "noEquipment",
+      "trackingType": "duration",
+      "imageRef": "images/standing-knee-drive__start.webp",
+      "frames": [
+        {
+          "path": "images/standing-knee-drive__start.webp",
+          "role": "start"
+        },
+        {
+          "path": "images/standing-knee-drive__end.webp",
+          "role": "end"
+        }
+      ],
+      "animationAvailable": true,
+      "sortOrder": 209
+    }
+  ]
+}

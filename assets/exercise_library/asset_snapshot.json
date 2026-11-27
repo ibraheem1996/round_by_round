@@ -1,0 +1,16 @@
+{
+  "source_commit": "fb05311cf49dd6ea7946faa014f07f91417aab43",
+  "source_catalog_sha256": "1b2c5a2c0dabd145ccc5aae86ef21eddeeb041c21d7cae9ae3f5507c3cf8b6fd",
+  "app_catalog_sha256": "5565191cb9babd30517126e2326e0fd1c9810a8eac4d61f91830b50160d0d5c5",
+  "definitions": 210,
+  "activities": {
+    "strength": 196,
+    "cardio": 14
+  },
+  "images_copied": 399,
+  "missing_source_image_paths": [],
+  "card_images_missing": 0,
+  "size_source_catalog_bytes": 653090,
+  "size_app_catalog_bytes": 173978,
+  "note": "Generated snapshot. Do not hand-edit; source repo is unchanged. sortOrder is an editorial starting order, not usage statistics."
+}
