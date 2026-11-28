@@ -5,6 +5,7 @@ abstract final class AppRoutes {
   static const startup = '/startup';
   static const onboarding = '/onboarding';
   static const login = '/login';
+  static const exerciseCatalog = '/library';
   static const accountSetup = '/account-setup';
 }
 

@@ -308,6 +308,174 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Couldn’t save your weight. Try again.'**
   String get accountWeightSaveFailed;
+
+  /// No description provided for @exerciseLibrary.
+  ///
+  /// In en, this message translates to:
+  /// **'Library'**
+  String get exerciseLibrary;
+
+  /// No description provided for @allExercises.
+  ///
+  /// In en, this message translates to:
+  /// **'All exercises'**
+  String get allExercises;
+
+  /// No description provided for @searchExercises.
+  ///
+  /// In en, this message translates to:
+  /// **'Search exercises'**
+  String get searchExercises;
+
+  /// No description provided for @clearExerciseSearch.
+  ///
+  /// In en, this message translates to:
+  /// **'Clear search'**
+  String get clearExerciseSearch;
+
+  /// No description provided for @exerciseMuscles.
+  ///
+  /// In en, this message translates to:
+  /// **'Muscles'**
+  String get exerciseMuscles;
+
+  /// No description provided for @exerciseEquipment.
+  ///
+  /// In en, this message translates to:
+  /// **'Equipment'**
+  String get exerciseEquipment;
+
+  /// No description provided for @exerciseRetry.
+  ///
+  /// In en, this message translates to:
+  /// **'Retry'**
+  String get exerciseRetry;
+
+  /// No description provided for @exerciseLoadFailed.
+  ///
+  /// In en, this message translates to:
+  /// **'Could not load exercises'**
+  String get exerciseLoadFailed;
+
+  /// No description provided for @noMatchingExercises.
+  ///
+  /// In en, this message translates to:
+  /// **'No matching exercises'**
+  String get noMatchingExercises;
+
+  /// No description provided for @exerciseDetailsComing.
+  ///
+  /// In en, this message translates to:
+  /// **'Exercise details are coming soon'**
+  String get exerciseDetailsComing;
+
+  /// No description provided for @exerciseMusclesCount.
+  ///
+  /// In en, this message translates to:
+  /// **'Muscles ({count})'**
+  String exerciseMusclesCount(int count);
+
+  /// No description provided for @exerciseEquipmentCount.
+  ///
+  /// In en, this message translates to:
+  /// **'Equipment ({count})'**
+  String exerciseEquipmentCount(int count);
+
+  /// No description provided for @exerciseResults.
+  ///
+  /// In en, this message translates to:
+  /// **'{count, plural, =1{1 exercise} other{{count} exercises}}'**
+  String exerciseResults(int count);
+
+  /// No description provided for @muscleChest.
+  ///
+  /// In en, this message translates to:
+  /// **'Chest'**
+  String get muscleChest;
+
+  /// No description provided for @muscleBack.
+  ///
+  /// In en, this message translates to:
+  /// **'Back'**
+  String get muscleBack;
+
+  /// No description provided for @muscleShoulders.
+  ///
+  /// In en, this message translates to:
+  /// **'Shoulders'**
+  String get muscleShoulders;
+
+  /// No description provided for @muscleBiceps.
+  ///
+  /// In en, this message translates to:
+  /// **'Biceps'**
+  String get muscleBiceps;
+
+  /// No description provided for @muscleTriceps.
+  ///
+  /// In en, this message translates to:
+  /// **'Triceps'**
+  String get muscleTriceps;
+
+  /// No description provided for @muscleOther.
+  ///
+  /// In en, this message translates to:
+  /// **'Other'**
+  String get muscleOther;
+
+  /// No description provided for @muscleCardio.
+  ///
+  /// In en, this message translates to:
+  /// **'Cardio'**
+  String get muscleCardio;
+
+  /// No description provided for @equipmentMachines.
+  ///
+  /// In en, this message translates to:
+  /// **'Machines'**
+  String get equipmentMachines;
+
+  /// No description provided for @equipmentNoEquipment.
+  ///
+  /// In en, this message translates to:
+  /// **'No equipment'**
+  String get equipmentNoEquipment;
+
+  /// No description provided for @equipmentDumbbell.
+  ///
+  /// In en, this message translates to:
+  /// **'Dumbbell'**
+  String get equipmentDumbbell;
+
+  /// No description provided for @equipmentBarbell.
+  ///
+  /// In en, this message translates to:
+  /// **'Barbell'**
+  String get equipmentBarbell;
+
+  /// No description provided for @equipmentBands.
+  ///
+  /// In en, this message translates to:
+  /// **'Resistance bands and suspension straps'**
+  String get equipmentBands;
+
+  /// No description provided for @equipmentKettlebell.
+  ///
+  /// In en, this message translates to:
+  /// **'Kettlebell'**
+  String get equipmentKettlebell;
+
+  /// No description provided for @equipmentOther.
+  ///
+  /// In en, this message translates to:
+  /// **'Other'**
+  String get equipmentOther;
+
+  /// No description provided for @exerciseLegs.
+  ///
+  /// In en, this message translates to:
+  /// **'Legs'**
+  String get exerciseLegs;
 }
 
 class _AppLocalizationsDelegate

@@ -30,6 +30,16 @@ final class AppTypography {
     height: _isArabic ? 1.35 : 1.2,
   );
 
+  TextStyle get catalogSectionTitle => _theme.textTheme.titleMedium!.copyWith(
+    color: _theme.colorScheme.primary,
+    fontWeight: FontWeight.w700,
+  );
+
+  TextStyle get catalogCardTitle =>
+      _theme.textTheme.titleMedium!.copyWith(fontWeight: FontWeight.w700);
+
+  TextStyle get catalogCardLabel => _theme.textTheme.labelMedium!;
+
   TextStyle get weightPickerValue => _theme.textTheme.headlineMedium!.copyWith(
     fontSize: 32,
     fontWeight: FontWeight.w800,

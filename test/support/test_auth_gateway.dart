@@ -10,6 +10,8 @@ import 'package:round_by_round/features/account_setup/account_repository.dart';
 import 'package:round_by_round/features/account_setup/presentation/account_setup_cubit.dart';
 import 'package:round_by_round/features/authentication/auth_gateway.dart';
 import 'package:round_by_round/features/authentication/presentation/login/login_cubit.dart';
+import 'package:round_by_round/features/exercises/data/asset_exercise_catalog_repository.dart';
+import 'package:round_by_round/features/exercises/presentation/catalog/exercise_catalog_cubit.dart';
 import 'package:round_by_round/features/onboarding/data/onboarding_intro_completion.dart';
 
 import 'test_preferences.dart';
@@ -69,6 +71,7 @@ Widget testApp(
   TestAuthGateway gateway, {
   Future<void> Function()? beforeInitialize,
   AccountRepository? accounts,
+  ExerciseCatalogCubit Function()? createExerciseCatalog,
 }) => AppStartup(
   prepare: () async {
     await beforeInitialize?.call();
@@ -79,6 +82,9 @@ Widget testApp(
       create: (_) =>
           AppEntryCubit(gateway, repository, completed, intro.save)..start(),
       child: MainApp(
+        createExerciseCatalog:
+            createExerciseCatalog ??
+            () => ExerciseCatalogCubit(AssetExerciseCatalogRepository()),
         createLogin: () => LoginCubit(gateway),
         createAccountSetup: (uid) => AccountSetupCubit(repository, uid),
       ),

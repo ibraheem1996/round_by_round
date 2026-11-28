@@ -125,4 +125,100 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get accountWeightSaveFailed => 'Couldn’t save your weight. Try again.';
+
+  @override
+  String get exerciseLibrary => 'Library';
+
+  @override
+  String get allExercises => 'All exercises';
+
+  @override
+  String get searchExercises => 'Search exercises';
+
+  @override
+  String get clearExerciseSearch => 'Clear search';
+
+  @override
+  String get exerciseMuscles => 'Muscles';
+
+  @override
+  String get exerciseEquipment => 'Equipment';
+
+  @override
+  String get exerciseRetry => 'Retry';
+
+  @override
+  String get exerciseLoadFailed => 'Could not load exercises';
+
+  @override
+  String get noMatchingExercises => 'No matching exercises';
+
+  @override
+  String get exerciseDetailsComing => 'Exercise details are coming soon';
+
+  @override
+  String exerciseMusclesCount(int count) {
+    return 'Muscles ($count)';
+  }
+
+  @override
+  String exerciseEquipmentCount(int count) {
+    return 'Equipment ($count)';
+  }
+
+  @override
+  String exerciseResults(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count exercises',
+      one: '1 exercise',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get muscleChest => 'Chest';
+
+  @override
+  String get muscleBack => 'Back';
+
+  @override
+  String get muscleShoulders => 'Shoulders';
+
+  @override
+  String get muscleBiceps => 'Biceps';
+
+  @override
+  String get muscleTriceps => 'Triceps';
+
+  @override
+  String get muscleOther => 'Other';
+
+  @override
+  String get muscleCardio => 'Cardio';
+
+  @override
+  String get equipmentMachines => 'Machines';
+
+  @override
+  String get equipmentNoEquipment => 'No equipment';
+
+  @override
+  String get equipmentDumbbell => 'Dumbbell';
+
+  @override
+  String get equipmentBarbell => 'Barbell';
+
+  @override
+  String get equipmentBands => 'Resistance bands and suspension straps';
+
+  @override
+  String get equipmentKettlebell => 'Kettlebell';
+
+  @override
+  String get equipmentOther => 'Other';
+
+  @override
+  String get exerciseLegs => 'Legs';
 }

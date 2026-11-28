@@ -6,16 +6,20 @@ import '../features/account_setup/presentation/account_setup_cubit.dart';
 import '../features/account_setup/presentation/account_setup_page.dart';
 import '../features/authentication/presentation/login/login_cubit.dart';
 import '../features/authentication/presentation/login/login_page.dart';
+import '../features/exercises/presentation/catalog/exercise_catalog_cubit.dart';
+import '../features/exercises/presentation/catalog/exercise_catalog_page.dart';
+import '../features/exercises/presentation/details/exercise_detail_placeholder_page.dart';
 import '../features/onboarding/presentation/onboarding_page.dart';
 import '../l10n/app_localizations.dart';
 import 'app_route_guard.dart';
+import 'home_page.dart';
 import 'startup/app_entry_cubit.dart';
 import 'startup/app_entry_state.dart';
 import 'startup/startup_page.dart';
-import 'theme/app_typography.dart';
 
 GoRouter createAppRouter({
   required AppEntryCubit entry,
+  required ExerciseCatalogCubit Function() createExerciseCatalog,
   required LoginCubit Function() createLogin,
   required AccountSetupCubit Function(String uid) createAccountSetup,
 }) {
@@ -38,17 +42,25 @@ GoRouter createAppRouter({
       ),
       GoRoute(
         path: AppRoutes.home,
-        builder: (context, state) => Scaffold(
-          body: SafeArea(
-            child: Center(
-              child: Text(
-                AppLocalizations.of(context)!.appName,
-                style: context.appTypography.pageTitle,
-                textAlign: TextAlign.center,
-              ),
+        builder: (context, _) => HomePage(
+          onOpenLibrary: () => context.push(AppRoutes.exerciseCatalog),
+        ),
+      ),
+      GoRoute(
+        path: AppRoutes.exerciseCatalog,
+        builder: (_, _) => BlocProvider(
+          create: (_) => createExerciseCatalog()..load(),
+          child: const ExerciseCatalogPage(),
+        ),
+        routes: [
+          GoRoute(
+            name: 'exercise-details',
+            path: ':exerciseId',
+            builder: (_, state) => ExerciseDetailPlaceholderPage(
+              exerciseId: state.pathParameters['exerciseId']!,
             ),
           ),
-        ),
+        ],
       ),
       GoRoute(
         path: AppRoutes.onboarding,

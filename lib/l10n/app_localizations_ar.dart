@@ -122,4 +122,103 @@ class AppLocalizationsAr extends AppLocalizations {
 
   @override
   String get accountWeightSaveFailed => 'تعذّر حفظ وزنك. حاول مرة أخرى.';
+
+  @override
+  String get exerciseLibrary => 'المكتبة';
+
+  @override
+  String get allExercises => 'كل التمارين';
+
+  @override
+  String get searchExercises => 'ابحث عن تمرين';
+
+  @override
+  String get clearExerciseSearch => 'مسح البحث';
+
+  @override
+  String get exerciseMuscles => 'العضلات';
+
+  @override
+  String get exerciseEquipment => 'المعدات';
+
+  @override
+  String get exerciseRetry => 'إعادة المحاولة';
+
+  @override
+  String get exerciseLoadFailed => 'تعذّر تحميل التمارين';
+
+  @override
+  String get noMatchingExercises => 'لا توجد تمارين مطابقة';
+
+  @override
+  String get exerciseDetailsComing => 'تفاصيل التمرين قريبًا';
+
+  @override
+  String exerciseMusclesCount(int count) {
+    return 'العضلات ($count)';
+  }
+
+  @override
+  String exerciseEquipmentCount(int count) {
+    return 'المعدات ($count)';
+  }
+
+  @override
+  String exerciseResults(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count تمرينًا',
+      few: '$count تمارين',
+      two: 'تمرينان',
+      one: 'تمرين واحد',
+      zero: 'لا نتائج',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get muscleChest => 'الصدر';
+
+  @override
+  String get muscleBack => 'الظهر';
+
+  @override
+  String get muscleShoulders => 'الأكتاف';
+
+  @override
+  String get muscleBiceps => 'البايسبس';
+
+  @override
+  String get muscleTriceps => 'الترايسبس';
+
+  @override
+  String get muscleOther => 'أخرى';
+
+  @override
+  String get muscleCardio => 'كارديو';
+
+  @override
+  String get equipmentMachines => 'أجهزة';
+
+  @override
+  String get equipmentNoEquipment => 'بدون أدوات';
+
+  @override
+  String get equipmentDumbbell => 'دمبل';
+
+  @override
+  String get equipmentBarbell => 'بار';
+
+  @override
+  String get equipmentBands => 'أشرطة مقاومة وحبال تعليق';
+
+  @override
+  String get equipmentKettlebell => 'كيتل بيل';
+
+  @override
+  String get equipmentOther => 'أخرى';
+
+  @override
+  String get exerciseLegs => 'الأرجل';
 }

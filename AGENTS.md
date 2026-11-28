@@ -8,7 +8,7 @@
 
 ## 2. Sources of Truth
 - `Project docs/GYM_TRACKER_V1_PRODUCT_CONTRACT.md` — approved product behavior and scope.
-- `Project docs/GYM_TRACKER_V1_TECHNICAL_CONTRACT (1).md` — approved technical decisions.
+- `Project docs/GYM_TRACKER_V1_TECHNICAL_CONTRACT.md` — approved technical decisions.
 - `Project docs/PROJECT_STATUS.md` — concise snapshot of current progress, active work, and blockers; **not** a source of new requirements. Read it when present and keep it accurate after material progress or a verified status change. Replace stale entries, never append a changelog; if absent, report it rather than inventing facts.
 - Read only task-relevant contract sections and dependencies. Never turn pending choices into decisions or silently override contracts. Product and technical contracts are living documents. Update the relevant contract in place when an approved decision changes requirements.
 

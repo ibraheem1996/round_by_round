@@ -6,6 +6,7 @@ import 'package:material_ui/material_ui.dart';
 
 import '../features/account_setup/presentation/account_setup_cubit.dart';
 import '../features/authentication/presentation/login/login_cubit.dart';
+import '../features/exercises/presentation/catalog/exercise_catalog_cubit.dart';
 import '../l10n/app_localizations.dart';
 import 'app_router.dart';
 import 'startup/app_entry_cubit.dart';
@@ -26,10 +27,12 @@ Locale resolveAppLocale(List<Locale>? preferred, Iterable<Locale> supported) =>
 class MainApp extends StatefulWidget {
   const MainApp({
     required this.createLogin,
+    required this.createExerciseCatalog,
     required this.createAccountSetup,
     super.key,
   });
 
+  final ExerciseCatalogCubit Function() createExerciseCatalog;
   final LoginCubit Function() createLogin;
   final AccountSetupCubit Function(String uid) createAccountSetup;
 
@@ -47,6 +50,7 @@ class _MainAppState extends State<MainApp> {
     final entry = context.read<AppEntryCubit>();
     _router = createAppRouter(
       entry: entry,
+      createExerciseCatalog: widget.createExerciseCatalog,
       createLogin: widget.createLogin,
       createAccountSetup: widget.createAccountSetup,
     );

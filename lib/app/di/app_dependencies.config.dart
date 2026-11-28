@@ -26,6 +26,12 @@ import '../../features/authentication/auth_gateway.dart' as _i401;
 import '../../features/authentication/data/firebase_auth_gateway.dart' as _i457;
 import '../../features/authentication/presentation/login/login_cubit.dart'
     as _i514;
+import '../../features/exercises/data/asset_exercise_catalog_repository.dart'
+    as _i938;
+import '../../features/exercises/domain/exercise_catalog_repository.dart'
+    as _i897;
+import '../../features/exercises/presentation/catalog/exercise_catalog_cubit.dart'
+    as _i58;
 import '../../features/onboarding/data/onboarding_intro_completion.dart'
     as _i1036;
 import 'firebase_module.dart' as _i616;
@@ -49,6 +55,12 @@ extension GetItInjectableX on _i174.GetIt {
     gh.lazySingleton<_i1036.OnboardingIntroCompletion>(
       () =>
           _i1036.OnboardingIntroCompletion(gh<_i460.SharedPreferencesAsync>()),
+    );
+    gh.lazySingleton<_i897.ExerciseCatalogRepository>(
+      () => _i938.AssetExerciseCatalogRepository(),
+    );
+    gh.factory<_i58.ExerciseCatalogCubit>(
+      () => _i58.ExerciseCatalogCubit(gh<_i897.ExerciseCatalogRepository>()),
     );
     gh.lazySingleton<_i158.AccountRepository>(
       () => _i177.FirestoreAccountRepository(

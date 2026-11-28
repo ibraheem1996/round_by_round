@@ -35,5 +35,54 @@
   "accountWeightReading": "{weight} kilograms",
   "@accountWeightReading": {"placeholders": {"weight": {"type": "String"}}},
   "accountWeightContinue": "Let’s start",
-  "accountWeightSaveFailed": "Couldn’t save your weight. Try again."
+  "accountWeightSaveFailed": "Couldn’t save your weight. Try again.",
+  "exerciseLibrary": "Library",
+  "allExercises": "All exercises",
+  "searchExercises": "Search exercises",
+  "clearExerciseSearch": "Clear search",
+  "exerciseMuscles": "Muscles",
+  "exerciseEquipment": "Equipment",
+  "exerciseRetry": "Retry",
+  "exerciseLoadFailed": "Could not load exercises",
+  "noMatchingExercises": "No matching exercises",
+  "exerciseDetailsComing": "Exercise details are coming soon",
+  "exerciseMusclesCount": "Muscles ({count})",
+  "@exerciseMusclesCount": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "exerciseEquipmentCount": "Equipment ({count})",
+  "@exerciseEquipmentCount": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "exerciseResults": "{count, plural, =1{1 exercise} other{{count} exercises}}",
+  "@exerciseResults": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "muscleChest": "Chest",
+  "muscleBack": "Back",
+  "muscleShoulders": "Shoulders",
+  "muscleBiceps": "Biceps",
+  "muscleTriceps": "Triceps",
+  "muscleOther": "Other",
+  "muscleCardio": "Cardio",
+  "equipmentMachines": "Machines",
+  "equipmentNoEquipment": "No equipment",
+  "equipmentDumbbell": "Dumbbell",
+  "equipmentBarbell": "Barbell",
+  "equipmentBands": "Resistance bands and suspension straps",
+  "equipmentKettlebell": "Kettlebell",
+  "equipmentOther": "Other",
+  "exerciseLegs": "Legs"
 }

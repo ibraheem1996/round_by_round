@@ -7,6 +7,7 @@ import '../features/account_setup/account_repository.dart';
 import '../features/account_setup/presentation/account_setup_cubit.dart';
 import '../features/authentication/auth_gateway.dart';
 import '../features/authentication/presentation/login/login_cubit.dart';
+import '../features/exercises/presentation/catalog/exercise_catalog_cubit.dart';
 import '../features/onboarding/data/onboarding_intro_completion.dart';
 import '../firebase_options.dart';
 import 'app.dart';
@@ -38,6 +39,7 @@ void bootstrap() {
         return BlocProvider<AppEntryCubit>(
           create: (_) => entry..start(),
           child: MainApp(
+            createExerciseCatalog: () => dependencies<ExerciseCatalogCubit>(),
             createLogin: () => dependencies<LoginCubit>(),
             createAccountSetup: (uid) =>
                 dependencies<AccountSetupCubit>(param1: uid),
