@@ -20,6 +20,10 @@ void main() {
     expect(catalog, hasLength(210));
     expect(catalog.map((e) => e.exerciseId), rows.map((e) => e['exerciseId']));
     expect(catalog.map((e) => e.exerciseId).toSet(), hasLength(210));
+    expect(
+      catalog.map((e) => e.imageRef),
+      rows.map((e) => 'assets/exercise_library/${e['imageRef']}'),
+    );
     final strength = catalog.where(
       (e) => e.activity == ExerciseActivity.strength,
     );
@@ -69,13 +73,6 @@ void main() {
       results.every((exercise) => exercise.group == ExerciseGroup.legs),
       isTrue,
     );
-  });
-
-  test('loads only requested image candidates from the asset bundle', () async {
-    final id = catalog.first.exerciseId;
-    expect(await repository.loadImage(id), isNotEmpty);
-    expect(await repository.loadImage(id, candidate: 1), isNotEmpty);
-    expect(await repository.loadImage('missing'), isNull);
   });
 
   test(

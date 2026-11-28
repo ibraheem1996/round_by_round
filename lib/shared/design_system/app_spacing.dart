@@ -11,6 +11,9 @@ abstract final class AppSpacing {
   static const double titleToBodyGap = 12;
   static const double sectionGap = 16;
   static const double relatedItemGap = 8;
+  static const double compactItemGap = 4;
+  static const double badgeHorizontalPadding = 8;
+  static const double badgeVerticalPadding = 2;
   static const double buttonHorizontalPadding = 16;
   static const double buttonVerticalPadding = 12;
 }

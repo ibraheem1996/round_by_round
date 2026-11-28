@@ -40,7 +40,6 @@ class _CatalogResults extends StatelessWidget {
     return BlocBuilder<ExerciseCatalogCubit, ExerciseCatalogState>(
       builder: (context, state) => ExerciseCatalogResults(
         state: state,
-        repository: cubit.repository,
         onRetry: cubit.load,
         onExercisePressed: (id) => context.pushNamed(
           'exercise-details',

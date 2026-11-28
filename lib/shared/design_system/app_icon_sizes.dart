@@ -7,6 +7,23 @@ abstract final class AppIconSizes {
   static double buttonAction(BuildContext context) =>
       _responsive(context, compact: 21, medium: 22, expanded: 23);
 
+  static double compactControl(BuildContext context) => _responsive(
+    context,
+    compact: _increaseSize(
+      context,
+      19,
+      largeIncrease: 3,
+      extraLargeIncrease: 4,
+    ),
+    medium: _increaseSize(context, 20, largeIncrease: 4, extraLargeIncrease: 5),
+    expanded: _increaseSize(
+      context,
+      21,
+      largeIncrease: 6,
+      extraLargeIncrease: 7,
+    ),
+  );
+
   static double _responsive(
     BuildContext context, {
     required double compact,

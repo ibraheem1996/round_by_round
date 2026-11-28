@@ -4,6 +4,7 @@ import 'package:material_ui/material_ui.dart';
 import '../../../../../app/theme/app_typography.dart';
 import '../../../../../l10n/app_localizations.dart';
 import '../../../../../shared/design_system/app_spacing.dart';
+import '../../../../../shared/design_system/app_text_scale_limits.dart';
 import '../exercise_catalog_cubit.dart';
 import 'exercise_catalog_filters.dart';
 
@@ -37,24 +38,27 @@ class _ExerciseCatalogHeaderState extends State<ExerciseCatalogHeader> {
         spacing: AppSpacing.relatedItemGap,
         children: [
           Text(l.allExercises, style: context.appTypography.pageTitle),
-          TextField(
-            controller: _search,
-            onChanged: cubit.search,
-            decoration: InputDecoration(
-              labelText: l.searchExercises,
-              filled: true,
-              fillColor: colors.surfaceContainer,
-              prefixIcon: const Icon(Icons.search),
-              suffixIcon: state.search.isEmpty
-                  ? null
-                  : IconButton(
-                      tooltip: l.clearExerciseSearch,
-                      onPressed: () {
-                        _search.clear();
-                        cubit.search('');
-                      },
-                      icon: const Icon(Icons.close),
-                    ),
+          MediaQuery.withClampedTextScaling(
+            maxScaleFactor: AppTextScaleLimits.textField,
+            child: TextField(
+              controller: _search,
+              onChanged: cubit.search,
+              decoration: InputDecoration(
+                labelText: l.searchExercises,
+                filled: true,
+                fillColor: colors.surfaceContainer,
+                prefixIcon: const Icon(Icons.search),
+                suffixIcon: state.search.isEmpty
+                    ? null
+                    : IconButton(
+                        tooltip: l.clearExerciseSearch,
+                        onPressed: () {
+                          _search.clear();
+                          cubit.search('');
+                        },
+                        icon: const Icon(Icons.close),
+                      ),
+              ),
             ),
           ),
           ExerciseCatalogFilters(state: state),

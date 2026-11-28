@@ -1,5 +1,7 @@
 import 'package:material_ui/material_ui.dart';
 
+import '../../shared/design_system/app_radius.dart';
+
 final lightTheme = _buildAppTheme(ThemeData.light());
 final darkTheme = _buildAppTheme(ThemeData.dark());
 
@@ -15,6 +17,12 @@ ThemeData _buildAppTheme(ThemeData defaults) {
   return defaults.copyWith(
     colorScheme: scheme,
     scaffoldBackgroundColor: scheme.surface,
+    cardTheme: defaults.cardTheme.copyWith(
+      shape: const RoundedRectangleBorder(
+        borderRadius: BorderRadius.all(Radius.circular(AppRadius.cardRadius)),
+      ),
+      clipBehavior: Clip.antiAlias,
+    ),
     iconTheme: IconThemeData(applyTextScaling: true),
   );
 }

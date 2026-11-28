@@ -1,5 +1,3 @@
-import 'dart:typed_data';
-
 import 'package:flutter_test/flutter_test.dart';
 import 'package:go_router/go_router.dart';
 import 'package:material_ui/material_ui.dart';
@@ -85,26 +83,51 @@ void main() {
     tester.view.physicalSize = const Size(320, 610);
     tester.view.devicePixelRatio = 1;
     tester.platformDispatcher.localesTestValue = const [Locale('ar')];
-    tester.platformDispatcher.textScaleFactorTestValue = 2;
+    tester.platformDispatcher.textScaleFactorTestValue = 3;
     addTearDown(tester.view.resetPhysicalSize);
     addTearDown(tester.view.resetDevicePixelRatio);
     addTearDown(tester.platformDispatcher.clearAllTestValues);
     final auth = TestAuthGateway(userId: 'owner');
     addTearDown(auth.close);
+    final cubit = ExerciseCatalogCubit(repository);
     await tester.pumpWidget(
       testApp(
         TestPreferences(completed: true),
         auth,
-        createExerciseCatalog: () => ExerciseCatalogCubit(repository),
+        createExerciseCatalog: () => cubit,
       ),
     );
     await tester.pumpAndSettle();
     await tester.tap(find.text('المكتبة'));
     await tester.pumpAndSettle();
     expect(find.byType(ExerciseCatalogPage), findsOneWidget);
-    expect(tester.takeException(), isNull);
-    await tester.drag(find.byType(CustomScrollView), const Offset(0, -310));
+    double scaleFor(Finder finder) =>
+        MediaQuery.textScalerOf(tester.element(finder)).scale(10) / 10;
+
+    expect(scaleFor(find.byType(TextField)), 1.5);
+    expect(scaleFor(find.byType(FilledButton).first), 1.5);
+    expect(scaleFor(find.byType(FilledButton).last), 1.5);
+    expect(scaleFor(find.text('كل التمارين')), 3);
+    cubit.toggleEquipment(Equipment.resistanceBand);
     await tester.pumpAndSettle();
+    final chipLabel = find.text('أشرطة مقاومة وحبال تعليق').last;
+    expect(scaleFor(chipLabel), 1.5);
+    final localizations = MaterialLocalizations.of(tester.element(chipLabel));
+    final delete = find.byTooltip(localizations.deleteButtonTooltip);
+    for (var i = 0; i < 5 && delete.hitTestable().evaluate().isEmpty; i++) {
+      await tester.drag(find.byType(CustomScrollView), const Offset(0, -180));
+      await tester.pumpAndSettle();
+    }
+    await tester.tap(delete.hitTestable());
+    await tester.pumpAndSettle();
+    expect(cubit.state.equipment, isEmpty);
+    expect(tester.takeException(), isNull);
+    for (var i = 0; i < 5 && find.byType(Card).evaluate().isEmpty; i++) {
+      await tester.drag(find.byType(CustomScrollView), const Offset(0, -200));
+      await tester.pumpAndSettle();
+    }
+    await tester.pumpAndSettle();
+    expect(scaleFor(find.byType(Card).first), 2);
     expect(tester.takeException(), isNull);
   });
 
@@ -115,7 +138,10 @@ void main() {
       addTearDown(auth.close);
       tester.platformDispatcher.localesTestValue = const [Locale('en')];
       addTearDown(tester.platformDispatcher.clearAllTestValues);
-      final failing = _RetryCatalog(await repository.loadAll());
+      final failing = _RetryCatalog([
+        for (final exercise in await repository.loadAll())
+          exercise.copyWith(imageRef: 'assets/exercise_library/missing.webp'),
+      ]);
       await tester.pumpWidget(
         testApp(
           TestPreferences(completed: true),
@@ -131,8 +157,6 @@ void main() {
       await tester.pumpAndSettle();
       expect(find.text('210 exercises'), findsOneWidget);
       expect(find.byIcon(Icons.image_outlined), findsWidgets);
-      expect(failing.imageCandidates, containsAll([0, 1]));
-      expect(failing.visibleIds.length, lessThan(210));
       await tester.enterText(find.byType(TextField), 'zzzzzz');
       await tester.pumpAndSettle();
       expect(find.text('No matching exercises'), findsOneWidget);
@@ -144,20 +168,11 @@ class _RetryCatalog implements ExerciseCatalogRepository {
   _RetryCatalog(this.definitions);
 
   final List<ExerciseDefinition> definitions;
-  final visibleIds = <String>{};
-  final imageCandidates = <int>{};
   var _attempts = 0;
 
   @override
   Future<List<ExerciseDefinition>> loadAll() async {
     if (_attempts++ == 0) throw const FormatException('Bad catalog');
     return definitions;
-  }
-
-  @override
-  Future<Uint8List?> loadImage(String exerciseId, {int candidate = 0}) async {
-    visibleIds.add(exerciseId);
-    imageCandidates.add(candidate);
-    return candidate == 0 ? Uint8List(0) : null;
   }
 }

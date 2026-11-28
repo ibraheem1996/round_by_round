@@ -7,7 +7,9 @@ abstract final class AppTextScaleLimits {
 
   // static const double snackbar = 2.0;
 
-  // static const double bottomSheet = 2.0;
+  static const double bottomSheet = 2.0;
 
-  // static const double appFormTextField = 1.8;
+  static const double textField = 1.5;
+  static const double contentCard = 2.0;
+  static const double compactButton = 1.5;
 }

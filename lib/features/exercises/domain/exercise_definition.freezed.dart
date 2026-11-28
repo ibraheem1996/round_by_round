@@ -15,7 +15,7 @@ T _$identity<T>(T value) => value;
 /// @nodoc
 mixin _$ExerciseDefinition {
 
- String get exerciseId; ExerciseSource get source; String? get nameAr; String? get nameEn; List<String> get aliases; ExerciseActivity get activity; ExerciseTrackingType get trackingType; ExerciseGroup get group; Equipment? get equipment; int get sortOrder;
+ String get exerciseId; ExerciseSource get source; String? get nameAr; String? get nameEn; List<String> get aliases; ExerciseActivity get activity; ExerciseTrackingType get trackingType; ExerciseGroup get group; Equipment? get equipment; String? get imageRef; int get sortOrder;
 /// Create a copy of ExerciseDefinition
 /// with the given fields replaced by the non-null parameter values.
 @JsonKey(includeFromJson: false, includeToJson: false)
@@ -27,20 +27,20 @@ $ExerciseDefinitionCopyWith<ExerciseDefinition> get copyWith => _$ExerciseDefini
 @override
 bool operator ==(Object other) {
   final _this = this as ExerciseDefinition;
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is ExerciseDefinition&&(identical(other.exerciseId, _this.exerciseId) || other.exerciseId == _this.exerciseId)&&(identical(other.source, _this.source) || other.source == _this.source)&&(identical(other.nameAr, _this.nameAr) || other.nameAr == _this.nameAr)&&(identical(other.nameEn, _this.nameEn) || other.nameEn == _this.nameEn)&&const DeepCollectionEquality().equals(other.aliases, _this.aliases)&&(identical(other.activity, _this.activity) || other.activity == _this.activity)&&(identical(other.trackingType, _this.trackingType) || other.trackingType == _this.trackingType)&&(identical(other.group, _this.group) || other.group == _this.group)&&(identical(other.equipment, _this.equipment) || other.equipment == _this.equipment)&&(identical(other.sortOrder, _this.sortOrder) || other.sortOrder == _this.sortOrder));
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is ExerciseDefinition&&(identical(other.exerciseId, _this.exerciseId) || other.exerciseId == _this.exerciseId)&&(identical(other.source, _this.source) || other.source == _this.source)&&(identical(other.nameAr, _this.nameAr) || other.nameAr == _this.nameAr)&&(identical(other.nameEn, _this.nameEn) || other.nameEn == _this.nameEn)&&const DeepCollectionEquality().equals(other.aliases, _this.aliases)&&(identical(other.activity, _this.activity) || other.activity == _this.activity)&&(identical(other.trackingType, _this.trackingType) || other.trackingType == _this.trackingType)&&(identical(other.group, _this.group) || other.group == _this.group)&&(identical(other.equipment, _this.equipment) || other.equipment == _this.equipment)&&(identical(other.imageRef, _this.imageRef) || other.imageRef == _this.imageRef)&&(identical(other.sortOrder, _this.sortOrder) || other.sortOrder == _this.sortOrder));
 }
 
 
 @override
 int get hashCode {
   final _this = this as ExerciseDefinition;
-  return Object.hash(runtimeType,_this.exerciseId,_this.source,_this.nameAr,_this.nameEn,const DeepCollectionEquality().hash(_this.aliases),_this.activity,_this.trackingType,_this.group,_this.equipment,_this.sortOrder);
+  return Object.hash(runtimeType,_this.exerciseId,_this.source,_this.nameAr,_this.nameEn,const DeepCollectionEquality().hash(_this.aliases),_this.activity,_this.trackingType,_this.group,_this.equipment,_this.imageRef,_this.sortOrder);
 }
 
 @override
 String toString() {
   final _this = this as ExerciseDefinition;
-  return 'ExerciseDefinition(exerciseId: ${_this.exerciseId}, source: ${_this.source}, nameAr: ${_this.nameAr}, nameEn: ${_this.nameEn}, aliases: ${_this.aliases}, activity: ${_this.activity}, trackingType: ${_this.trackingType}, group: ${_this.group}, equipment: ${_this.equipment}, sortOrder: ${_this.sortOrder})';
+  return 'ExerciseDefinition(exerciseId: ${_this.exerciseId}, source: ${_this.source}, nameAr: ${_this.nameAr}, nameEn: ${_this.nameEn}, aliases: ${_this.aliases}, activity: ${_this.activity}, trackingType: ${_this.trackingType}, group: ${_this.group}, equipment: ${_this.equipment}, imageRef: ${_this.imageRef}, sortOrder: ${_this.sortOrder})';
 }
 
 
@@ -51,7 +51,7 @@ abstract mixin class $ExerciseDefinitionCopyWith<$Res>  {
   factory $ExerciseDefinitionCopyWith(ExerciseDefinition value, $Res Function(ExerciseDefinition) _then) = _$ExerciseDefinitionCopyWithImpl;
 @useResult
 $Res call({
- String exerciseId, ExerciseSource source, String? nameAr, String? nameEn, List<String> aliases, ExerciseActivity activity, ExerciseTrackingType trackingType, ExerciseGroup group, Equipment? equipment, int sortOrder
+ String exerciseId, ExerciseSource source, String? nameAr, String? nameEn, List<String> aliases, ExerciseActivity activity, ExerciseTrackingType trackingType, ExerciseGroup group, Equipment? equipment, String? imageRef, int sortOrder
 });
 
 
@@ -68,7 +68,7 @@ class _$ExerciseDefinitionCopyWithImpl<$Res>
 
 /// Create a copy of ExerciseDefinition
 /// with the given fields replaced by the non-null parameter values.
-@pragma('vm:prefer-inline') @override $Res call({Object? exerciseId = null,Object? source = null,Object? nameAr = freezed,Object? nameEn = freezed,Object? aliases = null,Object? activity = null,Object? trackingType = null,Object? group = null,Object? equipment = freezed,Object? sortOrder = null,}) {
+@pragma('vm:prefer-inline') @override $Res call({Object? exerciseId = null,Object? source = null,Object? nameAr = freezed,Object? nameEn = freezed,Object? aliases = null,Object? activity = null,Object? trackingType = null,Object? group = null,Object? equipment = freezed,Object? imageRef = freezed,Object? sortOrder = null,}) {
   return _then(ExerciseDefinition(
 exerciseId: null == exerciseId ? _self.exerciseId : exerciseId // ignore: cast_nullable_to_non_nullable
 as String,source: null == source ? _self.source : source // ignore: cast_nullable_to_non_nullable
@@ -79,7 +79,8 @@ as List<String>,activity: null == activity ? _self.activity : activity // ignore
 as ExerciseActivity,trackingType: null == trackingType ? _self.trackingType : trackingType // ignore: cast_nullable_to_non_nullable
 as ExerciseTrackingType,group: null == group ? _self.group : group // ignore: cast_nullable_to_non_nullable
 as ExerciseGroup,equipment: freezed == equipment ? _self.equipment : equipment // ignore: cast_nullable_to_non_nullable
-as Equipment?,sortOrder: null == sortOrder ? _self.sortOrder : sortOrder // ignore: cast_nullable_to_non_nullable
+as Equipment?,imageRef: freezed == imageRef ? _self.imageRef : imageRef // ignore: cast_nullable_to_non_nullable
+as String?,sortOrder: null == sortOrder ? _self.sortOrder : sortOrder // ignore: cast_nullable_to_non_nullable
 as int,
   ));
 }
@@ -165,10 +166,10 @@ return $default(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( String exerciseId,  ExerciseSource source,  String? nameAr,  String? nameEn,  List<String> aliases,  ExerciseActivity activity,  ExerciseTrackingType trackingType,  ExerciseGroup group,  Equipment? equipment,  int sortOrder)?  $default,{required TResult orElse(),}) {final _that = this;
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( String exerciseId,  ExerciseSource source,  String? nameAr,  String? nameEn,  List<String> aliases,  ExerciseActivity activity,  ExerciseTrackingType trackingType,  ExerciseGroup group,  Equipment? equipment,  String? imageRef,  int sortOrder)?  $default,{required TResult orElse(),}) {final _that = this;
 switch (_that) {
 case _ExerciseDefinition() when $default != null:
-return $default(_that.exerciseId,_that.source,_that.nameAr,_that.nameEn,_that.aliases,_that.activity,_that.trackingType,_that.group,_that.equipment,_that.sortOrder);case _:
+return $default(_that.exerciseId,_that.source,_that.nameAr,_that.nameEn,_that.aliases,_that.activity,_that.trackingType,_that.group,_that.equipment,_that.imageRef,_that.sortOrder);case _:
   return orElse();
 
 }
@@ -186,10 +187,10 @@ return $default(_that.exerciseId,_that.source,_that.nameAr,_that.nameEn,_that.al
 /// }
 /// ```
 
-@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( String exerciseId,  ExerciseSource source,  String? nameAr,  String? nameEn,  List<String> aliases,  ExerciseActivity activity,  ExerciseTrackingType trackingType,  ExerciseGroup group,  Equipment? equipment,  int sortOrder)  $default,) {final _that = this;
+@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( String exerciseId,  ExerciseSource source,  String? nameAr,  String? nameEn,  List<String> aliases,  ExerciseActivity activity,  ExerciseTrackingType trackingType,  ExerciseGroup group,  Equipment? equipment,  String? imageRef,  int sortOrder)  $default,) {final _that = this;
 switch (_that) {
 case _ExerciseDefinition():
-return $default(_that.exerciseId,_that.source,_that.nameAr,_that.nameEn,_that.aliases,_that.activity,_that.trackingType,_that.group,_that.equipment,_that.sortOrder);case _:
+return $default(_that.exerciseId,_that.source,_that.nameAr,_that.nameEn,_that.aliases,_that.activity,_that.trackingType,_that.group,_that.equipment,_that.imageRef,_that.sortOrder);case _:
   throw StateError('Unexpected subclass');
 
 }
@@ -206,10 +207,10 @@ return $default(_that.exerciseId,_that.source,_that.nameAr,_that.nameEn,_that.al
 /// }
 /// ```
 
-@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( String exerciseId,  ExerciseSource source,  String? nameAr,  String? nameEn,  List<String> aliases,  ExerciseActivity activity,  ExerciseTrackingType trackingType,  ExerciseGroup group,  Equipment? equipment,  int sortOrder)?  $default,) {final _that = this;
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( String exerciseId,  ExerciseSource source,  String? nameAr,  String? nameEn,  List<String> aliases,  ExerciseActivity activity,  ExerciseTrackingType trackingType,  ExerciseGroup group,  Equipment? equipment,  String? imageRef,  int sortOrder)?  $default,) {final _that = this;
 switch (_that) {
 case _ExerciseDefinition() when $default != null:
-return $default(_that.exerciseId,_that.source,_that.nameAr,_that.nameEn,_that.aliases,_that.activity,_that.trackingType,_that.group,_that.equipment,_that.sortOrder);case _:
+return $default(_that.exerciseId,_that.source,_that.nameAr,_that.nameEn,_that.aliases,_that.activity,_that.trackingType,_that.group,_that.equipment,_that.imageRef,_that.sortOrder);case _:
   return null;
 
 }
@@ -221,7 +222,7 @@ return $default(_that.exerciseId,_that.source,_that.nameAr,_that.nameEn,_that.al
 
 
 class _ExerciseDefinition extends ExerciseDefinition {
-  const _ExerciseDefinition({required this.exerciseId, required this.source, this.nameAr, this.nameEn, required  List<String> aliases, required this.activity, required this.trackingType, required this.group, this.equipment, required this.sortOrder}): _aliases = aliases,super._();
+  const _ExerciseDefinition({required this.exerciseId, required this.source, this.nameAr, this.nameEn, required  List<String> aliases, required this.activity, required this.trackingType, required this.group, this.equipment, this.imageRef, required this.sortOrder}): _aliases = aliases,super._();
   
 
 @override final  String exerciseId;
@@ -239,6 +240,7 @@ class _ExerciseDefinition extends ExerciseDefinition {
 @override final  ExerciseTrackingType trackingType;
 @override final  ExerciseGroup group;
 @override final  Equipment? equipment;
+@override final  String? imageRef;
 @override final  int sortOrder;
 
 /// Create a copy of ExerciseDefinition
@@ -251,18 +253,18 @@ _$ExerciseDefinitionCopyWith<_ExerciseDefinition> get copyWith => __$ExerciseDef
 
 @override
 bool operator ==(Object other) {
-    return identical(this, other) || (other.runtimeType == runtimeType&&other is _ExerciseDefinition&&(identical(other.exerciseId, exerciseId) || other.exerciseId == exerciseId)&&(identical(other.source, source) || other.source == source)&&(identical(other.nameAr, nameAr) || other.nameAr == nameAr)&&(identical(other.nameEn, nameEn) || other.nameEn == nameEn)&&const DeepCollectionEquality().equals(other.aliases, _aliases)&&(identical(other.activity, activity) || other.activity == activity)&&(identical(other.trackingType, trackingType) || other.trackingType == trackingType)&&(identical(other.group, group) || other.group == group)&&(identical(other.equipment, equipment) || other.equipment == equipment)&&(identical(other.sortOrder, sortOrder) || other.sortOrder == sortOrder));
+    return identical(this, other) || (other.runtimeType == runtimeType&&other is _ExerciseDefinition&&(identical(other.exerciseId, exerciseId) || other.exerciseId == exerciseId)&&(identical(other.source, source) || other.source == source)&&(identical(other.nameAr, nameAr) || other.nameAr == nameAr)&&(identical(other.nameEn, nameEn) || other.nameEn == nameEn)&&const DeepCollectionEquality().equals(other.aliases, _aliases)&&(identical(other.activity, activity) || other.activity == activity)&&(identical(other.trackingType, trackingType) || other.trackingType == trackingType)&&(identical(other.group, group) || other.group == group)&&(identical(other.equipment, equipment) || other.equipment == equipment)&&(identical(other.imageRef, imageRef) || other.imageRef == imageRef)&&(identical(other.sortOrder, sortOrder) || other.sortOrder == sortOrder));
 }
 
 
 @override
 int get hashCode {
-    return Object.hash(runtimeType,exerciseId,source,nameAr,nameEn,const DeepCollectionEquality().hash(_aliases),activity,trackingType,group,equipment,sortOrder);
+    return Object.hash(runtimeType,exerciseId,source,nameAr,nameEn,const DeepCollectionEquality().hash(_aliases),activity,trackingType,group,equipment,imageRef,sortOrder);
 }
 
 @override
 String toString() {
-    return 'ExerciseDefinition(exerciseId: $exerciseId, source: $source, nameAr: $nameAr, nameEn: $nameEn, aliases: $aliases, activity: $activity, trackingType: $trackingType, group: $group, equipment: $equipment, sortOrder: $sortOrder)';
+    return 'ExerciseDefinition(exerciseId: $exerciseId, source: $source, nameAr: $nameAr, nameEn: $nameEn, aliases: $aliases, activity: $activity, trackingType: $trackingType, group: $group, equipment: $equipment, imageRef: $imageRef, sortOrder: $sortOrder)';
 }
 
 
@@ -273,7 +275,7 @@ abstract mixin class _$ExerciseDefinitionCopyWith<$Res> implements $ExerciseDefi
   factory _$ExerciseDefinitionCopyWith(_ExerciseDefinition value, $Res Function(_ExerciseDefinition) _then) = __$ExerciseDefinitionCopyWithImpl;
 @override @useResult
 $Res call({
- String exerciseId, ExerciseSource source, String? nameAr, String? nameEn, List<String> aliases, ExerciseActivity activity, ExerciseTrackingType trackingType, ExerciseGroup group, Equipment? equipment, int sortOrder
+ String exerciseId, ExerciseSource source, String? nameAr, String? nameEn, List<String> aliases, ExerciseActivity activity, ExerciseTrackingType trackingType, ExerciseGroup group, Equipment? equipment, String? imageRef, int sortOrder
 });
 
 
@@ -290,7 +292,7 @@ class __$ExerciseDefinitionCopyWithImpl<$Res>
 
 /// Create a copy of ExerciseDefinition
 /// with the given fields replaced by the non-null parameter values.
-@override @pragma('vm:prefer-inline') $Res call({Object? exerciseId = null,Object? source = null,Object? nameAr = freezed,Object? nameEn = freezed,Object? aliases = null,Object? activity = null,Object? trackingType = null,Object? group = null,Object? equipment = freezed,Object? sortOrder = null,}) {
+@override @pragma('vm:prefer-inline') $Res call({Object? exerciseId = null,Object? source = null,Object? nameAr = freezed,Object? nameEn = freezed,Object? aliases = null,Object? activity = null,Object? trackingType = null,Object? group = null,Object? equipment = freezed,Object? imageRef = freezed,Object? sortOrder = null,}) {
   return _then(_ExerciseDefinition(
 exerciseId: null == exerciseId ? _self.exerciseId : exerciseId // ignore: cast_nullable_to_non_nullable
 as String,source: null == source ? _self.source : source // ignore: cast_nullable_to_non_nullable
@@ -301,7 +303,8 @@ as List<String>,activity: null == activity ? _self.activity : activity // ignore
 as ExerciseActivity,trackingType: null == trackingType ? _self.trackingType : trackingType // ignore: cast_nullable_to_non_nullable
 as ExerciseTrackingType,group: null == group ? _self.group : group // ignore: cast_nullable_to_non_nullable
 as ExerciseGroup,equipment: freezed == equipment ? _self.equipment : equipment // ignore: cast_nullable_to_non_nullable
-as Equipment?,sortOrder: null == sortOrder ? _self.sortOrder : sortOrder // ignore: cast_nullable_to_non_nullable
+as Equipment?,imageRef: freezed == imageRef ? _self.imageRef : imageRef // ignore: cast_nullable_to_non_nullable
+as String?,sortOrder: null == sortOrder ? _self.sortOrder : sortOrder // ignore: cast_nullable_to_non_nullable
 as int,
   ));
 }

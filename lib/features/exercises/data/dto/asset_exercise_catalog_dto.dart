@@ -27,7 +27,6 @@ class AssetExerciseDto {
     required this.sortOrder,
     this.primaryMuscle,
     this.imageRef,
-    this.frames = const [],
   });
 
   factory AssetExerciseDto.fromJson(Map<String, dynamic> json) =>
@@ -43,29 +42,9 @@ class AssetExerciseDto {
   final Equipment equipment;
   final int sortOrder;
   final String? imageRef;
-  final List<AssetExerciseFrameDto> frames;
 
-  List<String> get imageCandidates {
-    final paths = <String>{};
-
+  ExerciseDefinition toDefinition({required String assetRoot}) {
     final image = imageRef;
-
-    if (image != null) {
-      paths.add(image);
-    }
-
-    for (final frame in frames) {
-      final path = frame.path;
-
-      if (path != null) {
-        paths.add(path);
-      }
-    }
-
-    return paths.toList();
-  }
-
-  ExerciseDefinition toDefinition() {
     final isCardio = activity == ExerciseActivity.cardio;
     final hasCardioTracking =
         trackingType == ExerciseTrackingType.duration ||
@@ -89,6 +68,7 @@ class AssetExerciseDto {
       trackingType: trackingType,
       group: _readGroup(),
       equipment: equipment,
+      imageRef: image == null || image.isEmpty ? null : '$assetRoot/$image',
       sortOrder: sortOrder,
     );
   }
@@ -123,14 +103,4 @@ class AssetExerciseAliasesDto {
 
   final List<String> ar;
   final List<String> en;
-}
-
-@JsonSerializable(createToJson: false)
-class AssetExerciseFrameDto {
-  const AssetExerciseFrameDto({this.path});
-
-  factory AssetExerciseFrameDto.fromJson(Map<String, dynamic> json) =>
-      _$AssetExerciseFrameDtoFromJson(json);
-
-  final String? path;
 }

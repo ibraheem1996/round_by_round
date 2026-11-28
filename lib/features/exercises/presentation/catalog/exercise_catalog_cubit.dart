@@ -26,15 +26,15 @@ abstract class ExerciseCatalogState with _$ExerciseCatalogState {
 
 @injectable
 class ExerciseCatalogCubit extends Cubit<ExerciseCatalogState> {
-  ExerciseCatalogCubit(this.repository) : super(const ExerciseCatalogState());
+  ExerciseCatalogCubit(this._repository) : super(const ExerciseCatalogState());
 
-  final ExerciseCatalogRepository repository;
+  final ExerciseCatalogRepository _repository;
   List<ExerciseDefinition> _definitions = const [];
 
   Future<void> load() async {
     emit(state.copyWith(loading: true, failed: false));
     try {
-      _definitions = await repository.loadAll();
+      _definitions = await _repository.loadAll();
       if (!isClosed) _update(state.copyWith(loading: false));
     } on Object {
       if (!isClosed) emit(state.copyWith(loading: false, failed: true));

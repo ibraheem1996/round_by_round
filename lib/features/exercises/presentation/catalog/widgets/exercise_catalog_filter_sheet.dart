@@ -3,6 +3,7 @@ import 'package:material_ui/material_ui.dart';
 
 import '../../../../../app/theme/app_typography.dart';
 import '../../../../../shared/design_system/app_spacing.dart';
+import '../../../../../shared/design_system/app_text_scale_limits.dart';
 import '../exercise_catalog_cubit.dart';
 
 void showExerciseCatalogFilter<T>(
@@ -22,42 +23,49 @@ void showExerciseCatalogFilter<T>(
     builder: (context) =>
         BlocBuilder<ExerciseCatalogCubit, ExerciseCatalogState>(
           bloc: cubit,
-          builder: (context, state) => FractionallySizedBox(
-            heightFactor: .8,
-            child: SafeArea(
-              top: false,
-              child: Column(
-                children: [
-                  Padding(
-                    padding: const EdgeInsets.symmetric(
-                      horizontal: AppSpacing.screenHorizontalInset,
-                    ),
-                    child: Row(
-                      children: [
-                        Expanded(
-                          child: Text(
-                            title,
-                            style: context.appTypography.catalogSectionTitle,
+          builder: (context, state) => MediaQuery.withClampedTextScaling(
+            maxScaleFactor: AppTextScaleLimits.bottomSheet,
+            child: FractionallySizedBox(
+              heightFactor: .8,
+              child: SafeArea(
+                top: false,
+                child: Column(
+                  children: [
+                    Padding(
+                      padding: const EdgeInsets.symmetric(
+                        horizontal: AppSpacing.screenHorizontalInset,
+                      ),
+                      child: Row(
+                        children: [
+                          Expanded(
+                            child: Text(
+                              title,
+                              style: context.appTypography.catalogSectionTitle,
+                            ),
                           ),
-                        ),
-                        const CloseButton(),
-                      ],
+                          CloseButton(
+                            color: Theme.of(context)
+                                .colorScheme
+                                .onSurfaceVariant,
+                          ),
+                        ],
+                      ),
                     ),
-                  ),
-                  Expanded(
-                    child: ListView.builder(
-                      itemCount: options.length,
-                      itemBuilder: (context, index) {
-                        final value = options[index];
-                        return CheckboxListTile(
-                          title: Text(label(value)),
-                          value: selected(state).contains(value),
-                          onChanged: (_) => toggle(value),
-                        );
-                      },
+                    Expanded(
+                      child: ListView.builder(
+                        itemCount: options.length,
+                        itemBuilder: (context, index) {
+                          final value = options[index];
+                          return CheckboxListTile(
+                            title: Text(label(value)),
+                            value: selected(state).contains(value),
+                            onChanged: (_) => toggle(value),
+                          );
+                        },
+                      ),
                     ),
-                  ),
-                ],
+                  ],
+                ),
               ),
             ),
           ),

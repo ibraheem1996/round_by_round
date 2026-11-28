@@ -7,6 +7,7 @@ abstract final class AppControlSizes {
   // static const double small = 32;
   // static const double medium = 40;
   static const double minimumTapTarget = 48;
+  static const double compactIconButtonMinSize = 44;
   static const double primaryButtonMinHeight = 56;
 
   // static const double defaultProgressIndicatorImageSize = 20;

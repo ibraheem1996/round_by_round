@@ -51,6 +51,7 @@ abstract class ExerciseDefinition with _$ExerciseDefinition {
     required ExerciseTrackingType trackingType,
     required ExerciseGroup group,
     Equipment? equipment,
+    String? imageRef,
     required int sortOrder,
   }) = _ExerciseDefinition;
 

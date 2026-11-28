@@ -3,7 +3,6 @@ import 'package:material_ui/material_ui.dart';
 import '../../../../../app/theme/app_typography.dart';
 import '../../../../../l10n/app_localizations.dart';
 import '../../../../../shared/design_system/app_spacing.dart';
-import '../../../domain/exercise_catalog_repository.dart';
 import '../exercise_catalog_cubit.dart';
 import '../exercise_catalog_labels.dart';
 import 'exercise_catalog_card.dart';
@@ -11,14 +10,12 @@ import 'exercise_catalog_card.dart';
 class ExerciseCatalogResults extends StatelessWidget {
   const ExerciseCatalogResults({
     required this.state,
-    required this.repository,
     required this.onRetry,
     required this.onExercisePressed,
     super.key,
   });
 
   final ExerciseCatalogState state;
-  final ExerciseCatalogRepository repository;
   final VoidCallback onRetry;
   final ValueChanged<String> onExercisePressed;
 
@@ -69,7 +66,6 @@ class ExerciseCatalogResults extends StatelessWidget {
               ),
             ExerciseCatalogCard(
               exercise: exercise,
-              repository: repository,
               onTap: () => onExercisePressed(exercise.exerciseId),
             ),
           ],

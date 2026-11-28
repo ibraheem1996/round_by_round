@@ -31,14 +31,6 @@ AssetExerciseDto _$AssetExerciseDtoFromJson(Map<String, dynamic> json) =>
       sortOrder: (json['sortOrder'] as num).toInt(),
       primaryMuscle: json['primaryMuscle'] as String?,
       imageRef: json['imageRef'] as String?,
-      frames:
-          (json['frames'] as List<dynamic>?)
-              ?.map(
-                (e) =>
-                    AssetExerciseFrameDto.fromJson(e as Map<String, dynamic>),
-              )
-              .toList() ??
-          const [],
     );
 
 const _$ExerciseActivityEnumMap = {
@@ -72,7 +64,3 @@ AssetExerciseAliasesDto _$AssetExerciseAliasesDtoFromJson(
   ar: (json['ar'] as List<dynamic>).map((e) => e as String).toList(),
   en: (json['en'] as List<dynamic>).map((e) => e as String).toList(),
 );
-
-AssetExerciseFrameDto _$AssetExerciseFrameDtoFromJson(
-  Map<String, dynamic> json,
-) => AssetExerciseFrameDto(path: json['path'] as String?);
