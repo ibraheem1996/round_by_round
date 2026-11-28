@@ -59,3 +59,4 @@ Project docs
 service-account*.json
 *firebase-adminsdk*.json
 /Project docs/
+devtools_options.yaml
